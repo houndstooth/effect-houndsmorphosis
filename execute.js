@@ -24,21 +24,23 @@ function quarter() {
   size = 1
 
   ITERATIONS.forEach(function() {
-    layer(y, size - 1, current_coordinate[0] /* * current_coordinate[1] */ == 1 ? 'white' : 'black', false)
+    layer(y, size - 1, current_coordinate[0] == 1 ? 'striped' : 'solid', false)
     y += size
-    layer(y, size,  current_coordinate[0] /* * current_coordinate[1] */ == 1 ? 'black' : 'white', true)
+    layer(y, size,  current_coordinate[0] == 1 ? 'solid' : 'striped', true)
     y += size
     size += 1
   })
 }
 
-function layer(y, initial_size, solid_color_in_layer, steady) {
+function layer(y, initial_size, striped_or_solid_layer, steady) {
   var growing_size = initial_size + 1
   var x = 0
-  if (current_coordinate[0]  * current_coordinate[1] == 1) {
-    color = solid_color_in_layer
+
+
+  if (current_coordinate[0] * current_coordinate[1] == 1) {
+    color = striped_or_solid_layer == 'striped' ? 'striped-c' : 'black'
   } else {
-    color = solid_color_in_layer == 'white' ? 'striped-a' : 'striped-b'
+    color = striped_or_solid_layer == 'striped' ? 'striped-d' : 'white'
   }
 
   ITERATIONS.forEach(function() {
@@ -48,10 +50,10 @@ function layer(y, initial_size, solid_color_in_layer, steady) {
     y += initial_size
     growing_size += 1
 
-    if (solid_color_in_layer == 'white') {
-      color = color == 'striped-a' ? 'white' : 'striped-a'
+    if (striped_or_solid_layer == 'striped') {
+      color = color == 'striped-d' ? 'striped-c' : 'striped-d'
     } else {
-      color = color == 'striped-b' ? 'black' : 'striped-b'
+      color = color == 'white' ? 'black' : 'white'
     }
   })
 }
@@ -69,9 +71,9 @@ function drawSquare(x, y, size, color) {
     topLeftY = CENTER[0] + UNIT * (y + size) * current_coordinate[1]
   }
 
-  if (color == "white") {
+  if (color == "striped-c") {
     drawStripedSquare(topLeftX, topLeftY, size * UNIT, "white")
-  } else if (color == "striped-a") {
+  } else if (color == "striped-d") {
     drawStripedSquare(topLeftX, topLeftY, size * UNIT, "black")
   } else {
     drawSolidSquare(x, y, size, color);
@@ -80,11 +82,7 @@ function drawSquare(x, y, size, color) {
 
 
 function drawSolidSquare(x, y, size, color) {
-  if (color == "striped-b") {
-    ctx.fillStyle = "white"
-  } else {
-    ctx.fillStyle = color;
-  }
+  ctx.fillStyle = color;
 
   ctx.beginPath()
   ctx.moveTo(
