@@ -4,7 +4,7 @@ WIDTH = HEIGHT = canvas.width = canvas.height = 1000
 UNIT = 1
 // ITERATIONS = new Array(100)
 // ITERATIONS.fill(0)
-ITERATIONS = 100
+ITERATIONS = 35
 var iterator = [...Array(ITERATIONS).keys()].map(k => k + 1)
 CENTER = [WIDTH / 2, HEIGHT / 2]
 COORDINATES = [
@@ -46,7 +46,7 @@ function layer(y, initial_size, striped_or_solid_layer, steady, layer_index) {
   }
 
   iterator.forEach(function(iter) {
-    drawSquare(x, y, steady ? initial_size : growing_size, color)
+    drawSquare(x, y, steady ? initial_size : growing_size, color, iter, layer_index)
 
     x += growing_size
     y += initial_size
@@ -62,7 +62,7 @@ function layer(y, initial_size, striped_or_solid_layer, steady, layer_index) {
     //but it's too inelegant and ugly to be worth it
     //instead, i just made cusps smaller and roots bigger
     //so you get that kind of native american looking motif
-    //that's what the 200.5 stuff is about
+    //that's what the hbf stuff is about
 
     //ah ha! or i could combine the impulses
     //and just have the striped squares have their own parallel transformation
@@ -81,7 +81,7 @@ function layer(y, initial_size, striped_or_solid_layer, steady, layer_index) {
   })
 }
 
-function drawSquare(x, y, size, color) {
+function drawSquare(x, y, size, color, iter, layer_index) {
   var topLeftX, topLeftY
   if (current_coordinate[0] == 1) {
     topLeftX = CENTER[0] + UNIT * x * current_coordinate[0]
@@ -94,6 +94,17 @@ function drawSquare(x, y, size, color) {
     topLeftY = CENTER[0] + UNIT * (y + size) * current_coordinate[1]
   }
 
+  if (current_coordinate[0] == 1) {
+    var ratio = iter / layer_index
+
+
+    // var thing = (100 / (layer_index - iter + 1))
+    if (ratio < 1) ratio = 1
+    // if (ratio > 100) ratio = 100
+    var herringbonification_factor = 2 * ratio
+  } else {
+    var herringbonification_factor = 2
+  }
   if (color == "striped-c") {
     //this, and analogous one for the other striped, is how i flip the grain of the houndstooth
     //in the lower half
@@ -101,13 +112,13 @@ function drawSquare(x, y, size, color) {
     //same problem with rotating the grain 90 degrees, perhaps even worse looking...
     //so let's not do this
     // if (current_coordinate[1] == 1) {
-      drawStripedSquare(topLeftX, topLeftY, size * UNIT, "white")
+      drawStripedSquare(topLeftX, topLeftY, size * UNIT, "white", herringbonification_factor)
     // } else {
     //   drawStripedSquareOtherOrientation(topLeftX, topLeftY, size * UNIT, "white")
     // }
   } else if (color == "striped-d") {
     // if (current_coordinate[1] == 1) {
-      drawStripedSquare(topLeftX, topLeftY, size * UNIT, "black")
+      drawStripedSquare(topLeftX, topLeftY, size * UNIT, "black", herringbonification_factor)
     // } else {
     //   drawStripedSquareOtherOrientation(topLeftX, topLeftY, size * UNIT, "black")
     // }
@@ -142,15 +153,15 @@ function drawSolidSquare(x, y, size, color) {
 }
 
 
-function drawStripedSquare(topLeftX, topLeftY, sizedUnit, topLeftColor) {
+function drawStripedSquare(topLeftX, topLeftY, sizedUnit, topLeftColor, hbf) {
   ctx.beginPath()
 
   //top left (move to)
   ctx.moveTo( topLeftX,                 topLeftY                 )
   //top middle
-  ctx.lineTo( topLeftX + sizedUnit / 200.5, topLeftY                 )
+  ctx.lineTo( topLeftX + sizedUnit / hbf, topLeftY                 )
   //middle left
-  ctx.lineTo( topLeftX,                 topLeftY + sizedUnit / 200.5 )
+  ctx.lineTo( topLeftX,                 topLeftY + sizedUnit / hbf )
   //close and fill topLeftColor
   ctx.fillStyle = topLeftColor == "white" ? "white" : "black"
   ctx.closePath()
@@ -158,13 +169,13 @@ function drawStripedSquare(topLeftX, topLeftY, sizedUnit, topLeftColor) {
   ctx.beginPath()
 
   //top middle (move to)
-  ctx.moveTo( topLeftX + sizedUnit / 200.5, topLeftY                 )
+  ctx.moveTo( topLeftX + sizedUnit / hbf, topLeftY                 )
   //top right
   ctx.lineTo( topLeftX + sizedUnit,     topLeftY                 )
   //bottom left
   ctx.lineTo( topLeftX,                 topLeftY + sizedUnit     )
   //middle left
-  ctx.lineTo( topLeftX,                 topLeftY + sizedUnit / 200.5 )
+  ctx.lineTo( topLeftX,                 topLeftY + sizedUnit / hbf )
   //close and fill other color
   ctx.fillStyle = topLeftColor == "white" ? "black" : "white"
   ctx.closePath()
@@ -176,9 +187,9 @@ function drawStripedSquare(topLeftX, topLeftY, sizedUnit, topLeftColor) {
   //top right
   ctx.lineTo( topLeftX + sizedUnit,     topLeftY                 )
   //middle right
-  ctx.lineTo( topLeftX + sizedUnit,     topLeftY + (sizedUnit - sizedUnit / 200.5) )
+  ctx.lineTo( topLeftX + sizedUnit,     topLeftY + (sizedUnit - sizedUnit / hbf) )
   //bottom middle
-  ctx.lineTo( topLeftX + (sizedUnit - sizedUnit / 200.5), topLeftY + sizedUnit     )
+  ctx.lineTo( topLeftX + (sizedUnit - sizedUnit / hbf), topLeftY + sizedUnit     )
   //bottom left
   ctx.lineTo( topLeftX,                 topLeftY + sizedUnit     )
   //close and fill topLeftColor
@@ -188,9 +199,9 @@ function drawStripedSquare(topLeftX, topLeftY, sizedUnit, topLeftColor) {
   ctx.beginPath()
 
   //bottom middle (move to)
-  ctx.moveTo( topLeftX + (sizedUnit - sizedUnit / 200.5),   topLeftY + sizedUnit     )
+  ctx.moveTo( topLeftX + (sizedUnit - sizedUnit / hbf),   topLeftY + sizedUnit     )
   //middle right
-  ctx.lineTo( topLeftX + sizedUnit,     topLeftY + (sizedUnit - sizedUnit / 200.5) )
+  ctx.lineTo( topLeftX + sizedUnit,     topLeftY + (sizedUnit - sizedUnit / hbf) )
   //bottom right
   ctx.lineTo( topLeftX + sizedUnit,     topLeftY + sizedUnit     )
   //close and fill white
