@@ -1,12 +1,13 @@
 var canvas = document.querySelector('.canvas')
+canvas.width = canvas.height = 1000
+
 var ctx = canvas.getContext('2d')
-WIDTH = HEIGHT = canvas.width = canvas.height = 1000
+
 UNIT = 1
-// ITERATIONS = new Array(100)
-// ITERATIONS.fill(0)
-ITERATIONS = 35
+ITERATIONS = 100
 var iterator = [...Array(ITERATIONS).keys()].map(k => k + 1)
-CENTER = [WIDTH / 2, HEIGHT / 2]
+
+CENTER = [canvas.width / 2, canvas.height / 2]
 COORDINATES = [
   [1, 1],
   [-1, 1],
