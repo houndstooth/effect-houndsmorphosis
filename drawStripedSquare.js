@@ -1,4 +1,4 @@
-export default (ctx, topLeftX, topLeftY, sizedUnit, topLeftColor, hbf) => {
+export default ({ctx, topLeftX, topLeftY, sizedUnit, topLeftColor, hbf}) => {
 	ctx.beginPath()
 
 	//top left (move to)

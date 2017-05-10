@@ -17,20 +17,20 @@ export default (x, y, size, color, iter, layer, quarter) => {
 		topLeftY = CENTER[ 0 ] + UNIT * (y + size) * quarter[ 1 ]
 	}
 
-	let herringbonification_factor
+	let hbf //herringbonification factor
 	if (quarter[ 0 ] == 1) {
 		let ratio = iter / layer
 		if (ratio < 1) ratio = 1
-		herringbonification_factor = 2 * ratio
+		hbf = 2 * ratio
 	} else {
-		herringbonification_factor = 2
+		hbf = 2
 	}
 
 	if (color == "striped-c") {
-		drawStripedSquare(ctx, topLeftX, topLeftY, size * UNIT, "white", herringbonification_factor)
+		drawStripedSquare({ctx, topLeftX, topLeftY, sizedUnit: size * UNIT, topLeftColor: "white", hbf})
 	} else if (color == "striped-d") {
-		drawStripedSquare(ctx, topLeftX, topLeftY, size * UNIT, "black", herringbonification_factor)
+		drawStripedSquare({ctx, topLeftX, topLeftY, sizedUnit: size * UNIT, topLeftColor: "black", hbf})
 	} else {
-		drawSolidSquare(ctx, x, y, size, color, quarter);
+		drawSolidSquare({ctx, x, y, size, color, quarter});
 	}
 }

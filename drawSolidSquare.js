@@ -1,7 +1,7 @@
 import { CENTER } from '../shared/constants'
 import { UNIT } from '../shared/customize'
 
-export default (ctx, x, y, size, color, quarter) => {
+export default ({ctx, x, y, size, color, quarter}) => {
 	ctx.fillStyle = color;
 
 	ctx.beginPath()
