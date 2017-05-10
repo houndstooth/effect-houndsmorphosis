@@ -1,14 +1,11 @@
-var canvas = document.querySelector('.canvas')
-canvas.width = canvas.height = 1000
+import ctx from '../shared/ctx'
+import { CENTER } from '../shared/constants'
 
-var ctx = canvas.getContext('2d')
-
-UNIT = 1
-ITERATIONS = 100
+const UNIT = 1
+const ITERATIONS = 100
 var iterator = [...Array(ITERATIONS).keys()].map(k => k + 1)
 
-CENTER = [canvas.width / 2, canvas.height / 2]
-COORDINATES = [
+const COORDINATES = [
   [1, 1],
   [-1, 1],
   [1, -1],
@@ -17,10 +14,7 @@ COORDINATES = [
 
 var current_coordinate, y, size, color
 
-COORDINATES.forEach(function(coordinate) {
-  current_coordinate = coordinate
-  quarter()
-})
+
 
 function quarter() {
   y = 0
@@ -209,4 +203,11 @@ function drawStripedSquare(topLeftX, topLeftY, sizedUnit, topLeftColor, hbf) {
   ctx.fillStyle = topLeftColor == "white" ? "black" : "white"
   ctx.closePath()
   ctx.fill()
+}
+
+export default () => {
+	COORDINATES.forEach(function(coordinate) {
+		current_coordinate = coordinate
+		quarter()
+	})
 }
