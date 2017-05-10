@@ -4,7 +4,7 @@ import { UNIT } from '../shared/customize'
 import drawStripedSquare from './drawStripedSquare'
 import drawSolidSquare from './drawSolidSquare'
 
-export default (x, y, size, color, iter, layer_index, quarter) => {
+export default (x, y, size, color, iter, layer, quarter) => {
 	let topLeftX, topLeftY
 	if (quarter[ 0 ] == 1) {
 		topLeftX = CENTER[ 0 ] + UNIT * x * quarter[ 0 ]
@@ -19,7 +19,7 @@ export default (x, y, size, color, iter, layer_index, quarter) => {
 
 	let herringbonification_factor
 	if (quarter[ 0 ] == 1) {
-		let ratio = iter / layer_index
+		let ratio = iter / layer
 		if (ratio < 1) ratio = 1
 		herringbonification_factor = 2 * ratio
 	} else {
