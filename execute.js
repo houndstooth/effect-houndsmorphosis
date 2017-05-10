@@ -1,9 +1,9 @@
 import ctx from '../shared/ctx'
 import { CENTER } from '../shared/constants'
-
-const UNIT = 1
-const ITERATIONS = 100
-const iterator = [ ...Array(ITERATIONS).keys() ].map(k => k + 1)
+import { UNIT, END_ITERATION } from '../shared/customize'
+import drawStripedSquare from './drawStripedSquare'
+import drawSolidSquare from './drawSolidSquare'
+import iterator from '../shared/iterator'
 
 const COORDINATES = [
 	[ 1, 1 ],
@@ -19,7 +19,7 @@ const quarter = () => {
 	y = 0
 	size = 1
 
-	iterator.forEach(iter => {
+	iterator(END_ITERATION).forEach(iter => {
 		layer(y, size - 1, current_coordinate[ 0 ] == 1 ? 'striped' : 'solid', false, iter)
 		y += size
 		layer(y, size, current_coordinate[ 0 ] == 1 ? 'solid' : 'striped', true, iter)
@@ -39,7 +39,7 @@ const layer = (y, initial_size, striped_or_solid_layer, steady, layer_index) => 
 		color = striped_or_solid_layer == 'striped' ? 'striped-d' : 'white'
 	}
 
-	iterator.forEach(iter => {
+	iterator(END_ITERATION).forEach(iter => {
 		drawSquare(x, y, steady ? initial_size : growing_size, color, iter, layer_index)
 
 		x += growing_size
@@ -107,102 +107,19 @@ const drawSquare = (x, y, size, color, iter, layer_index) => {
 		//same problem with rotating the grain 90 degrees, perhaps even worse looking...
 		//so let's not do this
 		// if (current_coordinate[1] == 1) {
-		drawStripedSquare(topLeftX, topLeftY, size * UNIT, "white", herringbonification_factor)
+		drawStripedSquare(ctx, topLeftX, topLeftY, size * UNIT, "white", herringbonification_factor)
 		// } else {
 		//   drawStripedSquareOtherOrientation(topLeftX, topLeftY, size * UNIT, "white")
 		// }
 	} else if (color == "striped-d") {
 		// if (current_coordinate[1] == 1) {
-		drawStripedSquare(topLeftX, topLeftY, size * UNIT, "black", herringbonification_factor)
+		drawStripedSquare(ctx, topLeftX, topLeftY, size * UNIT, "black", herringbonification_factor)
 		// } else {
 		//   drawStripedSquareOtherOrientation(topLeftX, topLeftY, size * UNIT, "black")
 		// }
 	} else {
-		drawSolidSquare(x, y, size, color);
+		drawSolidSquare(ctx, x, y, size, color, current_coordinate);
 	}
-}
-
-
-const drawSolidSquare = (x, y, size, color) => {
-	ctx.fillStyle = color;
-
-	ctx.beginPath()
-	ctx.moveTo(
-		CENTER[ 0 ] + UNIT * x * current_coordinate[ 0 ],
-		CENTER[ 1 ] + UNIT * y * current_coordinate[ 1 ]
-	)
-	ctx.lineTo(
-		CENTER[ 0 ] + UNIT * (x + size) * current_coordinate[ 0 ],
-		CENTER[ 1 ] + UNIT * y * current_coordinate[ 1 ]
-	)
-	ctx.lineTo(
-		CENTER[ 0 ] + UNIT * (x + size) * current_coordinate[ 0 ],
-		CENTER[ 1 ] + UNIT * (y + size) * current_coordinate[ 1 ]
-	)
-	ctx.lineTo(
-		CENTER[ 0 ] + UNIT * x * current_coordinate[ 0 ],
-		CENTER[ 1 ] + UNIT * (y + size) * current_coordinate[ 1 ]
-	)
-	ctx.closePath()
-	ctx.fill()
-}
-
-
-const drawStripedSquare = (topLeftX, topLeftY, sizedUnit, topLeftColor, hbf) => {
-	ctx.beginPath()
-
-	//top left (move to)
-	ctx.moveTo(topLeftX, topLeftY)
-	//top middle
-	ctx.lineTo(topLeftX + sizedUnit / hbf, topLeftY)
-	//middle left
-	ctx.lineTo(topLeftX, topLeftY + sizedUnit / hbf)
-	//close and fill topLeftColor
-	ctx.fillStyle = topLeftColor == "white" ? "white" : "black"
-	ctx.closePath()
-	ctx.fill()
-	ctx.beginPath()
-
-	//top middle (move to)
-	ctx.moveTo(topLeftX + sizedUnit / hbf, topLeftY)
-	//top right
-	ctx.lineTo(topLeftX + sizedUnit, topLeftY)
-	//bottom left
-	ctx.lineTo(topLeftX, topLeftY + sizedUnit)
-	//middle left
-	ctx.lineTo(topLeftX, topLeftY + sizedUnit / hbf)
-	//close and fill other color
-	ctx.fillStyle = topLeftColor == "white" ? "black" : "white"
-	ctx.closePath()
-	ctx.fill()
-	ctx.beginPath()
-
-	//bottom left (move to)
-	ctx.moveTo(topLeftX, topLeftY + sizedUnit)
-	//top right
-	ctx.lineTo(topLeftX + sizedUnit, topLeftY)
-	//middle right
-	ctx.lineTo(topLeftX + sizedUnit, topLeftY + (sizedUnit - sizedUnit / hbf))
-	//bottom middle
-	ctx.lineTo(topLeftX + (sizedUnit - sizedUnit / hbf), topLeftY + sizedUnit)
-	//bottom left
-	ctx.lineTo(topLeftX, topLeftY + sizedUnit)
-	//close and fill topLeftColor
-	ctx.fillStyle = topLeftColor == "white" ? "white" : "black"
-	ctx.closePath()
-	ctx.fill()
-	ctx.beginPath()
-
-	//bottom middle (move to)
-	ctx.moveTo(topLeftX + (sizedUnit - sizedUnit / hbf), topLeftY + sizedUnit)
-	//middle right
-	ctx.lineTo(topLeftX + sizedUnit, topLeftY + (sizedUnit - sizedUnit / hbf))
-	//bottom right
-	ctx.lineTo(topLeftX + sizedUnit, topLeftY + sizedUnit)
-	//close and fill white
-	ctx.fillStyle = topLeftColor == "white" ? "black" : "white"
-	ctx.closePath()
-	ctx.fill()
 }
 
 export default () => {
