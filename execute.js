@@ -3,7 +3,7 @@ import { CENTER } from '../shared/constants'
 
 const UNIT = 1
 const ITERATIONS = 100
-var iterator = [...Array(ITERATIONS).keys()].map(k => k + 1)
+const iterator = [...Array(ITERATIONS).keys()].map(k => k + 1)
 
 const COORDINATES = [
   [1, 1],
@@ -12,15 +12,15 @@ const COORDINATES = [
   [-1, -1]
 ]
 
-var current_coordinate, y, size, color
+let current_coordinate, y, size, color
 
 
 
-function quarter() {
+const quarter = () => {
   y = 0
   size = 1
 
-  iterator.forEach(function(iter) {
+  iterator.forEach(iter => {
     layer(y, size - 1, current_coordinate[0] == 1 ? 'striped' : 'solid', false, iter)
     y += size
     layer(y, size,  current_coordinate[0] == 1 ? 'solid' : 'striped', true, iter)
@@ -29,9 +29,9 @@ function quarter() {
   })
 }
 
-function layer(y, initial_size, striped_or_solid_layer, steady, layer_index) {
-  var growing_size = initial_size + 1
-  var x = 0
+const layer = (y, initial_size, striped_or_solid_layer, steady, layer_index) => {
+  let growing_size = initial_size + 1
+  let x = 0
 
 
   if (current_coordinate[0] * current_coordinate[1] == 1) {
@@ -40,7 +40,7 @@ function layer(y, initial_size, striped_or_solid_layer, steady, layer_index) {
     color = striped_or_solid_layer == 'striped' ? 'striped-d' : 'white'
   }
 
-  iterator.forEach(function(iter) {
+  iterator.forEach(iter => {
     drawSquare(x, y, steady ? initial_size : growing_size, color, iter, layer_index)
 
     x += growing_size
@@ -76,8 +76,8 @@ function layer(y, initial_size, striped_or_solid_layer, steady, layer_index) {
   })
 }
 
-function drawSquare(x, y, size, color, iter, layer_index) {
-  var topLeftX, topLeftY
+const drawSquare = (x, y, size, color, iter, layer_index) => {
+  let topLeftX, topLeftY
   if (current_coordinate[0] == 1) {
     topLeftX = CENTER[0] + UNIT * x * current_coordinate[0]
   } else {
@@ -89,16 +89,17 @@ function drawSquare(x, y, size, color, iter, layer_index) {
     topLeftY = CENTER[0] + UNIT * (y + size) * current_coordinate[1]
   }
 
+  let herringbonification_factor
   if (current_coordinate[0] == 1) {
-    var ratio = iter / layer_index
+    let ratio = iter / layer_index
 
 
-    // var thing = (100 / (layer_index - iter + 1))
+    // const thing = (100 / (layer_index - iter + 1))
     if (ratio < 1) ratio = 1
     // if (ratio > 100) ratio = 100
-    var herringbonification_factor = 2 * ratio
+    herringbonification_factor = 2 * ratio
   } else {
-    var herringbonification_factor = 2
+    herringbonification_factor = 2
   }
   if (color == "striped-c") {
     //this, and analogous one for the other striped, is how i flip the grain of the houndstooth
@@ -123,7 +124,7 @@ function drawSquare(x, y, size, color, iter, layer_index) {
 }
 
 
-function drawSolidSquare(x, y, size, color) {
+const drawSolidSquare = (x, y, size, color) => {
   ctx.fillStyle = color;
 
   ctx.beginPath()
@@ -148,7 +149,7 @@ function drawSolidSquare(x, y, size, color) {
 }
 
 
-function drawStripedSquare(topLeftX, topLeftY, sizedUnit, topLeftColor, hbf) {
+const drawStripedSquare = (topLeftX, topLeftY, sizedUnit, topLeftColor, hbf) => {
   ctx.beginPath()
 
   //top left (move to)
@@ -206,7 +207,7 @@ function drawStripedSquare(topLeftX, topLeftY, sizedUnit, topLeftColor, hbf) {
 }
 
 export default () => {
-	COORDINATES.forEach(function(coordinate) {
+	COORDINATES.forEach(coordinate => {
 		current_coordinate = coordinate
 		quarter()
 	})
