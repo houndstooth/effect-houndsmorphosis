@@ -2,19 +2,19 @@ import { END_ITERATION } from '../shared/customize'
 import iterator from '../shared/iterator'
 import drawSquare from './drawSquare'
 
-export default (y, initial_size, striped_or_solid_layer, steady, layer_index, current_coordinate) => {
+export default (y, initial_size, striped_or_solid_layer, steady, layer_index, quarter) => {
 	let growing_size = initial_size + 1
 	let x = 0
 	let color
 
-	if (current_coordinate[ 0 ] * current_coordinate[ 1 ] == 1) {
+	if (quarter[ 0 ] * quarter[ 1 ] == 1) {
 		color = striped_or_solid_layer == 'striped' ? 'striped-c' : 'black'
 	} else {
 		color = striped_or_solid_layer == 'striped' ? 'striped-d' : 'white'
 	}
 
 	iterator(END_ITERATION).forEach(iter => {
-		drawSquare(x, y, steady ? initial_size : growing_size, color, iter, layer_index, current_coordinate)
+		drawSquare(x, y, steady ? initial_size : growing_size, color, iter, layer_index, quarter)
 
 		x += growing_size
 		y += initial_size
@@ -39,7 +39,7 @@ export default (y, initial_size, striped_or_solid_layer, steady, layer_index, cu
 		//so that way they become contiguous stripes
 
 		// console.log(iter, ITERATIONS - layer_index)
-		// if (current_coordinate[0] == 1 && iter > layer_index) {
+		// if (quarter[0] == 1 && iter > layer_index) {
 		//   if (striped_or_solid_layer == 'striped') {
 		//     color = 'striped-d'
 		//   } else {
