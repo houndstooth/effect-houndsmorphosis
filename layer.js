@@ -25,26 +25,5 @@ export default (y, initial_size, striped_or_solid_layer, steady, layer_index, qu
 		} else {
 			color = color == 'white' ? 'black' : 'white'
 		}
-
-		//this is the bit that forcibly tries to make just stripes in the middle right area
-		//but it's too inelegant and ugly to be worth it
-		//instead, i just made cusps smaller and roots bigger
-		//so you get that kind of native american looking motif
-		//that's what the hbf stuff is about
-
-		//ah ha! or i could combine the impulses
-		//and just have the striped squares have their own parallel transformation
-		//from totally normal on the left (where they are tiny)
-		//gradually until the cusps are gone on the right
-		//so that way they become contiguous stripes
-
-		// console.log(iter, ITERATIONS - layer_index)
-		// if (quarter[0] == 1 && iter > layer_index) {
-		//   if (striped_or_solid_layer == 'striped') {
-		//     color = 'striped-d'
-		//   } else {
-		//     // color = 'white'
-		//   }
-		// }
 	})
 }
