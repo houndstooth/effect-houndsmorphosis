@@ -8,12 +8,16 @@ import calculateNextSquareType from '../utilities/calculateNextSquareType'
 export default ({ y, initialSize, stripedOrSolidLayer, steady, quarter }) => {
 	let growingSize = initialSize + 1
 	let x = 0
+	let size
 	let squareType = calculateInitialSquareType({quarter, stripedOrSolidLayer})
 
 	iterator(END_ITERATION).forEach(() => {
-		const size = steady ? initialSize : growingSize
-		const origin = adjustOrigin({ origin: [ x, y ], quarter, size })
-		square({ origin, size, squareType })
+		size = steady ? initialSize : growingSize
+		square({
+			origin: adjustOrigin({ origin: [ x, y ], quarter, size }),
+			size,
+			squareType
+		})
 
 		x += growingSize
 		y += initialSize
