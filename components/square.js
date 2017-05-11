@@ -1,4 +1,4 @@
-import drawStripedSquare from '../render/drawStripedSquare'
+import drawStripedSquare from '../../shared/render/drawMinorDiagonalStripedSquare'
 import drawSolidSquare from '../../shared/render/drawSolidSquare'
 
 export default ({ origin, size, squareType }) => {
