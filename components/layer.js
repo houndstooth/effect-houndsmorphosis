@@ -3,7 +3,7 @@ import iterator from '../../shared/utilities/iterator'
 import square from './square'
 import adjustOrigin from '../utilities/adjustOrigin'
 import calculateInitialSquareType from '../utilities/calculateInitialSquareType'
-import calculateNextSquareType from '../utilities/calculateNextSquareType'
+import calculateSquareType from '../utilities/calculateSquareType'
 
 export default ({ y, initialSize, stripedOrSolidLayer, steady, quarter }) => {
 	let growingSize = initialSize + 1
@@ -23,6 +23,6 @@ export default ({ y, initialSize, stripedOrSolidLayer, steady, quarter }) => {
 		y += initialSize
 		growingSize += 1
 
-		squareType = calculateNextSquareType({squareType, stripedOrSolidLayer})
+		squareType = calculateSquareType({squareType, stripedOrSolidLayer})
 	})
 }
