@@ -2,17 +2,13 @@ import { END_ITERATION } from '../../shared/common/customize'
 import iterator from '../../shared/utilities/iterator'
 import square from './square'
 import adjustOrigin from '../utilities/adjustOrigin'
+import calculateInitialSquareType from '../utilities/calculateInitialSquareType'
+import calculateNextSquareType from '../utilities/calculateNextSquareType'
 
 export default ({ y, initialSize, stripedOrSolidLayer, steady, quarter }) => {
 	let growingSize = initialSize + 1
 	let x = 0
-	let squareType
-
-	if (quarter[ 0 ] * quarter[ 1 ] == 1) {
-		squareType = stripedOrSolidLayer == 'STRIPED' ? 'STRIPED_A' : 'BLACK'
-	} else {
-		squareType = stripedOrSolidLayer == 'STRIPED' ? 'STRIPED_B' : 'WHITE'
-	}
+	let squareType = calculateInitialSquareType({quarter, stripedOrSolidLayer})
 
 	iterator(END_ITERATION).forEach(() => {
 		const size = steady ? initialSize : growingSize
@@ -23,10 +19,6 @@ export default ({ y, initialSize, stripedOrSolidLayer, steady, quarter }) => {
 		y += initialSize
 		growingSize += 1
 
-		if (stripedOrSolidLayer == 'STRIPED') {
-			squareType = squareType == 'STRIPED_B' ? 'STRIPED_A' : 'STRIPED_B'
-		} else {
-			squareType = squareType == 'WHITE' ? 'BLACK' : 'WHITE'
-		}
+		squareType = calculateNextSquareType({squareType, stripedOrSolidLayer})
 	})
 }
