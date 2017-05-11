@@ -1,4 +1,6 @@
-export default ({ctx, origin, sizedUnit, originColor, chevronification}) => {
+import ctx from '../../shared/render/ctx'
+
+export default ({ origin, sizedUnit, originColor, chevronification }) => {
 	ctx.beginPath()
 
 	//top left (move to)

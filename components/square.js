@@ -8,11 +8,11 @@ export default ({origin, size, squareType, iteration, layer, quarter}) => {
 	const chevronification = calculateChevronification({quarter, iteration, layer})
 
 	if (squareType == "STRIPED_A") {
-		drawStripedSquare({ ctx, origin, sizedUnit: size * UNIT, originColor: "WHITE", chevronification })
+		drawStripedSquare({ origin, sizedUnit: size * UNIT, originColor: "WHITE", chevronification })
 	} else if (squareType == "STRIPED_B") {
-		drawStripedSquare({ ctx, origin, sizedUnit: size * UNIT, originColor: "BLACK", chevronification })
+		drawStripedSquare({ origin, sizedUnit: size * UNIT, originColor: "BLACK", chevronification })
 	} else {
 		ctx.fillStyle = squareType;
-		drawSolidSquare({ ctx, origin, size })
+		drawSolidSquare({ origin, size })
 	}
 }
