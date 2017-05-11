@@ -1,8 +1,8 @@
-import ctx from '../shared/ctx'
-import { UNIT } from '../shared/customize'
-import drawStripedSquare from './drawStripedSquare'
-import drawSolidSquare from '../shared/drawSolidSquare'
-import calculateChevronification from './calculateChevronification'
+import ctx from '../../shared/ctx'
+import { UNIT } from '../../shared/customize'
+import drawStripedSquare from '../render/drawStripedSquare'
+import drawSolidSquare from '../../shared/drawSolidSquare'
+import calculateChevronification from '../utilities/calculateChevronification'
 
 export default ({origin, size, squareType, iteration, layer, quarter}) => {
 	const chevronification = calculateChevronification({quarter, iteration, layer})

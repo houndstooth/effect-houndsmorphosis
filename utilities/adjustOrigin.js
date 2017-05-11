@@ -1,5 +1,5 @@
-import { CENTER } from '../shared/constants'
-import { UNIT } from '../shared/customize'
+import { CENTER } from '../../shared/constants'
+import { UNIT } from '../../shared/customize'
 
 export default ({origin, quarter, size}) => {
 	const adjustedOrigin = [ null, null ]

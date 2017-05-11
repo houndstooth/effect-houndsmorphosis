@@ -1,5 +1,5 @@
-import { END_ITERATION } from '../shared/customize'
-import iterator from '../shared/iterator'
+import { END_ITERATION } from '../../shared/customize'
+import iterator from '../../shared/iterator'
 import layer from './layer'
 
 export default quarter => {
