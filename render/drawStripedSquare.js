@@ -1,6 +1,9 @@
 import ctx from '../../shared/render/ctx'
+import { UNIT } from '../../shared/common/customize'
 
-export default ({ origin, sizedUnit, originColor, chevronification }) => {
+export default ({ origin, size, originColor, chevronification }) => {
+	const sizedUnit = size * UNIT
+
 	ctx.beginPath()
 
 	//top left (move to)
