@@ -6,10 +6,27 @@ export default quarter => {
 	let y = 0
 	let size = 1
 
-	iterator(END_ITERATION).forEach(iter => {
-		layer(y, size - 1, quarter[ 0 ] == 1 ? 'striped' : 'solid', false, iter, quarter)
+	iterator(END_ITERATION).forEach(iteration => {
+		layer({
+			y,
+			initialSize: size - 1,
+			stripedOrSolidLayer: quarter[ 0 ] == 1 ? 'STRIPED' : 'SOLID',
+			steady: false,
+			layer: iteration,
+			quarter
+		})
+
 		y += size
-		layer(y, size, quarter[ 0 ] == 1 ? 'solid' : 'striped', true, iter, quarter)
+
+		layer({
+			y,
+			initialSize: size,
+			stripedOrSolidLayer: quarter[ 0 ] == 1 ? 'SOLID' : 'STRIPED',
+			steady: true,
+			layer: iteration,
+			quarter
+		})
+
 		y += size
 		size += 1
 	})

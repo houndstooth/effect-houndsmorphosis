@@ -1,4 +1,4 @@
-export default ({ctx, origin, sizedUnit, topLeftColor, hbf}) => {
+export default ({ctx, origin, sizedUnit, originColor, hbf}) => {
 	ctx.beginPath()
 
 	//top left (move to)
@@ -7,8 +7,8 @@ export default ({ctx, origin, sizedUnit, topLeftColor, hbf}) => {
 	ctx.lineTo(origin[ 0 ] + sizedUnit / hbf, origin[ 1 ])
 	//middle left
 	ctx.lineTo(origin[ 0 ], origin[ 1 ] + sizedUnit / hbf)
-	//close and fill topLeftColor
-	ctx.fillStyle = topLeftColor == "white" ? "white" : "black"
+	//close and fill originColor
+	ctx.fillStyle = originColor == "WHITE" ? "WHITE" : "BLACK"
 	ctx.closePath()
 	ctx.fill()
 	ctx.beginPath()
@@ -22,7 +22,7 @@ export default ({ctx, origin, sizedUnit, topLeftColor, hbf}) => {
 	//middle left
 	ctx.lineTo(origin[ 0 ], origin[ 1 ] + sizedUnit / hbf)
 	//close and fill other color
-	ctx.fillStyle = topLeftColor == "white" ? "black" : "white"
+	ctx.fillStyle = originColor == "WHITE" ? "BLACK" : "WHITE"
 	ctx.closePath()
 	ctx.fill()
 	ctx.beginPath()
@@ -37,8 +37,8 @@ export default ({ctx, origin, sizedUnit, topLeftColor, hbf}) => {
 	ctx.lineTo(origin[ 0 ] + (sizedUnit - sizedUnit / hbf), origin[ 1 ] + sizedUnit)
 	//bottom left
 	ctx.lineTo(origin[ 0 ], origin[ 1 ] + sizedUnit)
-	//close and fill topLeftColor
-	ctx.fillStyle = topLeftColor == "white" ? "white" : "black"
+	//close and fill originColor
+	ctx.fillStyle = originColor == "WHITE" ? "WHITE" : "BLACK"
 	ctx.closePath()
 	ctx.fill()
 	ctx.beginPath()
@@ -49,8 +49,8 @@ export default ({ctx, origin, sizedUnit, topLeftColor, hbf}) => {
 	ctx.lineTo(origin[ 0 ] + sizedUnit, origin[ 1 ] + (sizedUnit - sizedUnit / hbf))
 	//bottom right
 	ctx.lineTo(origin[ 0 ] + sizedUnit, origin[ 1 ] + sizedUnit)
-	//close and fill white
-	ctx.fillStyle = topLeftColor == "white" ? "black" : "white"
+	//close and fill other color
+	ctx.fillStyle = originColor == "WHITE" ? "BLACK" : "WHITE"
 	ctx.closePath()
 	ctx.fill()
 }

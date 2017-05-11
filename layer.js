@@ -3,30 +3,30 @@ import iterator from '../shared/iterator'
 import drawSquare from './drawSquare'
 import originAdjust from './originAdjust'
 
-export default (y, initialSize, stripedOrSolidLayer, steady, layer, quarter) => {
-	let growing_size = initialSize + 1
+export default ({y, initialSize, stripedOrSolidLayer, steady, layer, quarter}) => {
+	let growingSize = initialSize + 1
 	let x = 0
-	let color
+	let squareType
 
 	if (quarter[ 0 ] * quarter[ 1 ] == 1) {
-		color = stripedOrSolidLayer == 'striped' ? 'striped-c' : 'black'
+		squareType = stripedOrSolidLayer == 'STRIPED' ? 'STRIPED_A' : 'BLACK'
 	} else {
-		color = stripedOrSolidLayer == 'striped' ? 'striped-d' : 'white'
+		squareType = stripedOrSolidLayer == 'STRIPED' ? 'STRIPED_B' : 'WHITE'
 	}
 
-	iterator(END_ITERATION).forEach(iter => {
-		const size = steady ? initialSize : growing_size
+	iterator(END_ITERATION).forEach(iteration => {
+		const size = steady ? initialSize : growingSize
 		const origin = originAdjust({origin: [x, y], quarter, size})
-		drawSquare({origin, size, color, iter, layer, quarter})
+		drawSquare({origin, size, squareType, iteration, layer, quarter})
 
-		x += growing_size
+		x += growingSize
 		y += initialSize
-		growing_size += 1
+		growingSize += 1
 
-		if (stripedOrSolidLayer == 'striped') {
-			color = color == 'striped-d' ? 'striped-c' : 'striped-d'
+		if (stripedOrSolidLayer == 'STRIPED') {
+			squareType = squareType == 'STRIPED_B' ? 'STRIPED_A' : 'STRIPED_B'
 		} else {
-			color = color == 'white' ? 'black' : 'white'
+			squareType = squareType == 'WHITE' ? 'BLACK' : 'WHITE'
 		}
 	})
 }
