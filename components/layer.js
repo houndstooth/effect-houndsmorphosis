@@ -1,19 +1,19 @@
 import { END_ITERATION } from '../../shared/common/customize'
 import iterator from '../../shared/utilities/iterator'
-import square from './square'
+import standardHoundstoothSquare from '../../shared/components/standardHoundstoothSquare'
 import adjustOrigin from '../utilities/adjustOrigin'
-import calculateInitialSquareType from '../utilities/calculateInitialSquareType'
-import calculateSquareType from '../utilities/calculateSquareType'
+import initialSquareType from '../utilities/initialSquareType'
+import nextSquareType from '../utilities/nextSquareType'
 
-export default ({ y, initialSize, stripedOrSolidLayer, steady, quarter }) => {
+export default ({ y, initialSize, layerSquareType, layerSquareSizeBehavior, quarter }) => {
 	let growingSize = initialSize + 1
 	let x = 0
 	let size
-	let squareType = calculateInitialSquareType({quarter, stripedOrSolidLayer})
+	let squareType = initialSquareType({ quarter, layerSquareType })
 
 	iterator(END_ITERATION).forEach(() => {
-		size = steady ? initialSize : growingSize
-		square({
+		size = layerSquareSizeBehavior == 'STEADY' ? initialSize : growingSize
+		standardHoundstoothSquare({
 			origin: adjustOrigin({ origin: [ x, y ], quarter, size }),
 			size,
 			squareType
@@ -23,6 +23,6 @@ export default ({ y, initialSize, stripedOrSolidLayer, steady, quarter }) => {
 		y += initialSize
 		growingSize += 1
 
-		squareType = calculateSquareType({squareType, stripedOrSolidLayer})
+		squareType = nextSquareType({ squareType, layerSquareType })
 	})
 }

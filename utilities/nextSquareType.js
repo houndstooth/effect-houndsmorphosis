@@ -1,5 +1,5 @@
-export default ({squareType, stripedOrSolidLayer}) => {
-	if (stripedOrSolidLayer == 'STRIPED') {
+export default ({ squareType, layerSquareType }) => {
+	if (layerSquareType == 'STRIPED') {
 		return squareType == 'STRIPED_B' ? 'STRIPED_A' : 'STRIPED_B'
 	}
 

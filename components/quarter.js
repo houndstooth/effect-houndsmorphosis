@@ -10,8 +10,8 @@ export default quarter => {
 		layer({
 			y,
 			initialSize: size - 1,
-			stripedOrSolidLayer: quarter[ 0 ] == 1 ? 'STRIPED' : 'SOLID',
-			steady: false,
+			layerSquareType: quarter[ 0 ] == 1 ? 'STRIPED' : 'SOLID',
+			layerSquareSizeBehavior: 'GROWING',
 			quarter
 		})
 
@@ -20,8 +20,8 @@ export default quarter => {
 		layer({
 			y,
 			initialSize: size,
-			stripedOrSolidLayer: quarter[ 0 ] == 1 ? 'SOLID' : 'STRIPED',
-			steady: true,
+			layerSquareType: quarter[ 0 ] == 1 ? 'SOLID' : 'STRIPED',
+			layerSquareSizeBehavior: 'STEADY',
 			quarter
 		})
 

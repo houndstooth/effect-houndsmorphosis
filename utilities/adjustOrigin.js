@@ -1,7 +1,7 @@
 import { CENTER } from '../../shared/common/constants'
 import { UNIT } from '../../shared/common/customize'
 
-export default ({origin, quarter, size}) => {
+export default ({ origin, quarter, size }) => {
 	const adjustedOrigin = [ null, null ]
 	if (quarter[ 0 ] == 1) {
 		adjustedOrigin[ 0 ] = CENTER[ 0 ] + UNIT * origin[ 0 ]
