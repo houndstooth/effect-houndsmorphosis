@@ -1,5 +1,5 @@
-import { END_ITERATION } from '../../shared/customize'
-import iterator from '../../shared/iterator'
+import { END_ITERATION } from '../../shared/common/customize'
+import iterator from '../../shared/utilities/iterator'
 import square from './square'
 import adjustOrigin from '../utilities/adjustOrigin'
 

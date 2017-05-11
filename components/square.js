@@ -1,7 +1,7 @@
-import ctx from '../../shared/ctx'
-import { UNIT } from '../../shared/customize'
+import ctx from '../../shared/render/ctx'
+import { UNIT } from '../../shared/common/customize'
 import drawStripedSquare from '../render/drawStripedSquare'
-import drawSolidSquare from '../../shared/drawSolidSquare'
+import drawSolidSquare from '../../shared/render/drawSolidSquare'
 import calculateChevronification from '../utilities/calculateChevronification'
 
 export default ({origin, size, squareType, iteration, layer, quarter}) => {
