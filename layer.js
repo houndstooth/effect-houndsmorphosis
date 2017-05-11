@@ -1,6 +1,7 @@
 import { END_ITERATION } from '../shared/customize'
 import iterator from '../shared/iterator'
 import drawSquare from './drawSquare'
+import originAdjust from './originAdjust'
 
 export default (y, initialSize, stripedOrSolidLayer, steady, layer, quarter) => {
 	let growing_size = initialSize + 1
@@ -14,7 +15,9 @@ export default (y, initialSize, stripedOrSolidLayer, steady, layer, quarter) => 
 	}
 
 	iterator(END_ITERATION).forEach(iter => {
-		drawSquare(x, y, steady ? initialSize : growing_size, color, iter, layer, quarter)
+		const size = steady ? initialSize : growing_size
+		const origin = originAdjust({origin: [x, y], quarter, size})
+		drawSquare({origin, size, color, iter, layer, quarter})
 
 		x += growing_size
 		y += initialSize

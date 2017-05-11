@@ -1,12 +1,12 @@
-export default ({ctx, topLeftX, topLeftY, sizedUnit, topLeftColor, hbf}) => {
+export default ({ctx, origin, sizedUnit, topLeftColor, hbf}) => {
 	ctx.beginPath()
 
 	//top left (move to)
-	ctx.moveTo(topLeftX, topLeftY)
+	ctx.moveTo(origin[ 0 ], origin[ 1 ])
 	//top middle
-	ctx.lineTo(topLeftX + sizedUnit / hbf, topLeftY)
+	ctx.lineTo(origin[ 0 ] + sizedUnit / hbf, origin[ 1 ])
 	//middle left
-	ctx.lineTo(topLeftX, topLeftY + sizedUnit / hbf)
+	ctx.lineTo(origin[ 0 ], origin[ 1 ] + sizedUnit / hbf)
 	//close and fill topLeftColor
 	ctx.fillStyle = topLeftColor == "white" ? "white" : "black"
 	ctx.closePath()
@@ -14,13 +14,13 @@ export default ({ctx, topLeftX, topLeftY, sizedUnit, topLeftColor, hbf}) => {
 	ctx.beginPath()
 
 	//top middle (move to)
-	ctx.moveTo(topLeftX + sizedUnit / hbf, topLeftY)
+	ctx.moveTo(origin[ 0 ] + sizedUnit / hbf, origin[ 1 ])
 	//top right
-	ctx.lineTo(topLeftX + sizedUnit, topLeftY)
+	ctx.lineTo(origin[ 0 ] + sizedUnit, origin[ 1 ])
 	//bottom left
-	ctx.lineTo(topLeftX, topLeftY + sizedUnit)
+	ctx.lineTo(origin[ 0 ], origin[ 1 ] + sizedUnit)
 	//middle left
-	ctx.lineTo(topLeftX, topLeftY + sizedUnit / hbf)
+	ctx.lineTo(origin[ 0 ], origin[ 1 ] + sizedUnit / hbf)
 	//close and fill other color
 	ctx.fillStyle = topLeftColor == "white" ? "black" : "white"
 	ctx.closePath()
@@ -28,15 +28,15 @@ export default ({ctx, topLeftX, topLeftY, sizedUnit, topLeftColor, hbf}) => {
 	ctx.beginPath()
 
 	//bottom left (move to)
-	ctx.moveTo(topLeftX, topLeftY + sizedUnit)
+	ctx.moveTo(origin[ 0 ], origin[ 1 ] + sizedUnit)
 	//top right
-	ctx.lineTo(topLeftX + sizedUnit, topLeftY)
+	ctx.lineTo(origin[ 0 ] + sizedUnit, origin[ 1 ])
 	//middle right
-	ctx.lineTo(topLeftX + sizedUnit, topLeftY + (sizedUnit - sizedUnit / hbf))
+	ctx.lineTo(origin[ 0 ] + sizedUnit, origin[ 1 ] + (sizedUnit - sizedUnit / hbf))
 	//bottom middle
-	ctx.lineTo(topLeftX + (sizedUnit - sizedUnit / hbf), topLeftY + sizedUnit)
+	ctx.lineTo(origin[ 0 ] + (sizedUnit - sizedUnit / hbf), origin[ 1 ] + sizedUnit)
 	//bottom left
-	ctx.lineTo(topLeftX, topLeftY + sizedUnit)
+	ctx.lineTo(origin[ 0 ], origin[ 1 ] + sizedUnit)
 	//close and fill topLeftColor
 	ctx.fillStyle = topLeftColor == "white" ? "white" : "black"
 	ctx.closePath()
@@ -44,11 +44,11 @@ export default ({ctx, topLeftX, topLeftY, sizedUnit, topLeftColor, hbf}) => {
 	ctx.beginPath()
 
 	//bottom middle (move to)
-	ctx.moveTo(topLeftX + (sizedUnit - sizedUnit / hbf), topLeftY + sizedUnit)
+	ctx.moveTo(origin[ 0 ] + (sizedUnit - sizedUnit / hbf), origin[ 1 ] + sizedUnit)
 	//middle right
-	ctx.lineTo(topLeftX + sizedUnit, topLeftY + (sizedUnit - sizedUnit / hbf))
+	ctx.lineTo(origin[ 0 ] + sizedUnit, origin[ 1 ] + (sizedUnit - sizedUnit / hbf))
 	//bottom right
-	ctx.lineTo(topLeftX + sizedUnit, topLeftY + sizedUnit)
+	ctx.lineTo(origin[ 0 ] + sizedUnit, origin[ 1 ] + sizedUnit)
 	//close and fill white
 	ctx.fillStyle = topLeftColor == "white" ? "black" : "white"
 	ctx.closePath()
