@@ -1,7 +1,7 @@
 import ctx from '../../shared/render/ctx'
 import { UNIT } from '../../shared/common/customize'
 
-export default ({ origin, size, originColor }) => {
+export default ({ origin, size, originColor, otherColor }) => {
 	const sizedUnit = size * UNIT
 
 	ctx.beginPath()
@@ -12,8 +12,8 @@ export default ({ origin, size, originColor }) => {
 	ctx.lineTo(origin[ 0 ] + sizedUnit / 2, origin[ 1 ])
 	//middle left
 	ctx.lineTo(origin[ 0 ], origin[ 1 ] + sizedUnit / 2)
-	//close and fill originColor
-	ctx.fillStyle = originColor == "WHITE" ? "WHITE" : "BLACK"
+	//close and fill origin color
+	ctx.fillStyle = originColor
 	ctx.closePath()
 	ctx.fill()
 	ctx.beginPath()
@@ -27,7 +27,7 @@ export default ({ origin, size, originColor }) => {
 	//middle left
 	ctx.lineTo(origin[ 0 ], origin[ 1 ] + sizedUnit / 2)
 	//close and fill other color
-	ctx.fillStyle = originColor == "WHITE" ? "BLACK" : "WHITE"
+	ctx.fillStyle = otherColor
 	ctx.closePath()
 	ctx.fill()
 	ctx.beginPath()
@@ -42,8 +42,8 @@ export default ({ origin, size, originColor }) => {
 	ctx.lineTo(origin[ 0 ] + (sizedUnit / 2), origin[ 1 ] + sizedUnit)
 	//bottom left
 	ctx.lineTo(origin[ 0 ], origin[ 1 ] + sizedUnit)
-	//close and fill originColor
-	ctx.fillStyle = originColor == "WHITE" ? "WHITE" : "BLACK"
+	//close and fill origin color
+	ctx.fillStyle = originColor
 	ctx.closePath()
 	ctx.fill()
 	ctx.beginPath()
@@ -55,7 +55,7 @@ export default ({ origin, size, originColor }) => {
 	//bottom right
 	ctx.lineTo(origin[ 0 ] + sizedUnit, origin[ 1 ] + sizedUnit)
 	//close and fill other color
-	ctx.fillStyle = originColor == "WHITE" ? "BLACK" : "WHITE"
+	ctx.fillStyle = otherColor
 	ctx.closePath()
 	ctx.fill()
 }
