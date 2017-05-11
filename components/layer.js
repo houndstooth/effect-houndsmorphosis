@@ -3,7 +3,7 @@ import iterator from '../../shared/utilities/iterator'
 import square from './square'
 import adjustOrigin from '../utilities/adjustOrigin'
 
-export default ({y, initialSize, stripedOrSolidLayer, steady, layer, quarter}) => {
+export default ({ y, initialSize, stripedOrSolidLayer, steady, quarter }) => {
 	let growingSize = initialSize + 1
 	let x = 0
 	let squareType
@@ -14,10 +14,10 @@ export default ({y, initialSize, stripedOrSolidLayer, steady, layer, quarter}) =
 		squareType = stripedOrSolidLayer == 'STRIPED' ? 'STRIPED_B' : 'WHITE'
 	}
 
-	iterator(END_ITERATION).forEach(iteration => {
+	iterator(END_ITERATION).forEach(() => {
 		const size = steady ? initialSize : growingSize
-		const origin = adjustOrigin({origin: [x, y], quarter, size})
-		square({origin, size, squareType, iteration, layer, quarter})
+		const origin = adjustOrigin({ origin: [ x, y ], quarter, size })
+		square({ origin, size, squareType })
 
 		x += growingSize
 		y += initialSize
