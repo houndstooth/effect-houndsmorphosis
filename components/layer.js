@@ -16,7 +16,8 @@ export default ({ y, initialSize, layerSquareType, layerSquareSizeBehavior, quar
 		standardHoundstoothSquare({
 			origin: adjustOrigin({ origin: [ x, y ], quarter, size }),
 			size,
-			squareType
+			squareType,
+			scaleFromCenter: true
 		})
 
 		x += growingSize
