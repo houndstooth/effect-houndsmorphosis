@@ -1,7 +1,7 @@
 import { END_ITERATION } from '../../shared/common/customize'
 import { SQUARE_TYPE_TO_COLORS_MAPPING } from '../../shared/common/constants'
 import iterator from '../../shared/utilities/iterator'
-import standardHoundstoothSquare from '../../shared/components/standardHoundstoothSquare'
+import tile from '../../shared/components/tile'
 import adjustOrigin from '../utilities/adjustOrigin'
 import initialSquareType from '../utilities/initialSquareType'
 import nextSquareType from '../utilities/nextSquareType'
@@ -15,7 +15,7 @@ export default ({ y, initialSize, layerSquareType, layerSquareSizeBehavior, quar
 	iterator(END_ITERATION).forEach(() => {
 		size = layerSquareSizeBehavior === 'STEADY' ? initialSize : growingSize
 		const { originColor, otherColor } = SQUARE_TYPE_TO_COLORS_MAPPING[ squareType ]
-		standardHoundstoothSquare({
+		tile({
 			origin: adjustOrigin({ origin: [ x, y ], quarter, size }),
 			size,
 			originColor,
