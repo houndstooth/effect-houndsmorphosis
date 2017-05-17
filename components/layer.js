@@ -17,7 +17,7 @@ export default ({ y, initialSize, layerSquareType, layerSquareSizeBehavior, quar
 			origin: adjustOrigin({ origin: [ x, y ], quarter, size }),
 			size,
 			squareType,
-			scaleFromCenter: true
+			scaleFromGridCenter: true
 		})
 
 		x += growingSize
