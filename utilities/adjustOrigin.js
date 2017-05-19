@@ -1,4 +1,5 @@
 import { CENTER } from '../../shared/common/constants'
+import { SQUARE_SIZE } from '../../shared/common/customize'
 
 export default ({ initialOrigin, quarter, size }) => {
 	const adjustedOrigin = [ null, null ]
@@ -12,5 +13,8 @@ export default ({ initialOrigin, quarter, size }) => {
 	} else {
 		adjustedOrigin[ 1 ] = CENTER[ 1 ] + (initialOrigin[ 1 ] + size) * quarter[ 1 ]
 	}
+	adjustedOrigin[ 0 ] /= SQUARE_SIZE
+	adjustedOrigin[ 1 ] /= SQUARE_SIZE
+
 	return adjustedOrigin
 }
