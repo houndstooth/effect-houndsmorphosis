@@ -11,7 +11,7 @@ export default ({ y, initialSize, layerSquareType, layerSquareSizeBehavior, quar
 
 	iterator(END_ITERATION).forEach(() => {
 		const options = { layerSquareSizeBehavior, growingSize, initialSize, squareType, quarter }
-		houndsmorphosisTile({ x, y, options })
+		houndsmorphosisTile({ origin: [x, y], options })
 
 		x += growingSize
 		y += initialSize
