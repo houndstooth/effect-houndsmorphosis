@@ -1,5 +1,10 @@
-import execute from './common/execute'
+import quarter from './components/quarter'
 
-const houndsmorphosis = execute
+const QUARTERS = [
+    [ 1, 1 ],
+    [ -1, 1 ],
+    [ 1, -1 ],
+    [ -1, -1 ]
+]
 
-export { houndsmorphosis }
+export default () => QUARTERS.forEach(quarter)
