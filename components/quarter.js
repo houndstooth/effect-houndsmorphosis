@@ -1,12 +1,12 @@
-import { END_ITERATION } from '../../shared/common/customize'
 import iterator from '../../shared/utilities/iterator'
 import layer from './layer'
+import state from '../../state'
 
 export default quarter => {
 	let y = 0
 	let size = 1
 
-	iterator(END_ITERATION).forEach(() => {
+	iterator(state.shared.endIteration).forEach(() => {
 		layer({
 			y,
 			initialSize: size - 1,
