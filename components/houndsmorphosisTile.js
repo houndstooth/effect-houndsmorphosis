@@ -1,4 +1,4 @@
-import { SQUARE_TYPE_TO_COLORS_MAPPING } from '../../shared/common/constants'
+import { SQUARE_TYPE_TO_COLORS_MAPPING } from '../../shared/constants'
 import tile from '../../shared/components/tile'
 import adjustOrigin from '../utilities/adjustOrigin'
 
