@@ -6,7 +6,7 @@ export default quarter => {
 	let y = 0
 	let size = 1
 
-	iterator(state.shared.endIteration).forEach(() => {
+	iterator(state.houndsmorphosis.endIteration).forEach(() => {
 		layer({
 			y,
 			initialSize: size - 1,
