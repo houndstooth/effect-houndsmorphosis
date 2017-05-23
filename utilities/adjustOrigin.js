@@ -1,4 +1,4 @@
-import state from '../../state'
+import state from '../../shared/application/state'
 
 export default ({ initialOrigin, quarter, size }) => {
 	const { tileSize, canvasSize } = state.shared

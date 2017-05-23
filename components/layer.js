@@ -2,7 +2,7 @@ import iterator from '../../shared/utilities/iterator'
 import initialSquareType from '../utilities/initialSquareType'
 import nextSquareType from '../utilities/nextSquareType'
 import houndsmorphosisTile from '../components/houndsmorphosisTile'
-import state from '../../state'
+import state from '../../shared/application/state'
 
 export default ({ y, initialSize, layerSquareType, layerSquareSizeBehavior, quarter }) => {
 	let growingSize = initialSize + 1
@@ -11,7 +11,7 @@ export default ({ y, initialSize, layerSquareType, layerSquareSizeBehavior, quar
 
 	iterator(state.houndsmorphosis.endIteration).forEach(() => {
 		const options = { layerSquareSizeBehavior, growingSize, initialSize, squareType, quarter }
-		houndsmorphosisTile({ origin: [x, y], options })
+		houndsmorphosisTile({ origin: [ x, y ], options })
 
 		x += growingSize
 		y += initialSize

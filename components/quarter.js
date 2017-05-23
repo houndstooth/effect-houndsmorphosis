@@ -1,6 +1,6 @@
 import iterator from '../../shared/utilities/iterator'
 import layer from './layer'
-import state from '../../state'
+import state from '../../shared/application/state'
 
 export default quarter => {
 	let y = 0

@@ -5,4 +5,3 @@ export default ({ squareType, layerSquareType }) => {
 
 	return squareType === 'SOLID_A' ? 'SOLID_B' : 'SOLID_A'
 }
-
