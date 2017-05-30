@@ -1,7 +1,7 @@
 import iterator from '../shared/utilities/iterator'
 import state from '../shared/state/state'
 import tile from '../shared/components/tile'
-import convertSquareTypeToColors from '../shared/utilities/convertSquareTypeToColors'
+import convertTileTypeToColors from '../shared/utilities/convertTileTypeToColors'
 
 const QUARTERS = [
 	[ 1, 1 ],
@@ -10,21 +10,21 @@ const QUARTERS = [
 	[ -1, -1 ]
 ]
 
-const nextSquareType = ({ squareType, layerSquareType }) => {
-	if (layerSquareType === 'STRIPED') {
-		return squareType === 'STRIPED_B' ? 'STRIPED_A' : 'STRIPED_B'
+const nextTileType = ({ tileType, layerTileType }) => {
+	if (layerTileType === 'STRIPED') {
+		return tileType === 'STRIPED_B' ? 'STRIPED_A' : 'STRIPED_B'
 	}
 
-	return squareType === 'SOLID_A' ? 'SOLID_B' : 'SOLID_A'
+	return tileType === 'SOLID_A' ? 'SOLID_B' : 'SOLID_A'
 }
 
 
-const initialSquareType = ({ quarter, layerSquareType }) => {
+const initialTileType = ({ quarter, layerTileType }) => {
 	if (quarter[ 0 ] * quarter[ 1 ] === 1) {
-		return layerSquareType === 'STRIPED' ? 'STRIPED_A' : 'SOLID_B'
+		return layerTileType === 'STRIPED' ? 'STRIPED_A' : 'SOLID_B'
 	}
 
-	return layerSquareType === 'STRIPED' ? 'STRIPED_B' : 'SOLID_A'
+	return layerTileType === 'STRIPED' ? 'STRIPED_B' : 'SOLID_A'
 }
 
 const adjustOrigin = ({ initialOrigin, quarter, size }) => {
@@ -49,29 +49,29 @@ const adjustOrigin = ({ initialOrigin, quarter, size }) => {
 }
 
 const houndsmorphosisTile = ({ origin: initialOrigin, options }) => {
-	const { initialSize, growingSize, squareType, layerSquareSizeBehavior, quarter } = options
-	const size = layerSquareSizeBehavior === 'STEADY' ? initialSize : growingSize
-	const colors = convertSquareTypeToColors({ squareType })
+	const { initialSize, growingSize, tileType, layerTileSizeBehavior, quarter } = options
+	const size = layerTileSizeBehavior === 'STEADY' ? initialSize : growingSize
+	const colors = convertTileTypeToColors({ tileType })
 	const origin = adjustOrigin({ initialOrigin, quarter, size })
 	const scaleFromGridCenter = true
 
 	tile({ origin, size, colors, scaleFromGridCenter })
 }
 
-const layer = ({ y, initialSize, layerSquareType, layerSquareSizeBehavior, quarter }) => {
+const layer = ({ y, initialSize, layerTileType, layerTileSizeBehavior, quarter }) => {
 	let growingSize = initialSize + 1
 	let x = 0
-	let squareType = initialSquareType({ quarter, layerSquareType })
+	let tileType = initialTileType({ quarter, layerTileType })
 
 	iterator(state.houndsmorphosis.endIteration).forEach(() => {
-		const options = { layerSquareSizeBehavior, growingSize, initialSize, squareType, quarter }
+		const options = { layerTileSizeBehavior, growingSize, initialSize, tileType, quarter }
 		houndsmorphosisTile({ origin: [ x, y ], options })
 
 		x += growingSize
 		y += initialSize
 		growingSize += 1
 
-		squareType = nextSquareType({ squareType, layerSquareType })
+		tileType = nextTileType({ tileType, layerTileType })
 	})
 }
 
@@ -83,8 +83,8 @@ const quarter = quarter => {
 		layer({
 			y,
 			initialSize: size - 1,
-			layerSquareType: quarter[ 0 ] === 1 ? 'STRIPED' : 'SOLID',
-			layerSquareSizeBehavior: 'GROWING',
+			layerTileType: quarter[ 0 ] === 1 ? 'STRIPED' : 'SOLID',
+			layerTileSizeBehavior: 'GROWING',
 			quarter
 		})
 
@@ -93,8 +93,8 @@ const quarter = quarter => {
 		layer({
 			y,
 			initialSize: size,
-			layerSquareType: quarter[ 0 ] === 1 ? 'SOLID' : 'STRIPED',
-			layerSquareSizeBehavior: 'STEADY',
+			layerTileType: quarter[ 0 ] === 1 ? 'SOLID' : 'STRIPED',
+			layerTileSizeBehavior: 'STEADY',
 			quarter
 		})
 
