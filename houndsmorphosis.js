@@ -1,7 +1,7 @@
 import iterator from '../shared/utilities/iterator'
 import state from '../shared/state/state'
 import tile from '../shared/components/tile'
-import convertTileTypeToColors from '../shared/utilities/convertTileTypeToColors'
+import colorUtilities from '../shared/utilities/colorUtilities'
 
 const QUARTERS = [
 	[ 1, 1 ],
@@ -51,7 +51,7 @@ const adjustOrigin = ({ initialOrigin, quarter, size }) => {
 const houndsmorphosisTile = ({ origin: initialOrigin, options }) => {
 	const { initialSize, growingSize, tileType, layerTileSizeBehavior, quarter } = options
 	const size = layerTileSizeBehavior === 'STEADY' ? initialSize : growingSize
-	const colors = convertTileTypeToColors({ tileType })
+	const colors = colorUtilities.convertTileTypeToColors({ tileType })
 	const origin = adjustOrigin({ initialOrigin, quarter, size })
 	const scaleFromGridCenter = true
 
