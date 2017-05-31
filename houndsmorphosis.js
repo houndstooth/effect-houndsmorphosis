@@ -1,7 +1,6 @@
 import iterator from '../shared/utilities/iterator'
 import state from '../shared/state/state'
 import tile from '../shared/components/tile'
-import colorUtilities from '../shared/utilities/colorUtilities'
 
 const QUARTERS = [
 	[ 1, 1 ],
@@ -9,6 +8,13 @@ const QUARTERS = [
 	[ 1, -1 ],
 	[ -1, -1 ]
 ]
+
+const TILE_TYPE_TO_COLORS_INDICES_MAPPING = {
+	"SOLID_A": [ 0, 0 ],
+	"SOLID_B": [ 1, 1 ],
+	"STRIPED_A": [ 0, 1 ],
+	"STRIPED_B": [ 1, 0 ]
+}
 
 const nextTileType = ({ tileType, layerTileType }) => {
 	if (layerTileType === 'STRIPED') {
@@ -48,10 +54,19 @@ const adjustOrigin = ({ initialOrigin, quarter, size }) => {
 	return adjustedOrigin
 }
 
+const calculateColors = ({ tileType }) => {
+	const colors = state.shared.color.colors
+	const indices = TILE_TYPE_TO_COLORS_INDICES_MAPPING[ tileType ]
+	return [
+		colors[ indices[ 0 ] ],
+		colors[ indices[ 1 ] ]
+	]
+}
+
 const houndsmorphosisTile = ({ origin: initialOrigin, options }) => {
 	const { initialSize, growingSize, tileType, layerTileSizeBehavior, quarter } = options
 	const size = layerTileSizeBehavior === 'STEADY' ? initialSize : growingSize
-	const colors = colorUtilities.convertTileTypeToColors({ tileType })
+	const colors = calculateColors({ tileType })
 	const origin = adjustOrigin({ initialOrigin, quarter, size })
 	const scaleFromGridCenter = true
 
