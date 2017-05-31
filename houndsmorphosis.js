@@ -55,7 +55,7 @@ const adjustOrigin = ({ initialOrigin, quarter, size }) => {
 }
 
 const calculateColors = ({ tileType }) => {
-	const colors = state.shared.color.colors
+	const colors = state.shared.color.set
 	const indices = TILE_TYPE_TO_COLORS_INDICES_MAPPING[ tileType ]
 	return [
 		colors[ indices[ 0 ] ],
