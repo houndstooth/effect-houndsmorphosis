@@ -9,11 +9,18 @@ const QUARTERS = [
 	[ -1, -1 ]
 ]
 
-const TILE_TYPE_TO_COLORS_INDICES_MAPPING = {
+const COLORS = {
 	"SOLID_A": [ 0, 0 ],
 	"SOLID_B": [ 1, 1 ],
 	"STRIPED_A": [ 0, 1 ],
 	"STRIPED_B": [ 1, 0 ]
+}
+
+const DAZZLE = {
+	"SOLID_A": [ 1, 1 ],
+	"SOLID_B": [ 0, 0 ],
+	"STRIPED_A": [ 1, 0 ],
+	"STRIPED_B": [ 0, 1 ]
 }
 
 const nextTileType = ({ tileType, layerTileType }) => {
@@ -23,7 +30,6 @@ const nextTileType = ({ tileType, layerTileType }) => {
 
 	return tileType === 'SOLID_A' ? 'SOLID_B' : 'SOLID_A'
 }
-
 
 const initialTileType = ({ quarter, layerTileType }) => {
 	if (quarter[ 0 ] * quarter[ 1 ] === 1) {
@@ -54,23 +60,25 @@ const adjustOrigin = ({ initialOrigin, quarter, size }) => {
 	return adjustedOrigin
 }
 
-const calculateColors = ({ tileType }) => {
-	const colors = state.shared.color.set
-	const indices = TILE_TYPE_TO_COLORS_INDICES_MAPPING[ tileType ]
-	return [
-		colors[ indices[ 0 ] ],
-		colors[ indices[ 1 ] ]
-	]
+const calculateEntry = ({ tileType, set, mapping }) => {
+	const indices = mapping[ tileType ]
+	return [ set[ indices[ 0 ] ], set[ indices[ 1 ] ] ]
 }
 
 const houndsmorphosisTile = ({ origin: initialOrigin, options }) => {
 	const { initialSize, growingSize, tileType, layerTileSizeBehavior, quarter } = options
 	const size = layerTileSizeBehavior === 'STEADY' ? initialSize : growingSize
-	const colors = calculateColors({ tileType })
+
+	const { color } = state.shared
+	const { set, houndazzle } = color
+	const colors = calculateEntry({ tileType, set, mapping: COLORS })
+	const dazzleColors = calculateEntry({ tileType, set: houndazzle.color.set, mapping: DAZZLE })
+	const dazzleOrientations = calculateEntry({ tileType, set: houndazzle.orientation.set, mapping: DAZZLE })
+
 	const origin = adjustOrigin({ initialOrigin, quarter, size })
 	const scaleFromGridCenter = true
 
-	tile({ origin, size, colors, scaleFromGridCenter })
+	tile({ origin, size, colors, dazzleColors, dazzleOrientations, scaleFromGridCenter })
 }
 
 const layer = ({ y, initialSize, layerTileType, layerTileSizeBehavior, quarter }) => {
