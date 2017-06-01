@@ -39,25 +39,25 @@ const initialTileType = ({ quarter, layerTileType }) => {
 	return layerTileType === 'STRIPED' ? 'STRIPED_B' : 'SOLID_A'
 }
 
-const adjustOrigin = ({ initialOrigin, quarter, size }) => {
+const adjustAddress = ({ unadjustedAddress, quarter, size }) => {
 	const { tileSize, canvasSize } = state.shared
 	const canvasCenter = [ canvasSize / 2, canvasSize / 2 ]
 
-	const adjustedOrigin = [ null, null ]
+	const adjustedAddress = [ null, null ]
 	if (quarter[ 0 ] === 1) {
-		adjustedOrigin[ 0 ] = canvasCenter[ 0 ] + initialOrigin[ 0 ]
+		adjustedAddress[ 0 ] = canvasCenter[ 0 ] + unadjustedAddress[ 0 ]
 	} else {
-		adjustedOrigin[ 0 ] = canvasCenter[ 0 ] + (initialOrigin[ 0 ] + size) * quarter[ 0 ]
+		adjustedAddress[ 0 ] = canvasCenter[ 0 ] + (unadjustedAddress[ 0 ] + size) * quarter[ 0 ]
 	}
 	if (quarter[ 1 ] === 1) {
-		adjustedOrigin[ 1 ] = canvasCenter[ 1 ] + initialOrigin[ 1 ]
+		adjustedAddress[ 1 ] = canvasCenter[ 1 ] + unadjustedAddress[ 1 ]
 	} else {
-		adjustedOrigin[ 1 ] = canvasCenter[ 1 ] + (initialOrigin[ 1 ] + size) * quarter[ 1 ]
+		adjustedAddress[ 1 ] = canvasCenter[ 1 ] + (unadjustedAddress[ 1 ] + size) * quarter[ 1 ]
 	}
-	adjustedOrigin[ 0 ] /= tileSize
-	adjustedOrigin[ 1 ] /= tileSize
+	adjustedAddress[ 0 ] /= tileSize
+	adjustedAddress[ 1 ] /= tileSize
 
-	return adjustedOrigin
+	return adjustedAddress
 }
 
 const calculateEntry = ({ tileType, set, mapping }) => {
@@ -65,7 +65,7 @@ const calculateEntry = ({ tileType, set, mapping }) => {
 	return [ set[ indices[ 0 ] ], set[ indices[ 1 ] ] ]
 }
 
-const houndsmorphosisTile = ({ origin: initialOrigin, options }) => {
+const houndsmorphosisTile = ({ unadjustedAddress, options }) => {
 	const { initialSize, growingSize, tileType, layerTileSizeBehavior, quarter } = options
 	const size = layerTileSizeBehavior === 'STEADY' ? initialSize : growingSize
 
@@ -76,10 +76,10 @@ const houndsmorphosisTile = ({ origin: initialOrigin, options }) => {
 		colors: calculateEntry({ tileType, set: houndazzle && houndazzle.color && houndazzle.color.set || set, mapping: DAZZLE }),
 		orientations: calculateEntry({ tileType, set: houndazzle && houndazzle.orientation && houndazzle.orientation.set || set, mapping: DAZZLE })
 	}
-	const origin = adjustOrigin({ initialOrigin, quarter, size })
+	const address = adjustAddress({ unadjustedAddress, quarter, size })
 	const scaleFromGridCenter = true
 
-	tile({ origin, size, colors, scaleFromGridCenter, initialDazzle })
+	tile({ address, size, colors, scaleFromGridCenter, initialDazzle })
 }
 
 const layer = ({ y, initialSize, layerTileType, layerTileSizeBehavior, quarter }) => {
@@ -89,7 +89,7 @@ const layer = ({ y, initialSize, layerTileType, layerTileSizeBehavior, quarter }
 
 	iterator(state.houndsmorphosis.endIteration).forEach(() => {
 		const options = { layerTileSizeBehavior, growingSize, initialSize, tileType, quarter }
-		houndsmorphosisTile({ origin: [ x, y ], options })
+		houndsmorphosisTile({ unadjustedAddress: [ x, y ], options })
 
 		x += growingSize
 		y += initialSize
