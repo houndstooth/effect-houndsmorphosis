@@ -77,9 +77,8 @@ const houndsmorphosisTile = ({ unadjustedAddress, options }) => {
 		orientations: calculateEntry({ tileType, set: houndazzle && houndazzle.orientationConfig && houndazzle.orientationConfig.set || set, mapping: DAZZLE })
 	}
 	const address = adjustAddress({ unadjustedAddress, quarter, size })
-	const scaleFromGridCenter = true
 
-	tile({ address, size, colors, scaleFromGridCenter, initialDazzle })
+	tile({ address, size, colors, initialDazzle })
 }
 
 const layer = ({ y, initialSize, layerTileType, layerTileSizeBehavior, quarter }) => {
