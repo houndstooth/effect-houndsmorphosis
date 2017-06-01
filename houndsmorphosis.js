@@ -72,13 +72,14 @@ const houndsmorphosisTile = ({ origin: initialOrigin, options }) => {
 	const { color } = state.shared
 	const { set, houndazzle } = color
 	const colors = calculateEntry({ tileType, set, mapping: COLORS })
-	const dazzleColors = calculateEntry({ tileType, set: houndazzle.color.set, mapping: DAZZLE })
-	const dazzleOrientations = calculateEntry({ tileType, set: houndazzle.orientation.set, mapping: DAZZLE })
-
+	const initialDazzle = {
+		colors: calculateEntry({ tileType, set: houndazzle && houndazzle.color && houndazzle.color.set || set, mapping: DAZZLE }),
+		orientations: calculateEntry({ tileType, set: houndazzle && houndazzle.orientation && houndazzle.orientation.set || set, mapping: DAZZLE })
+	}
 	const origin = adjustOrigin({ initialOrigin, quarter, size })
 	const scaleFromGridCenter = true
 
-	tile({ origin, size, colors, dazzleColors, dazzleOrientations, scaleFromGridCenter })
+	tile({ origin, size, colors, scaleFromGridCenter, initialDazzle })
 }
 
 const layer = ({ y, initialSize, layerTileType, layerTileSizeBehavior, quarter }) => {
