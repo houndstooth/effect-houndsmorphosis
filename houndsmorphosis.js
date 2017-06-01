@@ -69,12 +69,12 @@ const houndsmorphosisTile = ({ unadjustedAddress, options }) => {
 	const { initialSize, growingSize, tileType, layerTileSizeBehavior, quarter } = options
 	const size = layerTileSizeBehavior === 'STEADY' ? initialSize : growingSize
 
-	const { color } = state.shared
-	const { set, houndazzle } = color
+	const { colorConfig } = state.shared
+	const { set, houndazzle } = colorConfig
 	const colors = calculateEntry({ tileType, set, mapping: COLORS })
 	const initialDazzle = {
-		colors: calculateEntry({ tileType, set: houndazzle && houndazzle.color && houndazzle.color.set || set, mapping: DAZZLE }),
-		orientations: calculateEntry({ tileType, set: houndazzle && houndazzle.orientation && houndazzle.orientation.set || set, mapping: DAZZLE })
+		colors: calculateEntry({ tileType, set: houndazzle && houndazzle.colorConfig && houndazzle.colorConfig.set || set, mapping: DAZZLE }),
+		orientations: calculateEntry({ tileType, set: houndazzle && houndazzle.orientationConfig && houndazzle.orientationConfig.set || set, mapping: DAZZLE })
 	}
 	const address = adjustAddress({ unadjustedAddress, quarter, size })
 	const scaleFromGridCenter = true
