@@ -40,7 +40,7 @@ const initialTileType = ({ quarter, layerTileType }) => {
 }
 
 const adjustAddress = ({ unadjustedAddress, quarter, size }) => {
-	const { tileSize, canvasSize } = state.shared
+	const { tileSize, canvasSize } = state
 	const canvasCenter = [ canvasSize / 2, canvasSize / 2 ]
 
 	const adjustedAddress = [ null, null ]
@@ -69,7 +69,7 @@ const houndsmorphosisTile = ({ unadjustedAddress, options }) => {
 	const { initialSize, growingSize, tileType, layerTileSizeBehavior, quarter } = options
 	const size = layerTileSizeBehavior === 'STEADY' ? initialSize : growingSize
 
-	const { colorConfig } = state.shared
+	const { colorConfig } = state
 	const { set, houndazzle } = colorConfig
 	const colors = calculateEntry({ tileType, set, mapping: COLORS })
 	const initialDazzle = {
