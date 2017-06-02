@@ -1,5 +1,7 @@
 export default {
-	houndsmorphosis: {
-
-	}
+	state: {
+		houndsmorphosisMode: true
+	},
+	iterations: {},
+	animations: {}
 }

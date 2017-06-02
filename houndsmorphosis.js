@@ -86,7 +86,7 @@ const layer = ({ y, initialSize, layerTileType, layerTileSizeBehavior, quarter }
 	let x = 0
 	let tileType = initialTileType({ quarter, layerTileType })
 
-	iterator(state.houndsmorphosis.endIteration).forEach(() => {
+	iterator(state.gridSize).forEach(() => {
 		const options = { layerTileSizeBehavior, growingSize, initialSize, tileType, quarter }
 		houndsmorphosisTile({ unadjustedAddress: [ x, y ], options })
 
@@ -102,7 +102,24 @@ const quarter = quarter => {
 	let y = 0
 	let size = 1
 
-	iterator(state.houndsmorphosis.endIteration).forEach(() => {
+	iterator(state.gridSize).forEach(() => {
+		// so if y is moving by 1, per grid, then these are the % 2 === 0 layers
+		// and that means old "y", which will become the result of the forked origin calc fn,
+		// would be y * size
+		// except NOT THAT FAST
+		// because every 2 rows, size itself increases by 1
+		// ...so, it's y * size + triangularNumber(Math.floor(y / 2))
+		// we want it to go 0, 1, 2, 4, 6, 9, 12, 16, 20
+		// so +1 +1 +2 +2 +3 +3 +4 +4 +5 +5
+		// .25x^2 + .5x ?
+		// 0   1   2  3
+		// 0, .75, 2, 15/4, ,
+
+		//Quarter-squares: floor(n/2)*ceiling(n/2). Equivalently, floor(n^2/4).
+		Math.floor(Math.pow(y + 1, 2)/4)
+		//although since we don't have two 0's at the beginning offset by + 1
+
+
 		layer({
 			y,
 			initialSize: size - 1,
@@ -113,6 +130,7 @@ const quarter = quarter => {
 
 		y += size
 
+		//and these are the % 2 === 1 layers
 		layer({
 			y,
 			initialSize: size,
