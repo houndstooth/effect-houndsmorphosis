@@ -14,6 +14,7 @@ export default {
                 ]
             }
         },
-        offsetOrigin: [ CANVAS_SIZE / 2, CANVAS_SIZE / 2 ]
+        // offsetOrigin: [ CANVAS_SIZE / 2, CANVAS_SIZE / 2 ]
+        // scaleFromGridCenter: false
 	}
 }
