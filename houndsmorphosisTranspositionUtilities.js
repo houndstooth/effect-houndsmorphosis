@@ -1,10 +1,10 @@
 import transpositionUtilities from '../shared/utilities/transpositionUtilities'
-import triangularNumbers from '../harmonitooth/triangularNumbers'
+import mathUtilities from '../shared/utilities/mathUtilities'
 
 const quarterSquareNumber = n => Math.floor(Math.pow(n, 2) / 4)
 
 const trapezoidalNumber = ({ start, height }) => {
-    const { triangularNumber } = triangularNumbers
+    const { triangularNumber } = mathUtilities
     return triangularNumber(start + height) - triangularNumber(start)
 } 
 
