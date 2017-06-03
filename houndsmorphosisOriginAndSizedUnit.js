@@ -1,5 +1,6 @@
 import transpositionUtilities from '../shared/utilities/transpositionUtilities'
 import mathUtilities from '../shared/utilities/mathUtilities'
+import state from '../shared/state/state'
 
 export default ({ address }) => {
     const addressX = address[ 0 ]
@@ -12,7 +13,8 @@ export default ({ address }) => {
     ]
     origin = transpositionUtilities.adjustOrigin({ origin })
 
-    const sizedUnit = addressY % 2 === 0 ? addressX + size + 1 : size
+    let sizedUnit = addressY % 2 === 0 ? addressX + size + 1 : size
+    sizedUnit *= state.unit
 
     return { origin, sizedUnit }
 }
