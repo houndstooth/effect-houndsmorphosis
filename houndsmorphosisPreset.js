@@ -24,7 +24,7 @@ export default {
             }
         },
         offsetOrigin: [ CANVAS_SIZE / 2, CANVAS_SIZE / 2 ],
-        negativeGridToo: true,
+        // negativeGridToo: true,
         scaleFromGridCenter: false
 	}
 }
