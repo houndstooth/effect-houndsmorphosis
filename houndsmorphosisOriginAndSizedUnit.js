@@ -5,6 +5,8 @@ import state from '../shared/state/state'
 export default ({ address }) => {
     const addressX = address[ 0 ]
     const addressY = address[ 1 ]
+    if (addressY < -2 * (addressX + 1)) return { origin: null, sizedUnit: null} 
+
     const size = Math.ceil(addressY / 2)
 
     let origin = [ 
