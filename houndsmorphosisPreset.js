@@ -2,7 +2,7 @@ const CANVAS_SIZE = 1000
 
 export default {
 	state: {
-        gridSize: 45,
+        gridSize: 71,
         canvasSize: CANVAS_SIZE,
 		houndsmorphosisMode: true,
         colorConfig: {
@@ -12,10 +12,6 @@ export default {
                     [ [ 0, 0 ], [ 0, 1 ] ], 
                     [ [ 1, 1 ], [ 1, 0 ] ]
                 ],
-                alternateSupertile: [
-                    [ [ 0, 0 ], [ 1, 0 ] ], 
-                    [ [ 1, 1 ], [ 0, 1 ] ]
-                ]
                 // for when it is gongram mode
                 // supertile: [
                 //     [ [ 0, 0 ], [ 0, 1 ] ], 
