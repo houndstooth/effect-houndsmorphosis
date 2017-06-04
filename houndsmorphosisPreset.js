@@ -7,19 +7,7 @@ export default {
 		houndsmorphosisMode: true,
         colorConfig: {
             assignment: {
-                mode: 'SUPERTILE',
-                supertile: [ 
-                    [ [ 0, 0 ], [ 0, 1 ] ], 
-                    [ [ 1, 1 ], [ 1, 0 ] ]
-                ],
-                // for when it is gongram mode
-                // supertile: [
-                //     [ [ 0, 0 ], [ 0, 1 ] ], 
-                //     [ [ 1, 1 ], [ 1, 2 ] ], 
-                //     [ [ 2, 2 ], [ 2, 3 ] ], 
-                //     [ [ 3, 3 ], [ 3, 4 ] ], 
-                //     [ [ 4, 4 ], [ 4, 0 ] ], 
-                // ]
+                mode: 'SUPERTILE'
             }
         },
         offsetOrigin: [ CANVAS_SIZE / 2, CANVAS_SIZE / 2 ],
