@@ -13,8 +13,14 @@ export default ({ address }) => {
     ]
     origin = transpositionUtilities.adjustOrigin({ origin })
 
-    let sizedUnit = addressY % 2 === 0 ? addressX + size + 1 : size
-    sizedUnit *= state.unit
+    let vector = addressY % 2 === 0 ? addressX + size + 1 : size
+    const positivityX = addressX < 0 ? -1 : 1
+    const positivityY = addressY < 0 ? -1 : 1
+    // console.log(positivityX, positivityY)
+    vector = [ 
+        vector * state.unit * positivityX, 
+        vector * state.unit * positivityY 
+    ]
 
-    return { origin, sizedUnit }
+    return { origin, vector }
 }
