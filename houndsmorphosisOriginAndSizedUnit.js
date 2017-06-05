@@ -3,59 +3,45 @@ import mathUtilities from '../shared/utilities/mathUtilities'
 import state from '../shared/state/state'
 
 export default ({ address }) => {
-    const addressX = address[ 0 ]
-    const addressY = address[ 1 ]
-    if (addressX >= 0 && addressY >= 0) {
-        const size = Math.ceil(Math.abs(addressY) / 2)
-        let sizedUnit = Math.abs(addressY) % 2 === 0 ? Math.abs(addressX) + size + 1 : size
-        sizedUnit *= state.unit
+	const addressX = address[ 0 ]
+	const addressY = address[ 1 ]
 
-        const thing = Math.abs(addressY) % 2 === 0 ? 0 : 0
-        let origin = [ 
-            thing + mathUtilities.trapezoidalNumber({ start: size, height: Math.abs(addressX) }),
-            mathUtilities.quarterSquareNumber(Math.abs(addressY) + 1) + Math.abs(addressX) * size
-        ]
-        origin = transpositionUtilities.adjustOrigin({ origin })
-        
-        return { origin, sizedUnit }
-    } else if (addressX < 0 && addressY >= 0) {
-        const size = Math.ceil(Math.abs(addressY) / 2)
-        let sizedUnit = Math.abs(addressY) % 2 === 0 ? Math.abs(addressX) + size : size
-        sizedUnit *= state.unit
+	// what if we solved the problem by eliminating every tile located on either axis ?
+	// that is, none of this preferring [ 0, 0 ] into the bottom right quadrant
+	// if (addressX === 0 || addressY === 0) return { origin: null, sizedUnit: null }
 
-        const thing = Math.abs(addressY) % 2 === 0 ? 0 : Math.abs(addressX) 
-        let origin = [ 
-            thing + mathUtilities.trapezoidalNumber({ start: size, height: Math.abs(addressX) }) * -1,
-            mathUtilities.quarterSquareNumber(Math.abs(addressY) + 1) + Math.abs(addressX + 1) * size
-        ]
-        origin = transpositionUtilities.adjustOrigin({ origin })
+	// base size is used in everything
+	const size = Math.abs(Math.ceil(addressY / 2))
 
-        return { origin, sizedUnit }
-    } else if (addressX >= 0 && addressY < 0) {
-        const size = Math.ceil(Math.abs(addressY + 1) / 2)
-        let sizedUnit = Math.abs(addressY) % 2 === 0 ? Math.abs(addressX) + size : size
-        sizedUnit *= state.unit
+	// x
+	const thingOne = addressY < 0 ? Math.abs(addressX) : 0
+	const thingTwo = addressX < 0 ? Math.abs(addressX) : 0
+	const thing = addressY % 2 === 0 ? thingOne : thingTwo
+	let x = mathUtilities.trapezoidalNumber({
+			start: size,
+			height: Math.abs(addressX)
+		})
+		-
+		thing
 
-        const thing = Math.abs(addressY) % 2 === 0 ? 0 : Math.abs(addressX)
-        let origin = [ 
-            thing + mathUtilities.trapezoidalNumber({ start: size, height: Math.abs(addressX) }) - Math.abs(addressX),
-            (mathUtilities.quarterSquareNumber(Math.abs(addressY)) + Math.abs(addressX) * size) * -1 
-        ]
-        origin = transpositionUtilities.adjustOrigin({ origin })
-        
-        return { origin, sizedUnit }
-    } else if (addressX < 0 && addressY < 0) {
-        const size = Math.ceil(Math.abs(addressY + 1) / 2)
-        let sizedUnit = Math.abs(addressY) % 2 === 0 ? Math.abs(addressX) + size - 1 : size
-        sizedUnit *= state.unit
+	// y
+	const sizeScalarX = addressX < 0 ? Math.abs(addressX + 1) : addressX
+	const sizeScalarY = addressY < 0 ? addressY : addressY + 1
+	let y = mathUtilities.quarterSquareNumber(sizeScalarY)
+		+
+		sizeScalarX * size
 
-        const thing = Math.abs(addressY) % 2 === 0 ? 0 : 0
-        let origin = [ 
-            thing + (mathUtilities.trapezoidalNumber({ start: size, height: Math.abs(addressX) }) - Math.abs(addressX)) * -1,
-            (mathUtilities.quarterSquareNumber(Math.abs(addressY)) + Math.abs(addressX + 1) * size) * -1
-        ]
-        origin = transpositionUtilities.adjustOrigin({ origin })
-        
-        return { origin, sizedUnit }
-    }
+	// put in correct quadrant
+	if (addressX < 0) x *= -1
+	if (addressY < 0) y *= -1
+
+	// size
+	const scalarX = addressX < 0 ? -0.5 : 0.5
+	const scalarY = addressY < 0 ? -0.5 : 0.5
+	const growingSize = Math.abs(addressX) + size + scalarX + scalarY
+	let sizedUnit = addressY % 2 === 0 ? growingSize : size
+	sizedUnit *= state.unit
+
+	const origin = transpositionUtilities.adjustOrigin({ origin: [ x, y ] })
+	return { origin, sizedUnit }
 }
