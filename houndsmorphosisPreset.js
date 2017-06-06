@@ -20,6 +20,6 @@ export default {
 		gridOriginOffset: [ CANVAS_SIZE / 2, CANVAS_SIZE / 2 ],
 		getOriginAndSizedUnit: getHoundsmorphosisOriginAndSizedUnit,
 		negativeGridToo: true,
-		scaleFromGridCenter: false
+		scaleFromCanvasCenter: false
 	}
 }
