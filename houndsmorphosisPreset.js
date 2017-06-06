@@ -17,7 +17,7 @@ export default {
 				offsetAddress: getHoundsmorphosisAddressOffset
 			}
 		},
-		offsetOrigin: [ CANVAS_SIZE / 2, CANVAS_SIZE / 2 ],
+		originOffset: [ CANVAS_SIZE / 2, CANVAS_SIZE / 2 ],
 		getOriginAndSizedUnit: getHoundsmorphosisOriginAndSizedUnit,
 		negativeGridToo: true,
 		scaleFromGridCenter: false
