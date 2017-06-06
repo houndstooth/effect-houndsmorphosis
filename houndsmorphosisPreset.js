@@ -5,7 +5,6 @@ import getHoundsmorphosisShapeOriginAndSizedUnit from './getHoundsmorphosisShape
 export default {
 	state: {
 		tileSize: 0, // if you remove this, does not work with cmyktooth anymore
-		gridSize: 71,
 		view: {
 			canvasSize: CANVAS_SIZE,
 			zoomOnCanvasCenter: true,
@@ -22,6 +21,9 @@ export default {
 			}
 		},
 		getShapeOriginAndSizedUnit: getHoundsmorphosisShapeOriginAndSizedUnit,
-		negativeGridToo: true
+		grid: {
+			gridSize: 71,
+			includeNegativeQuadrants: true
+		}
 	}
 }
