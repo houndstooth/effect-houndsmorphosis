@@ -4,6 +4,7 @@ import getHoundsmorphosisShapeOriginAndSizedUnit from './getHoundsmorphosisShape
 
 export default {
 	state: {
+		tileSize: 0, // if you remove this, does not work with cmyktooth anymore
 		gridSize: 71,
 		canvasSize: CANVAS_SIZE,
 		houndsmorphosisMode: true,
@@ -17,7 +18,7 @@ export default {
 				offsetAddress: getHoundsmorphosisAddressOffset
 			}
 		},
-		gridOriginOffset: [ CANVAS_SIZE / 2, CANVAS_SIZE / 2 ],
+		centerViewOnCenterOfTileAtZeroZeroAddress: true,
 		getShapeOriginAndSizedUnit: getHoundsmorphosisShapeOriginAndSizedUnit,
 		negativeGridToo: true,
 		scaleFromCanvasCenter: false
