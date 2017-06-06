@@ -3,7 +3,7 @@ import mathUtilities from '../../utilities/mathUtilities'
 import state from '../../state/state'
 
 export default ({ address }) => {
-	if (address[ 0 ] === 0 || address[ 1 ] === 0) return { origin: null, sizedUnit: null }
+	if (address[ 0 ] === 0 || address[ 1 ] === 0) return { shapeOrigin: null, sizedUnit: null }
 
 	const addressX = Math.abs(address[ 0 ])
 	const addressY = Math.abs(address[ 1 ])
@@ -25,6 +25,6 @@ export default ({ address }) => {
 	}
 
 	const sizedUnit = size * state.unit
-	const origin = transpositionUtilities.adjustOrigin({ origin: [ x, y ] })
-	return { origin, sizedUnit }
+	const shapeOrigin = transpositionUtilities.adjustOrigin({ shapeOrigin: [ x, y ] })
+	return { shapeOrigin, sizedUnit }
 }

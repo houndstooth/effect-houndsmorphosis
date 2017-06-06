@@ -1,6 +1,6 @@
 const CANVAS_SIZE = 1000
 import getHoundsmorphosisAddressOffset from './getHoundsmorphosisAddressOffset'
-import getHoundsmorphosisOriginAndSizedUnit from './getHoundsmorphosisOriginAndSizedUnit'
+import getHoundsmorphosisShapeOriginAndSizedUnit from './getHoundsmorphosisShapeOriginAndSizedUnit'
 
 export default {
 	state: {
@@ -18,7 +18,7 @@ export default {
 			}
 		},
 		gridOriginOffset: [ CANVAS_SIZE / 2, CANVAS_SIZE / 2 ],
-		getOriginAndSizedUnit: getHoundsmorphosisOriginAndSizedUnit,
+		getShapeOriginAndSizedUnit: getHoundsmorphosisShapeOriginAndSizedUnit,
 		negativeGridToo: true,
 		scaleFromCanvasCenter: false
 	}
