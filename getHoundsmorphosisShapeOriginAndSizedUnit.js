@@ -24,7 +24,7 @@ export default ({ address }) => {
 		y -= size
 	}
 
-	const sizedUnit = size * state.unit
+	const sizedUnit = size * state.view.zoom
 	const shapeOrigin = transpositionUtilities.adjustOrigin({ shapeOrigin: [ x, y ] })
 	return { shapeOrigin, sizedUnit }
 }

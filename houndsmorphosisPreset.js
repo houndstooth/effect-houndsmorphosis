@@ -6,7 +6,11 @@ export default {
 	state: {
 		tileSize: 0, // if you remove this, does not work with cmyktooth anymore
 		gridSize: 71,
-		canvasSize: CANVAS_SIZE,
+		view: {
+			canvasSize: CANVAS_SIZE,
+			zoomOnCanvasCenter: true,
+			centerViewOnCenterOfTileAtZeroZeroAddress: true
+		},
 		colorConfig: {
 			assignment: {
 				mode: 'SUPERTILE',
@@ -17,9 +21,7 @@ export default {
 				offsetAddress: getHoundsmorphosisAddressOffset
 			}
 		},
-		centerViewOnCenterOfTileAtZeroZeroAddress: true,
 		getShapeOriginAndSizedUnit: getHoundsmorphosisShapeOriginAndSizedUnit,
-		negativeGridToo: true,
-		scaleFromCanvasCenter: false
+		negativeGridToo: true
 	}
 }
