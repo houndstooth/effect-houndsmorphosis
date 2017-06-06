@@ -4,7 +4,9 @@ import getHoundsmorphosisShapeOriginAndSizedUnit from './getHoundsmorphosisShape
 
 export default {
 	state: {
-		tileSize: 0, // if you remove this, does not work with cmyktooth anymore
+		tile: {
+			tileSize: 0, // if you remove this, does not work with cmyktooth anymore
+		},
 		view: {
 			canvasSize: CANVAS_SIZE,
 			zoomOnCanvasCenter: true,
