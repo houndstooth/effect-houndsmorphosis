@@ -14,7 +14,7 @@ export default {
 					[ [ 0, 0 ], [ 0, 1 ] ],
 					[ [ 1, 1 ], [ 1, 0 ] ]
 				],
-				addressOffsetFunction: getHoundsmorphosisAddressOffset
+				offsetAddress: getHoundsmorphosisAddressOffset
 			}
 		},
 		offsetOrigin: [ CANVAS_SIZE / 2, CANVAS_SIZE / 2 ],
