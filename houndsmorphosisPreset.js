@@ -7,7 +7,6 @@ export default {
 		tileSize: 0, // if you remove this, does not work with cmyktooth anymore
 		gridSize: 71,
 		canvasSize: CANVAS_SIZE,
-		houndsmorphosisMode: true,
 		colorConfig: {
 			assignment: {
 				mode: 'SUPERTILE',
