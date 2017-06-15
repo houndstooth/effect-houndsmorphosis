@@ -1,6 +1,6 @@
 const CANVAS_SIZE = 1000
 import getHoundsmorphosisAddressOffset from './getHoundsmorphosisAddressOffset'
-import getHoundsmorphosisShapeOriginAndSizedUnit from './getHoundsmorphosisShapeOriginAndSizedUnit'
+import getHoundsmorphosisTileOriginAndSizedUnit from './getHoundsmorphosisTileOriginAndSizedUnit'
 
 export default {
 	state: {
@@ -22,7 +22,7 @@ export default {
 				offsetAddress: getHoundsmorphosisAddressOffset
 			}
 		},
-		getShapeOriginAndSizedUnit: getHoundsmorphosisShapeOriginAndSizedUnit,
+		getTileOriginAndSizedUnit: getHoundsmorphosisTileOriginAndSizedUnit,
 		gridConfig: {
 			gridSize: 71,
 			includeNegativeQuadrants: true
