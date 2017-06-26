@@ -1,6 +1,5 @@
 import transpositionUtilities from '../../utilities/transpositionUtilities'
 import mathUtilities from '../../utilities/mathUtilities'
-import state from '../../state/state'
 
 export default ({ address }) => {
 	if (address[ 0 ] === 0 || address[ 1 ] === 0) return { tileOrigin: null, sizedUnit: null }
