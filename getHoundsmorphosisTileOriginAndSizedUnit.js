@@ -1,5 +1,6 @@
 import transpositionUtilities from '../../utilities/transpositionUtilities'
 import mathUtilities from '../../utilities/mathUtilities'
+import { ZOOM } from '../../defaults'
 
 export default ({ address }) => {
 	if (address[ 0 ] === 0 || address[ 1 ] === 0) return { tileOrigin: null, sizedUnit: null }
@@ -23,7 +24,8 @@ export default ({ address }) => {
 		y -= size
 	}
 
-	const sizedUnit = size * state.viewConfig.zoom
+	const zoom = settings.initial.viewConfig && settings.initial.viewConfig.zoom || ZOOM
+	const sizedUnit = size * zoom
 	const tileOrigin = transpositionUtilities.adjustOrigin({ tileOrigin: [ x, y ] })
 	return { tileOrigin, sizedUnit }
 }

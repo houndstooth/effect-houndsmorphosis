@@ -3,10 +3,7 @@ import getHoundsmorphosisAddressOffset from './getHoundsmorphosisAddressOffset'
 import getHoundsmorphosisTileOriginAndSizedUnit from './getHoundsmorphosisTileOriginAndSizedUnit'
 
 export default {
-	state: {
-		tileConfig: {
-			tileSize: 0
-		},
+	initial: {
 		viewConfig: {
 			canvasSize: CANVAS_SIZE,
 			zoomOnCanvasCenter: true,
