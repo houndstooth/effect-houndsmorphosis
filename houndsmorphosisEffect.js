@@ -1,11 +1,9 @@
-const CANVAS_SIZE = 1000
 import getHoundsmorphosisAddressOffset from './getHoundsmorphosisAddressOffset'
 import getHoundsmorphosisTileOriginAndSizedUnit from './getHoundsmorphosisTileOriginAndSizedUnit'
 
 export default {
 	initial: {
 		viewConfig: {
-			canvasSize: CANVAS_SIZE,
 			zoomOnCanvasCenter: true,
 			centerViewOnCenterOfTileAtZeroZeroAddress: true
 		},
