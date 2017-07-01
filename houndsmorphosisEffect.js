@@ -5,22 +5,22 @@ export default {
 	initial: {
 		viewConfig: {
 			zoomOnCanvasCenter: true,
-			centerViewOnCenterOfTileAtZeroZeroAddress: true
+			centerViewOnCenterOfTileAtZeroZeroAddress: true,
 		},
 		colorConfig: {
 			assignment: {
 				mode: 'SUPERTILE',
 				supertile: [
 					[ [ 0, 0 ], [ 0, 1 ] ],
-					[ [ 1, 1 ], [ 1, 0 ] ]
+					[ [ 1, 1 ], [ 1, 0 ] ],
 				],
-				offsetAddress: getHoundsmorphosisAddressOffset
-			}
+				offsetAddress: getHoundsmorphosisAddressOffset,
+			},
 		},
 		getTileOriginAndSizedUnit: getHoundsmorphosisTileOriginAndSizedUnit,
 		gridConfig: {
 			gridSize: 71,
-			includeNegativeQuadrants: true
-		}
-	}
+			includeNegativeQuadrants: true,
+		},
+	},
 }
