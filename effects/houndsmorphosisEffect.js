@@ -1,5 +1,5 @@
-import getHoundsmorphosisAddressOffset from './getHoundsmorphosisAddressOffset'
-import getHoundsmorphosisTileOriginAndSizedUnit from './getHoundsmorphosisTileOriginAndSizedUnit'
+import getHoundsmorphosisAddressOffset from '../src/utilities/getHoundsmorphosisAddressOffset'
+import getHoundsmorphosisTileOriginAndSizedUnit from '../src/utilities/getHoundsmorphosisTileOriginAndSizedUnit'
 
 export default {
 	initial: {
