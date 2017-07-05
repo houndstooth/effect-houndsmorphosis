@@ -3,11 +3,11 @@ import getHoundsmorphosisTileOriginAndSizedUnit from '../src/utilities/getHounds
 
 export default {
 	initial: {
-		viewConfig: {
+		viewSettings: {
 			zoomOnCanvasCenter: true,
 			centerViewOnCenterOfTileAtZeroZeroAddress: true,
 		},
-		colorConfig: {
+		colorSettings: {
 			assignment: {
 				mode: 'SUPERTILE',
 				supertile: [
@@ -18,7 +18,7 @@ export default {
 			},
 		},
 		getTileOriginAndSizedUnit: getHoundsmorphosisTileOriginAndSizedUnit,
-		gridConfig: {
+		gridSettings: {
 			gridSize: 71,
 			includeNegativeQuadrants: true,
 		},

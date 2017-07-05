@@ -24,7 +24,7 @@ export default ({ address }) => {
 		y -= size
 	}
 
-	const zoom = settings.initial.viewConfig && settings.initial.viewConfig.zoom || ZOOM
+	const zoom = settings.initial.viewSettings && settings.initial.viewSettings.zoom || ZOOM
 	const sizedUnit = size * zoom
 	const tileOrigin = transpositionUtilities.adjustOrigin({ tileOrigin: [ x, y ] })
 	return { tileOrigin, sizedUnit }
