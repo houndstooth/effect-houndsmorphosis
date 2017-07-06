@@ -6,6 +6,11 @@ export default {
 		viewSettings: {
 			zoomOnCanvasCenter: true,
 			centerViewOnCenterOfTileAtZeroZeroAddress: true,
+			zoom: 5,
+			// canvasSize: 400
+		},
+		tileSettings: {
+			tileSize: 0,
 		},
 		colorSettings: {
 			assignment: {
