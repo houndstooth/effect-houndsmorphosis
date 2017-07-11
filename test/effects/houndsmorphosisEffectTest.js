@@ -1,6 +1,6 @@
 import execute from '../../../../src/application/execute'
 import setup from '../../../../src/application/setup'
-import expectStandardTile from '../../../../test/helpers/expectStandardTile'
+import standardTileIsColors from '../../../../test/helpers/standardTileIsColors'
 import { BLACK, TRANSPARENT } from '../../../../src/constants'
 import houndsmorphosisEffect from '../../effects/houndsmorphosisEffect'
 
@@ -21,13 +21,11 @@ describe('houndsmorphosis', () => {
 		execute()
 
 		const tiles = [
-			{ origin: [ 190, 190 ], tileSize: 1, colors: [ TRANSPARENT, TRANSPARENT ] },
-			// { origin: [ 170, 180 ], tileSize: 2, colors: [ BLACK, BLACK ] },
-			// { origin: [ 140, 170 ], tileSize: 3, colors: [ TRANSPARENT, TRANSPARENT ] },
-			// { origin: [ 100, 160 ], tileSize: 4, colors: [BLACK, BLACK] },
+			{ originInPixels: [ 190, 190 ], tileSizeInPixels: 10, colors: [ TRANSPARENT, TRANSPARENT ] },
+			{ originInPixels: [ 170, 180 ], tileSizeInPixels: 20, colors: [ BLACK, BLACK ] },
+			{ originInPixels: [ 140, 170 ], tileSizeInPixels: 30, colors: [ TRANSPARENT, TRANSPARENT ] },
+			{ originInPixels: [ 100, 160 ], tileSizeInPixels: 40, colors: [ BLACK, BLACK ] },
 		]
-		tiles.forEach(tile => {
-			expectStandardTile(tile)
-		})
+		tiles.forEach(tile => expect(standardTileIsColors(tile)).toBe(true))
 	})
 })
