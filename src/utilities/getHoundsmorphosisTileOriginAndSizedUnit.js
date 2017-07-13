@@ -1,5 +1,6 @@
 import transpositionUtilities from '../../../../src/utilities/transpositionUtilities'
 import mathUtilities from '../../../../src/utilities/mathUtilities'
+import settingsUtilities from '../../../../src/utilities/settingsUtilities'
 import { ZOOM } from '../../../../src/defaults'
 
 export default ({ address }) => {
@@ -24,7 +25,10 @@ export default ({ address }) => {
 		y -= size
 	}
 
-	const zoom = current.settings.initial.viewSettings && current.settings.initial.viewSettings.zoom || ZOOM
+	const zoom = settingsUtilities.getFromSettingsOrDefault({
+		nestedPropertyPath: [ 'initial', 'viewSettings', 'zoom' ],
+		defaultForProperty: ZOOM,
+	})
 	const sizedUnit = size * zoom
 	const tileOrigin = transpositionUtilities.adjustOrigin({ tileOrigin: [ x, y ] })
 	return { tileOrigin, sizedUnit }
