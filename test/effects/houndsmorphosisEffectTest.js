@@ -11,6 +11,9 @@ describe('houndsmorphosis', () => {
 			effects: [ houndsmorphosisEffect ],
 			overrides: {
 				initial: {
+					gridSettings: {
+						gridSize: 5,
+					},
 					viewSettings: {
 						zoom: 10,
 						canvasSize: 400,
