@@ -12,7 +12,7 @@ export default {
 		},
 		colorSettings: {
 			assignment: {
-				mode: 'SUPERTILE',
+				assignmentMode: 'SUPERTILE',
 				supertile: [
 					[ [ 0, 0 ], [ 0, 1 ] ],
 					[ [ 1, 1 ], [ 1, 0 ] ],
