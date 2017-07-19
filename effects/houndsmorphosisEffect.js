@@ -1,5 +1,5 @@
 import getHoundsmorphosisAddressOffset from '../src/utilities/getHoundsmorphosisAddressOffset'
-import getHoundsmorphosisTileOriginAndSizedUnit from '../src/utilities/getHoundsmorphosisTileOriginAndSizedUnit'
+import getHoundsmorphosisTileOriginAndSize from '../src/utilities/getHoundsmorphosisTileOriginAndSize'
 
 export default {
 	initial: {
@@ -20,7 +20,7 @@ export default {
 				offsetAddress: getHoundsmorphosisAddressOffset,
 			},
 		},
-		getTileOriginAndSizedUnit: getHoundsmorphosisTileOriginAndSizedUnit,
+		getTileOriginAndSize: getHoundsmorphosisTileOriginAndSize,
 		gridSettings: {
 			gridSize: 71,
 			includeNegativeQuadrants: true,

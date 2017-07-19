@@ -22,6 +22,7 @@ describe('houndsmorphosis', () => {
 			},
 		})
 		activateTestMarkerCanvas()
+
 		execute()
 
 		const tiles = [
