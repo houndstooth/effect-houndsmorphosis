@@ -10,7 +10,7 @@ describe('houndsmorphosis', () => {
 		setup({
 			effects: [ houndsmorphosisEffect ],
 			overrides: {
-				initial: {
+				base: {
 					gridSettings: {
 						gridSize: 5,
 					},
