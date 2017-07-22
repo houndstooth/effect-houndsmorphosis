@@ -1,9 +1,9 @@
 import execute from '../../../../src/application/execute'
 import buildPattern from '../../../../src/state/buildPattern'
-import standardTileIsColors from '../../../../test/helpers/standardTileIsColors'
+import standardTileIsColors from '../../../../test/integration/helpers/standardTileIsColors'
 import { BLACK, TRANSPARENT } from '../../../../src/constants'
 import houndsmorphosisEffect from '../../effects/houndsmorphosisEffect'
-import activateTestMarkerCanvas from '../../../../test/helpers/activateTestMarkerCanvas'
+import activateTestMarkerCanvas from '../../../../test/integration/helpers/activateTestMarkerCanvas'
 
 describe('houndsmorphosis', () => {
 	it('lays out the tiles in alternating growing rows and steady rows', () => {
