@@ -1,5 +1,5 @@
 import execute from '../../../../src/application/execute'
-import setup from '../../../../src/settings/setup'
+import buildPattern from '../../../../src/settings/buildPattern'
 import standardTileIsColors from '../../../../test/helpers/standardTileIsColors'
 import { BLACK, TRANSPARENT } from '../../../../src/constants'
 import houndsmorphosisEffect from '../../effects/houndsmorphosisEffect'
@@ -7,9 +7,9 @@ import activateTestMarkerCanvas from '../../../../test/helpers/activateTestMarke
 
 describe('houndsmorphosis', () => {
 	it('lays out the tiles in alternating growing rows and steady rows', () => {
-		setup({
-			effects: [ houndsmorphosisEffect ],
-			overrides: {
+		buildPattern({
+			patternEffects: [ houndsmorphosisEffect ],
+			patternOverrides: {
 				base: {
 					gridSettings: {
 						gridSize: 5,
