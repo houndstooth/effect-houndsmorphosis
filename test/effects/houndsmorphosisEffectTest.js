@@ -1,5 +1,5 @@
 import execute from '../../../../src/application/execute'
-import buildPattern from '../../../../src/settings/buildPattern'
+import buildPattern from '../../../../src/state/buildPattern'
 import standardTileIsColors from '../../../../test/helpers/standardTileIsColors'
 import { BLACK, TRANSPARENT } from '../../../../src/constants'
 import houndsmorphosisEffect from '../../effects/houndsmorphosisEffect'
