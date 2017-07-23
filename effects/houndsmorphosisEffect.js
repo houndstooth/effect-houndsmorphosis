@@ -8,7 +8,7 @@ export default {
 			centerViewOnCenterOfTileAtZeroZeroAddress: true,
 		},
 		tileSettings: {
-			tileSize: 0,
+			tileSizeSetting: 0,
 			getTileOriginAndSize: getHoundsmorphosisTileOriginAndSize,
 		},
 		colorSettings: {
