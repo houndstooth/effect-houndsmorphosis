@@ -9,6 +9,7 @@ export default {
 		},
 		tileSettings: {
 			tileSize: 0,
+			getTileOriginAndSize: getHoundsmorphosisTileOriginAndSize,
 		},
 		colorSettings: {
 			assignment: {
@@ -20,7 +21,6 @@ export default {
 				offsetAddress: getHoundsmorphosisAddressOffset,
 			},
 		},
-		getTileOriginAndSize: getHoundsmorphosisTileOriginAndSize,
 		gridSettings: {
 			gridSize: 71,
 			includeNegativeQuadrants: true,
