@@ -2,7 +2,7 @@ import getHoundsmorphosisAddressOffset from '../src/utilities/getHoundsmorphosis
 import getHoundsmorphosisTileOriginAndSize from '../src/utilities/getHoundsmorphosisTileOriginAndSize'
 
 export default {
-	base: {
+	basePattern: {
 		viewSettings: {
 			zoomOnCanvasCenter: true,
 			centerViewOnCenterOfTileAtZeroZeroAddress: true,
