@@ -1,5 +1,5 @@
 import execute from '../../../../src/application/execute'
-import composeMainHoundstooth from '../../../../src/state/composeMainHoundstooth'
+import composeMainHoundstooth from '../../../../src/store/composeMainHoundstooth'
 import standardTileIsColors from '../../../../test/integration/helpers/standardTileIsColors'
 import { BLACK, TRANSPARENT } from '../../../../src/constants'
 import houndsmorphosisEffect from '../../effects/houndsmorphosisEffect'
