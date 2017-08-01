@@ -133,7 +133,7 @@ describe('houndsmorphosis', () => {
 		const positiveXnegativeYquadrantTiles = positiveXnegativeYquadrantFirstRowTiles
 			.concat(positiveXnegativeYquadrantSecondRowTiles)
 			.concat(positiveXnegativeYquadrantThirdRowTiles)
-			.concat(positiveXnegativeYquadrantFourthRowTiles)	
+			.concat(positiveXnegativeYquadrantFourthRowTiles)
 
 		const negativeXpositiveYquadrantTiles = negativeXpositiveYquadrantFirstRowTiles
 			.concat(negativeXpositiveYquadrantSecondRowTiles)
