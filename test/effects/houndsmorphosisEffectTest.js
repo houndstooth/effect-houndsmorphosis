@@ -1,29 +1,27 @@
-import execute from '../../../../src/application/execute'
-import composeMainHoundstooth from '../../../../src/store/composeMainHoundstooth'
+import executeSelectedHoundstoothEffects from '../../../../src/interface/executeSelectedHoundstoothEffects'
 import standardTileIsColors from '../../../../test/integration/helpers/standardTileIsColors'
 import { BLACK, TRANSPARENT } from '../../../../src/constants'
 import houndsmorphosisEffect from '../../effects/houndsmorphosisEffect'
 import activateTestMarkerCanvas from '../../../../test/integration/helpers/activateTestMarkerCanvas'
+import store from '../../../../store'
 
 describe('houndsmorphosis', () => {
 	it('lays out the tiles in alternating growing rows and steady rows', () => {
-		composeMainHoundstooth({
-			houndstoothEffects: [ houndsmorphosisEffect ],
-			houndstoothOverrides: {
-				basePattern: {
-					gridSettings: {
-						gridSize: 6,
-					},
-					viewSettings: {
-						zoom: 10,
-						canvasSize: 400,
-					},
+		store.selectedHoundstoothEffects = [ houndsmorphosisEffect ]
+		const houndstoothOverrides = {
+			basePattern: {
+				gridSettings: {
+					gridSize: 6,
+				},
+				viewSettings: {
+					zoom: 10,
+					canvasSize: 400,
 				},
 			},
-		})
+		}
 		activateTestMarkerCanvas()
 
-		execute()
+		executeSelectedHoundstoothEffects({ houndstoothOverrides })
 
 		const negativeXnegativeYquadrantFirstRowTiles = [
 			{ baseId: 0, originInPixels: [ 190, 190 ], tileSizeInPixels: 10, colors: [ TRANSPARENT, TRANSPARENT ] },
