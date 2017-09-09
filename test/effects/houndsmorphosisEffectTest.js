@@ -3,11 +3,11 @@ import standardTileIsColors from '../../../../test/integration/helpers/standardT
 import { BLACK, TRANSPARENT } from '../../../../src/constants'
 import houndsmorphosisEffect from '../../effects/houndsmorphosisEffect'
 import activateTestMarkerCanvas from '../../../../test/integration/helpers/activateTestMarkerCanvas'
-import store from '../../../../store'
+import state from '../../../../state'
 
 describe('houndsmorphosis', () => {
 	it('lays out the tiles in alternating growing rows and steady rows', () => {
-		store.selectedHoundstoothEffects = [ houndsmorphosisEffect ]
+		state.selectedHoundstoothEffects = [ houndsmorphosisEffect ]
 		const houndstoothOverrides = {
 			basePattern: {
 				gridSettings: {
