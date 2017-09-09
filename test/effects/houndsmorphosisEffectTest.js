@@ -1,4 +1,4 @@
-import executeSelectedHoundstoothEffects from '../../../../src/interface/executeSelectedHoundstoothEffects'
+import executeSelectedHoundstoothEffects from '../../../../src/controls/executeSelectedHoundstoothEffects'
 import standardTileIsColors from '../../../../test/integration/helpers/standardTileIsColors'
 import { BLACK, TRANSPARENT } from '../../../../src/constants'
 import houndsmorphosisEffect from '../../effects/houndsmorphosisEffect'
