@@ -1,5 +1,4 @@
-import getHoundsmorphosisAddressOffset from '../src/utilities/getHoundsmorphosisAddressOffset'
-import getHoundsmorphosisTileOriginAndSize from '../src/utilities/getHoundsmorphosisTileOriginAndSize'
+import houndsmorphosisSrc from '../src'
 
 export default {
 	name: 'houndsmorphosis',
@@ -10,7 +9,7 @@ export default {
 		},
 		tileSettings: {
 			tileSizeSetting: 0,
-			getTileOriginAndSize: getHoundsmorphosisTileOriginAndSize,
+			getTileOriginAndSize: houndsmorphosisSrc.getHoundsmorphosisTileOriginAndSize,
 		},
 		colorSettings: {
 			assignment: {
@@ -19,7 +18,7 @@ export default {
 					[ [ 0, 0 ], [ 0, 1 ] ],
 					[ [ 1, 1 ], [ 1, 0 ] ],
 				],
-				offsetAddress: getHoundsmorphosisAddressOffset,
+				offsetAddress: houndsmorphosisSrc.getHoundsmorphosisAddressOffset,
 			},
 		},
 		gridSettings: {

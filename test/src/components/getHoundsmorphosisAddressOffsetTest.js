@@ -1,4 +1,4 @@
-import subject from '../../../src/utilities/getHoundsmorphosisAddressOffset'
+import subject from '../../../src/components/getHoundsmorphosisAddressOffset'
 
 describe('houndsmorphosis address offset deals with set assignment because the axes were eliminated to simplify sizing and positioning but that screws with assignment', () => {
 	describe('when both x and y are negative', () => {
