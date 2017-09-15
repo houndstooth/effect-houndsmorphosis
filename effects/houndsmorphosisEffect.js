@@ -5,7 +5,7 @@ export default {
 	basePattern: {
 		viewSettings: {
 			zoomOnCanvasCenter: true,
-			centerViewOnCenterOfTileAtZeroZeroAddress: true,
+			centerViewOnCenterOfTileAtHomeAddress: true,
 		},
 		tileSettings: {
 			tileSizeSetting: 0,
