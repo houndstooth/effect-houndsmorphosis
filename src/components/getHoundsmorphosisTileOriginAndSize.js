@@ -1,4 +1,4 @@
-import mathUtilities from '../../../../src/utilities/mathUtilities'
+import { trapezoidalNumber, quarterSquareNumber } from '../../../../src/utilities/mathUtilities'
 
 export default ({ gridAddress }) => {
 	if (gridAddress[ 0 ] === 0 || gridAddress[ 1 ] === 0) return { tileOrigin: null, tileSize: null }
@@ -8,8 +8,8 @@ export default ({ gridAddress }) => {
 
 	const baseSize = Math.floor(addressY / 2)
 
-	let x = mathUtilities.trapezoidalNumber({ start: baseSize, height: addressX - 1 })
-	let y = mathUtilities.quarterSquareNumber(addressY) + (addressX - 1) * baseSize
+	let x = trapezoidalNumber({ start: baseSize, height: addressX - 1 })
+	let y = quarterSquareNumber(addressY) + (addressX - 1) * baseSize
 
 	let tileSize = addressY % 2 !== 0 ? addressX + baseSize : baseSize
 
