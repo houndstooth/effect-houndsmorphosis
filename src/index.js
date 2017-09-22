@@ -1,8 +1,6 @@
-import components from './components'
+import { getHoundsmorphosisTileOriginAndSize, getHoundsmorphosisAddressOffset } from './components'
 
-const { getHoundsmorphosisTileOriginAndSize, getHoundsmorphosisAddressOffset } = components
-
-export default {
+export {
 	getHoundsmorphosisTileOriginAndSize,
 	getHoundsmorphosisAddressOffset,
 }

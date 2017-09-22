@@ -1,5 +1,3 @@
 import houndsmorphosisEffect from './houndsmorphosisEffect'
 
-export default {
-	houndsmorphosisEffect,
-}
+export { houndsmorphosisEffect }

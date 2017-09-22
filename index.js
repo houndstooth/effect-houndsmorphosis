@@ -1,7 +1,3 @@
-import effects from './effects'
+import { houndsmorphosisEffect } from './effects'
 
-const { houndsmorphosisEffect } = effects
-
-export default {
-	houndsmorphosisEffect,
-}
+export { houndsmorphosisEffect }
