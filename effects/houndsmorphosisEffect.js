@@ -1,6 +1,6 @@
 import { getHoundsmorphosisAddressOffset, getHoundsmorphosisTileOriginAndSize } from '../src'
 
-export default {
+const houndsmorphosisEffect = {
 	name: 'houndsmorphosis',
 	basePattern: {
 		viewSettings: {
@@ -27,3 +27,5 @@ export default {
 		},
 	},
 }
+
+export default houndsmorphosisEffect

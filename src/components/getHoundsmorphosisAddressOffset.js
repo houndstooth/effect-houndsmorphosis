@@ -1,4 +1,4 @@
-export default ({ gridAddress }) => {
+const getHoundsmorphosisAddressOffset = ({ gridAddress }) => {
 	let xOffset = 0
 	let yOffset = 0
 
@@ -13,3 +13,5 @@ export default ({ gridAddress }) => {
 
 	return [ xOffset, yOffset ]
 }
+
+export default getHoundsmorphosisAddressOffset
