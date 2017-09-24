@@ -3,7 +3,7 @@ import standardTileIsColors from '../../../../test/integration/helpers/standardT
 import { BLACK, TRANSPARENT } from '../../../../src/constants'
 import houndsmorphosisEffect from '../../effects/houndsmorphosisEffect'
 import activateTestMarkerCanvas from '../../../../test/integration/helpers/activateTestMarkerCanvas'
-import state from '../../../../state'
+import state from '../../../../src/state'
 import resetState from '../../../../src/store/resetState'
 
 describe('houndsmorphosis', () => {
