@@ -8,10 +8,19 @@ const getHoundsmorphosisTileOriginAndSize = ({ gridAddress }) => {
 
 	const baseSize = Math.floor(addressY / 2)
 
+	const tileSize = houndsmorphosisTileSize({ baseSize, addressX, addressY })
+	const tileOrigin = houndsmorphosisTileOrigin({ baseSize, addressX, addressY, tileSize, gridAddress })
+
+	return { tileOrigin, tileSize }
+}
+
+const houndsmorphosisTileSize = ({ baseSize, addressX, addressY }) => {
+	return addressY % 2 !== 0 ? addressX + baseSize : baseSize
+}
+
+const houndsmorphosisTileOrigin = ({ tileSize, gridAddress, baseSize, addressX, addressY }) => {
 	let x = trapezoidalNumber({ start: baseSize, height: addressX - 1 })
 	let y = quarterSquareNumber(addressY) + (addressX - 1) * baseSize
-
-	let tileSize = addressY % 2 !== 0 ? addressX + baseSize : baseSize
 
 	if (gridAddress[ 0 ] < 0) {
 		x *= -1
@@ -21,8 +30,7 @@ const getHoundsmorphosisTileOriginAndSize = ({ gridAddress }) => {
 		y *= -1
 		y -= tileSize
 	}
-
-	return { tileOrigin: [ x, y ], tileSize }
+	return [ x, y ]
 }
 
 export default getHoundsmorphosisTileOriginAndSize
