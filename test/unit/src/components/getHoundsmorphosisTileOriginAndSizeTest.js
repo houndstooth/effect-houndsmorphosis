@@ -1,4 +1,4 @@
-import subject from '../../../src/components/getHoundsmorphosisTileOriginAndSize'
+import subject from '../../../../src/components/getHoundsmorphosisTileOriginAndSize'
 
 describe('houndsmorphosis tile origin and size', () => {
 	describe('if either x or y are 0', () => {
