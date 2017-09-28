@@ -4,11 +4,8 @@ import { BLACK, TRANSPARENT } from '../../../../../src/constants'
 import houndsmorphosisEffect from '../../../effects/houndsmorphosisEffect'
 import activateTestMarkerCanvas from '../../../../../test/integration/helpers/activateTestMarkerCanvas'
 import state from '../../../../../src/state'
-import resetState from '../../../../../src/store/resetState'
 
 describe('houndsmorphosis', () => {
-	beforeEach(() => resetState(state))
-
 	it('lays out the tiles in alternating growing rows and steady rows', () => {
 		state.selectedHoundstoothEffects = [ houndsmorphosisEffect ]
 		const houndstoothOverrides = {
