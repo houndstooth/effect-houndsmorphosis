@@ -1,7 +1,9 @@
 import { trapezoidalNumber, quarterSquareNumber } from '../../../../src/utilities/mathUtilities'
 
 const getHoundsmorphosisTileOriginAndSize = ({ gridAddress }) => {
-	if (gridAddress[ 0 ] === 0 || gridAddress[ 1 ] === 0) return { tileOrigin: null, tileSize: null }
+	if (gridAddress[ 0 ] === 0 || gridAddress[ 1 ] === 0) {
+		return { tileOrigin: null, tileSize: null }
+	}
 
 	const addressX = Math.abs(gridAddress[ 0 ])
 	const addressY = Math.abs(gridAddress[ 1 ])
