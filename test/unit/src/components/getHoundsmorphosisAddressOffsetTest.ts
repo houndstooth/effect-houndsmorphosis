@@ -1,6 +1,6 @@
 import subject from '../../../../src/components/getHoundsmorphosisAddressOffset'
 
-describe(`houndsmorphosis address offset deals with set assignment 
+describe(`houndsmorphosis address offset deals with set assignment
 because the axes were eliminated to simplify sizing and positioning but that screws with assignment`, () => {
 		describe('when both x and y are negative', () => {
 			it('provides an offset to cause the address to assign its tile the correct colors, etc', () => {
