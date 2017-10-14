@@ -1,5 +1,6 @@
 import { getHoundsmorphosisAddressOffset, getHoundsmorphosisTileOriginAndSize } from '../src'
 import { Houndstooth } from '../../../src'
+import Supertile from '../../../src/components/types/Supertile'
 
 const houndsmorphosisEffect: Houndstooth = {
 	name: 'houndsmorphosis',
@@ -18,7 +19,7 @@ const houndsmorphosisEffect: Houndstooth = {
 				supertile: [
 					[ [ 0, 0 ], [ 0, 1 ] ],
 					[ [ 1, 1 ], [ 1, 0 ] ],
-				],
+				] as Supertile,
 				offsetAddress: getHoundsmorphosisAddressOffset,
 			},
 		},
