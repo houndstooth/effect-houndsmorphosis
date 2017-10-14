@@ -13,7 +13,7 @@ const getHoundsmorphosisAddressOffset: { ({}: { gridAddress: Address }): Address
 		xOffset += 1
 	}
 
-	return [ xOffset, yOffset ]
+	return [ xOffset, yOffset ] as Address
 }
 
 export default getHoundsmorphosisAddressOffset
