@@ -48,7 +48,7 @@ const houndsmorphosisTileOrigin: HoundsmorphosisTileOrigin = params => {
 		y *= -1
 		y -= tileSize
 	}
-	return [ x, y ]
+	return [ x, y ] as Coordinate
 }
 
 export default getHoundsmorphosisTileOriginAndSize
