@@ -1,6 +1,7 @@
 import { getHoundsmorphosisAddressOffset, getHoundsmorphosisTileOriginAndSize } from '../src'
+import { Houndstooth } from '../../../src'
 
-const houndsmorphosisEffect = {
+const houndsmorphosisEffect: Houndstooth = {
 	name: 'houndsmorphosis',
 	basePattern: {
 		viewSettings: {
