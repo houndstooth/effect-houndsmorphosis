@@ -1,5 +1,5 @@
 import { trapezoidalNumber, quarterSquareNumber } from '../../../../src/utilities/mathUtilities'
-import { TileOriginAndSize, Address, Coordinate } from '../../../../src'
+import { TileOriginAndSize, Address, Coordinate, Units } from '../../../../src'
 
 type GetHoundsmorphosisTileOriginAndSize = { ({}: { gridAddress: Address }): TileOriginAndSize }
 
@@ -19,7 +19,7 @@ const getHoundsmorphosisTileOriginAndSize: GetHoundsmorphosisTileOriginAndSize =
 	return { tileOrigin, tileSize }
 }
 
-type HoundsmorphsosisTileSize = { ({}: { baseSize: number, addressX: number, addressY: number }): number }
+type HoundsmorphsosisTileSize = { ({}: { baseSize: Units, addressX: number, addressY: number }): Units }
 
 const houndsmorphosisTileSize: HoundsmorphsosisTileSize = ({ baseSize, addressX, addressY }) => {
 	return addressY % 2 !== 0 ? addressX + baseSize : baseSize
@@ -27,9 +27,9 @@ const houndsmorphosisTileSize: HoundsmorphsosisTileSize = ({ baseSize, addressX,
 
 type HoundsmorphosisTileOrigin = {
 	({}: {
-		tileSize: number,
+		tileSize: Units,
 		gridAddress: Address,
-		baseSize: number,
+		baseSize: Units,
 		addressX: number,
 		addressY: number,
 	}): Coordinate,
