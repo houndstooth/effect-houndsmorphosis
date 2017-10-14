@@ -4,6 +4,7 @@ import { BLACK, TRANSPARENT } from '../../../../../src/constants'
 import houndsmorphosisEffect from '../../../effects/houndsmorphosisEffect'
 import activateTestMarkerCanvas from '../../../../../test/integration/helpers/activateTestMarkerCanvas'
 import state from '../../../../../src/state'
+import CanvasSize from '../../../../../src/canvas/types/CanvasSize'
 
 describe('houndsmorphosis', () => {
 	it('lays out the tiles in alternating growing rows and steady rows', () => {
@@ -15,7 +16,7 @@ describe('houndsmorphosis', () => {
 				},
 				viewSettings: {
 					zoom: 10,
-					canvasSize: 400,
+					canvasSize: 400 as CanvasSize,
 				},
 			},
 		}
