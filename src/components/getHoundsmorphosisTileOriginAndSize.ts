@@ -21,8 +21,11 @@ const getHoundsmorphosisTileOriginAndSize: GetHoundsmorphosisTileOriginAndSize =
 
 type HoundsmorphsosisTileSize = { ({}: { baseSize: Units, addressX: number, addressY: number }): Units }
 
-const houndsmorphosisTileSize: HoundsmorphsosisTileSize = ({ baseSize, addressX, addressY }) =>
-	addressY % 2 !== 0 ? addressX + baseSize : baseSize
+const houndsmorphosisTileSize: HoundsmorphsosisTileSize = ({ baseSize, addressX, addressY }) => {
+	const baseSizeAsNumber = baseSize as number
+
+	return addressY % 2 !== 0 ? addressX + baseSizeAsNumber : baseSize
+}
 
 type HoundsmorphosisTileOrigin = {
 	({}: {
