@@ -2,10 +2,10 @@ import { trapezoidalNumber, quarterSquareNumber } from '../../../../src/utilitie
 import { TileOriginAndSize, Address, Coordinate, Units } from '../../../../src'
 
 const getHoundsmorphosisTileOriginAndSize: {
-	({}: { gridAddress: Address }): TileOriginAndSize,
+	({}: { gridAddress: Address }): TileOriginAndSize | undefined,
 } = ({ gridAddress }) => {
 	if (gridAddress[ 0 ] === 0 || gridAddress[ 1 ] === 0) {
-		return { tileOrigin: undefined, tileSize: undefined }
+		return undefined
 	}
 
 	const addressX = Math.abs(gridAddress[ 0 ])
@@ -16,7 +16,7 @@ const getHoundsmorphosisTileOriginAndSize: {
 	const tileSize = houndsmorphosisTileSize({ baseSize, addressX, addressY })
 	const tileOrigin = houndsmorphosisTileOrigin({ baseSize, addressX, addressY, tileSize, gridAddress })
 
-	return { tileOrigin, tileSize }
+	return { tileOrigin, tileSize } as TileOriginAndSize
 }
 
 const houndsmorphosisTileSize: {
