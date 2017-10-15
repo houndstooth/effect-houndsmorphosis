@@ -10,7 +10,7 @@ const houndsmorphosisEffect: Houndstooth = {
 			centerViewOnCenterOfTileAtHomeAddress: true,
 		},
 		tileSettings: {
-			tileSizeSetting: 0,
+			tileSizeSetting: 0 as any,
 			getTileOriginAndSize: getHoundsmorphosisTileOriginAndSize,
 		},
 		colorSettings: {
