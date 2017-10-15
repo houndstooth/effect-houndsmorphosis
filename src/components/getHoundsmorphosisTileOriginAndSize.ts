@@ -5,7 +5,7 @@ type GetHoundsmorphosisTileOriginAndSize = { ({}: { gridAddress: Address }): Til
 
 const getHoundsmorphosisTileOriginAndSize: GetHoundsmorphosisTileOriginAndSize = ({ gridAddress }) => {
 	if (gridAddress[ 0 ] === 0 || gridAddress[ 1 ] === 0) {
-		return { tileOrigin: null, tileSize: null }
+		return { tileOrigin: undefined, tileSize: undefined }
 	}
 
 	const addressX = Math.abs(gridAddress[ 0 ])
@@ -21,9 +21,8 @@ const getHoundsmorphosisTileOriginAndSize: GetHoundsmorphosisTileOriginAndSize =
 
 type HoundsmorphsosisTileSize = { ({}: { baseSize: Units, addressX: number, addressY: number }): Units }
 
-const houndsmorphosisTileSize: HoundsmorphsosisTileSize = ({ baseSize, addressX, addressY }) => {
-	return addressY % 2 !== 0 ? addressX + baseSize : baseSize
-}
+const houndsmorphosisTileSize: HoundsmorphsosisTileSize = ({ baseSize, addressX, addressY }) =>
+	addressY % 2 !== 0 ? addressX + baseSize : baseSize
 
 type HoundsmorphosisTileOrigin = {
 	({}: {
@@ -48,6 +47,7 @@ const houndsmorphosisTileOrigin: HoundsmorphosisTileOrigin = params => {
 		y *= -1
 		y -= tileSize
 	}
+
 	return [ x, y ] as Coordinate
 }
 

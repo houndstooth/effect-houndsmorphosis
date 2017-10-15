@@ -3,13 +3,13 @@ import Address from '../../../../../../src/components/types/Address'
 
 describe('houndsmorphosis tile origin and size', () => {
 	describe('if either x or y are 0', () => {
-		it('returns nulls', () => {
-			const nulls = { tileOrigin: null, tileSize: null }
+		it('returns undefineds', () => {
+			const undefineds = { tileOrigin: undefined, tileSize: undefined }
 
-			expect(subject({ gridAddress: [ 0, 1 ] as Address })).toEqual(nulls)
-			expect(subject({ gridAddress: [ 1, 0 ] as Address })).toEqual(nulls)
-			expect(subject({ gridAddress: [ 0, -1 ] as Address })).toEqual(nulls)
-			expect(subject({ gridAddress: [ -1, 0 ] as Address })).toEqual(nulls)
+			expect(subject({ gridAddress: [ 0, 1 ] as Address })).toEqual(undefineds)
+			expect(subject({ gridAddress: [ 1, 0 ] as Address })).toEqual(undefineds)
+			expect(subject({ gridAddress: [ 0, -1 ] as Address })).toEqual(undefineds)
+			expect(subject({ gridAddress: [ -1, 0 ] as Address })).toEqual(undefineds)
 		})
 	})
 
