@@ -1,6 +1,5 @@
 import { getHoundsmorphosisAddressOffset, getHoundsmorphosisTileOriginAndSize } from '../src'
-import { Houndstooth } from '../../../src'
-import Supertile from '../../../src/components/types/Supertile'
+import { Houndstooth, Supertile, AssignmentMode } from '../../../src'
 
 const houndsmorphosisEffect: Houndstooth = {
 	name: 'houndsmorphosis',
@@ -15,7 +14,7 @@ const houndsmorphosisEffect: Houndstooth = {
 		},
 		colorSettings: {
 			assignment: {
-				assignmentMode: 'SUPERTILE',
+				assignmentMode: AssignmentMode.SUPERTILE,
 				supertile: [
 					[ [ 0, 0 ], [ 0, 1 ] ],
 					[ [ 1, 1 ], [ 1, 0 ] ],
