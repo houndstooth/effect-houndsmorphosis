@@ -16,8 +16,8 @@ describe('houndsmorphosis', () => {
 					gridSize: 6,
 				},
 				viewSettings: {
-					zoom: 10,
 					canvasSize: 400 as CanvasSize,
+					zoom: 10,
 				},
 			},
 		}
@@ -28,420 +28,420 @@ describe('houndsmorphosis', () => {
 		const negativeXnegativeYquadrantFirstRowTiles = [
 			{
 				baseId: 0,
+				colors: [ TRANSPARENT, TRANSPARENT ],
 				tileOrigin: [ 190 as any, 190 as any ] as Coordinate,
 				tileSize: 10 as any,
-				colors: [ TRANSPARENT, TRANSPARENT ],
 			},
 			{
 				baseId: 8,
+				colors: [ BLACK, BLACK ],
 				tileOrigin: [ 170 as any, 180 as any ] as Coordinate,
 				tileSize: 20 as any,
-				colors: [ BLACK, BLACK ],
 			},
 			{
 				baseId: 16,
+				colors: [ TRANSPARENT, TRANSPARENT ],
 				tileOrigin: [ 140 as any, 170 as any ] as Coordinate,
 				tileSize: 30 as any,
-				colors: [ TRANSPARENT, TRANSPARENT ],
 			},
 			{
 				baseId: 24,
+				colors: [ BLACK, BLACK ],
 				tileOrigin: [ 100 as any, 160 as any ] as Coordinate,
 				tileSize: 40 as any,
-				colors: [ BLACK, BLACK ],
 			},
 		]
 		const negativeXnegativeYquadrantSecondRowTiles = [
 			{
 				baseId: 32,
+				colors: [ TRANSPARENT, BLACK ],
 				tileOrigin: [ 190 as any, 180 as any ] as Coordinate,
 				tileSize: 10 as any,
-				colors: [ TRANSPARENT, BLACK ],
 			},
 			{
 				baseId: 40,
+				colors: [ BLACK, TRANSPARENT ],
 				tileOrigin: [ 170 as any, 170 as any ] as Coordinate,
 				tileSize: 10 as any,
-				colors: [ BLACK, TRANSPARENT ],
 			},
 			{
 				baseId: 48,
+				colors: [ TRANSPARENT, BLACK ],
 				tileOrigin: [ 140 as any, 160 as any ] as Coordinate,
 				tileSize: 10 as any,
-				colors: [ TRANSPARENT, BLACK ],
 			},
 			{
 				baseId: 56,
+				colors: [ BLACK, TRANSPARENT ],
 				tileOrigin: [ 100 as any, 150 as any ] as Coordinate,
 				tileSize: 10 as any,
-				colors: [ BLACK, TRANSPARENT ],
 			},
 		]
 		const negativeXnegativeYquadrantThirdRowTiles = [
 			{
 				baseId: 64,
+				colors: [ TRANSPARENT, TRANSPARENT ],
 				tileOrigin: [ 180 as any, 160 as any ] as Coordinate,
 				tileSize: 20 as any,
-				colors: [ TRANSPARENT, TRANSPARENT ],
 			},
 			{
 				baseId: 72,
+				colors: [ BLACK, BLACK ],
 				tileOrigin: [ 150 as any, 140 as any ] as Coordinate,
 				tileSize: 30 as any,
-				colors: [ BLACK, BLACK ],
 			},
 			{
 				baseId: 80,
+				colors: [ TRANSPARENT, TRANSPARENT ],
 				tileOrigin: [ 110 as any, 120 as any ] as Coordinate,
 				tileSize: 40 as any,
-				colors: [ TRANSPARENT, TRANSPARENT ],
 			},
 			{
 				baseId: 88,
+				colors: [ BLACK, BLACK ],
 				tileOrigin: [ 60 as any, 100 as any ] as Coordinate,
 				tileSize: 50 as any,
-				colors: [ BLACK, BLACK ],
 			},
 		]
 		const negativeXnegativeYquadrantFourthRowTiles = [
 			{
 				baseId: 96,
+				colors: [ TRANSPARENT, BLACK ],
 				tileOrigin: [ 180 as any, 140 as any ] as Coordinate,
 				tileSize: 20 as any,
-				colors: [ TRANSPARENT, BLACK ],
 			},
 			{
 				baseId: 104,
+				colors: [ BLACK, TRANSPARENT ],
 				tileOrigin: [ 150 as any, 120 as any ] as Coordinate,
 				tileSize: 20 as any,
-				colors: [ BLACK, TRANSPARENT ],
 			},
 			{
 				baseId: 112,
+				colors: [ TRANSPARENT, BLACK ],
 				tileOrigin: [ 110 as any, 100 as any ] as Coordinate,
 				tileSize: 20 as any,
-				colors: [ TRANSPARENT, BLACK ],
 			},
 			{
 				baseId: 120,
+				colors: [ BLACK, TRANSPARENT ],
 				tileOrigin: [ 60 as any, 80 as any ] as Coordinate,
 				tileSize: 20 as any,
-				colors: [ BLACK, TRANSPARENT ],
 			},
 		]
 
 		const positiveXnegativeYquadrantFirstRowTiles = [
 			{
 				baseId: 128,
+				colors: [ BLACK, TRANSPARENT ],
 				tileOrigin: [ 200 as any, 190 as any ] as Coordinate,
 				tileSize: 10 as any,
-				colors: [ BLACK, TRANSPARENT ],
 			},
 			{
 				baseId: 136,
+				colors: [ TRANSPARENT, BLACK ],
 				tileOrigin: [ 210 as any, 180 as any ] as Coordinate,
 				tileSize: 20 as any,
-				colors: [ TRANSPARENT, BLACK ],
 			},
 			{
 				baseId: 144,
+				colors: [ BLACK, TRANSPARENT ],
 				tileOrigin: [ 230 as any, 170 as any ] as Coordinate,
 				tileSize: 30 as any,
-				colors: [ BLACK, TRANSPARENT ],
 			},
 			{
 				baseId: 152,
+				colors: [ TRANSPARENT, BLACK ],
 				tileOrigin: [ 260 as any, 160 as any ] as Coordinate,
 				tileSize: 40 as any,
-				colors: [ TRANSPARENT, BLACK ],
 			},
 		]
 		const positiveXnegativeYquadrantSecondRowTiles = [
 			{
 				baseId: 160,
+				colors: [ BLACK, BLACK ],
 				tileOrigin: [ 200 as any, 180 as any ] as Coordinate,
 				tileSize: 10 as any,
-				colors: [ BLACK, BLACK ],
 			},
 			{
 				baseId: 168,
+				colors: [ TRANSPARENT, TRANSPARENT ],
 				tileOrigin: [ 220 as any, 170 as any ] as Coordinate,
 				tileSize: 10 as any,
-				colors: [ TRANSPARENT, TRANSPARENT ],
 			},
 			{
 				baseId: 176,
+				colors: [ BLACK, BLACK ],
 				tileOrigin: [ 250 as any, 160 as any ] as Coordinate,
 				tileSize: 10 as any,
-				colors: [ BLACK, BLACK ],
 			},
 			{
 				baseId: 184,
+				colors: [ TRANSPARENT, TRANSPARENT ],
 				tileOrigin: [ 290 as any, 150 as any ] as Coordinate,
 				tileSize: 10 as any,
-				colors: [ TRANSPARENT, TRANSPARENT ],
 			},
 		]
 		const positiveXnegativeYquadrantThirdRowTiles = [
 			{
 				baseId: 192,
+				colors: [ BLACK, TRANSPARENT ],
 				tileOrigin: [ 200 as any, 160 as any ] as Coordinate,
 				tileSize: 20 as any,
-				colors: [ BLACK, TRANSPARENT ],
 			},
 			{
 				baseId: 200,
+				colors: [ TRANSPARENT, BLACK ],
 				tileOrigin: [ 220 as any, 140 as any ] as Coordinate,
 				tileSize: 30 as any,
-				colors: [ TRANSPARENT, BLACK ],
 			},
 			{
 				baseId: 208,
+				colors: [ BLACK, TRANSPARENT ],
 				tileOrigin: [ 250 as any, 120 as any ] as Coordinate,
 				tileSize: 40 as any,
-				colors: [ BLACK, TRANSPARENT ],
 			},
 			{
 				baseId: 216,
+				colors: [ TRANSPARENT, BLACK ],
 				tileOrigin: [ 290 as any, 100 as any ] as Coordinate,
 				tileSize: 50 as any,
-				colors: [ TRANSPARENT, BLACK ],
 			},
 		]
 		const positiveXnegativeYquadrantFourthRowTiles = [
 			{
 				baseId: 224,
+				colors: [ BLACK, BLACK ],
 				tileOrigin: [ 200 as any, 140 as any ] as Coordinate,
 				tileSize: 20 as any,
-				colors: [ BLACK, BLACK ],
 			},
 			{
 				baseId: 232,
+				colors: [ TRANSPARENT, TRANSPARENT ],
 				tileOrigin: [ 230 as any, 120 as any ] as Coordinate,
 				tileSize: 20 as any,
-				colors: [ TRANSPARENT, TRANSPARENT ],
 			},
 			{
 				baseId: 240,
+				colors: [ BLACK, BLACK ],
 				tileOrigin: [ 270 as any, 100 as any ] as Coordinate,
 				tileSize: 20 as any,
-				colors: [ BLACK, BLACK ],
 			},
 			{
 				baseId: 248,
+				colors: [ TRANSPARENT, TRANSPARENT ],
 				tileOrigin: [ 320 as any, 80 as any ] as Coordinate,
 				tileSize: 20 as any,
-				colors: [ TRANSPARENT, TRANSPARENT ],
 			},
 		]
 
 		const negativeXpositiveYquadrantFirstRowTiles = [
 			{
 				baseId: 256,
+				colors: [ BLACK, BLACK ],
 				tileOrigin: [ 190 as any, 200 as any ] as Coordinate,
 				tileSize: 10 as any,
-				colors: [ BLACK, BLACK ],
 			},
 			{
 				baseId: 264,
+				colors: [ TRANSPARENT, TRANSPARENT ],
 				tileOrigin: [ 170 as any, 200 as any ] as Coordinate,
 				tileSize: 20 as any,
-				colors: [ TRANSPARENT, TRANSPARENT ],
 			},
 			{
 				baseId: 272,
+				colors: [ BLACK, BLACK ],
 				tileOrigin: [ 140 as any, 200 as any ] as Coordinate,
 				tileSize: 30 as any,
-				colors: [ BLACK, BLACK ],
 			},
 			{
 				baseId: 280,
+				colors: [ TRANSPARENT, TRANSPARENT ],
 				tileOrigin: [ 100 as any, 200 as any ] as Coordinate,
 				tileSize: 40 as any,
-				colors: [ TRANSPARENT, TRANSPARENT ],
 			},
 		]
 		const negativeXpositiveYquadrantSecondRowTiles = [
 			{
 				baseId: 288,
+				colors: [ BLACK, TRANSPARENT ],
 				tileOrigin: [ 190 as any, 210 as any ] as Coordinate,
 				tileSize: 10 as any,
-				colors: [ BLACK, TRANSPARENT ],
 			},
 			{
 				baseId: 296,
+				colors: [ TRANSPARENT, BLACK ],
 				tileOrigin: [ 170 as any, 220 as any ] as Coordinate,
 				tileSize: 10 as any,
-				colors: [ TRANSPARENT, BLACK ],
 			},
 			{
 				baseId: 304,
+				colors: [ BLACK, TRANSPARENT ],
 				tileOrigin: [ 140 as any, 230 as any ] as Coordinate,
 				tileSize: 10 as any,
-				colors: [ BLACK, TRANSPARENT ],
 			},
 			{
 				baseId: 312,
+				colors: [ TRANSPARENT, BLACK ],
 				tileOrigin: [ 100 as any, 240 as any ] as Coordinate,
 				tileSize: 10 as any,
-				colors: [ TRANSPARENT, BLACK ],
 			},
 		]
 		const negativeXpositiveYquadrantThirdRowTiles = [
 			{
 				baseId: 320,
+				colors: [ BLACK, BLACK ],
 				tileOrigin: [ 180 as any, 220 as any ] as Coordinate,
 				tileSize: 20 as any,
-				colors: [ BLACK, BLACK ],
 			},
 			{
 				baseId: 328,
+				colors: [ TRANSPARENT, TRANSPARENT ],
 				tileOrigin: [ 150 as any, 230 as any ] as Coordinate,
 				tileSize: 30 as any,
-				colors: [ TRANSPARENT, TRANSPARENT ],
 			},
 			{
 				baseId: 336,
+				colors: [ BLACK, BLACK ],
 				tileOrigin: [ 110 as any, 240 as any ] as Coordinate,
 				tileSize: 40 as any,
-				colors: [ BLACK, BLACK ],
 			},
 			{
 				baseId: 344,
+				colors: [ TRANSPARENT, TRANSPARENT ],
 				tileOrigin: [ 60 as any, 250 as any ] as Coordinate,
 				tileSize: 50 as any,
-				colors: [ TRANSPARENT, TRANSPARENT ],
 			},
 		]
 		const negativeXpositiveYquadrantFourthRowTiles = [
 			{
 				baseId: 352,
+				colors: [ BLACK, TRANSPARENT ],
 				tileOrigin: [ 180 as any, 240 as any ] as Coordinate,
 				tileSize: 20 as any,
-				colors: [ BLACK, TRANSPARENT ],
 			},
 			{
 				baseId: 360,
+				colors: [ TRANSPARENT, BLACK ],
 				tileOrigin: [ 150 as any, 260 as any ] as Coordinate,
 				tileSize: 20 as any,
-				colors: [ TRANSPARENT, BLACK ],
 			},
 			{
 				baseId: 368,
+				colors: [ BLACK, TRANSPARENT ],
 				tileOrigin: [ 110 as any, 280 as any ] as Coordinate,
 				tileSize: 20 as any,
-				colors: [ BLACK, TRANSPARENT ],
 			},
 			{
 				baseId: 376,
+				colors: [ TRANSPARENT, BLACK ],
 				tileOrigin: [ 60 as any, 300 as any ] as Coordinate,
 				tileSize: 20 as any,
-				colors: [ TRANSPARENT, BLACK ],
 			},
 		]
 
 		const positiveXpositiveYquadrantFirstRowTiles = [
 			{
 				baseId: 384,
+				colors: [ TRANSPARENT, BLACK ],
 				tileOrigin: [ 200 as any, 200 as any ] as Coordinate,
 				tileSize: 10 as any,
-				colors: [ TRANSPARENT, BLACK ],
 			},
 			{
 				baseId: 392,
+				colors: [ BLACK, TRANSPARENT ],
 				tileOrigin: [ 210 as any, 200 as any ] as Coordinate,
 				tileSize: 20 as any,
-				colors: [ BLACK, TRANSPARENT ],
 			},
 			{
 				baseId: 400,
+				colors: [ TRANSPARENT, BLACK ],
 				tileOrigin: [ 230 as any, 200 as any ] as Coordinate,
 				tileSize: 30 as any,
-				colors: [ TRANSPARENT, BLACK ],
 			},
 			{
 				baseId: 408,
+				colors: [ BLACK, TRANSPARENT ],
 				tileOrigin: [ 260 as any, 200 as any ] as Coordinate,
 				tileSize: 40 as any,
-				colors: [ BLACK, TRANSPARENT ],
 			},
 		]
 		const positiveXpositiveYquadrantSecondRowTiles = [
 			{
 				baseId: 416,
+				colors: [ TRANSPARENT, TRANSPARENT ],
 				tileOrigin: [ 200 as any, 210 as any ] as Coordinate,
 				tileSize: 10 as any,
-				colors: [ TRANSPARENT, TRANSPARENT ],
 			},
 			{
 				baseId: 424,
+				colors: [ BLACK, BLACK ],
 				tileOrigin: [ 220 as any, 220 as any ] as Coordinate,
 				tileSize: 10 as any,
-				colors: [ BLACK, BLACK ],
 			},
 			{
 				baseId: 432,
+				colors: [ TRANSPARENT, TRANSPARENT ],
 				tileOrigin: [ 250 as any, 230 as any ] as Coordinate,
 				tileSize: 10 as any,
-				colors: [ TRANSPARENT, TRANSPARENT ],
 			},
 			{
 				baseId: 440,
+				colors: [ BLACK, BLACK ],
 				tileOrigin: [ 290 as any, 240 as any ] as Coordinate,
 				tileSize: 10 as any,
-				colors: [ BLACK, BLACK ],
 			},
 		]
 		const positiveXpositiveYquadrantThirdRowTiles = [
 			{
 				baseId: 448,
+				colors: [ TRANSPARENT, BLACK ],
 				tileOrigin: [ 200 as any, 220 as any ] as Coordinate,
 				tileSize: 20 as any,
-				colors: [ TRANSPARENT, BLACK ],
 			},
 			{
 				baseId: 456,
+				colors: [ BLACK, TRANSPARENT ],
 				tileOrigin: [ 220 as any, 230 as any ] as Coordinate,
 				tileSize: 30 as any,
-				colors: [ BLACK, TRANSPARENT ],
 			},
 			{
 				baseId: 464,
+				colors: [ TRANSPARENT, BLACK ],
 				tileOrigin: [ 250 as any, 240 as any ] as Coordinate,
 				tileSize: 40 as any,
-				colors: [ TRANSPARENT, BLACK ],
 			},
 			{
 				baseId: 472,
+				colors: [ BLACK, TRANSPARENT ],
 				tileOrigin: [ 290 as any, 250 as any ] as Coordinate,
 				tileSize: 50 as any,
-				colors: [ BLACK, TRANSPARENT ],
 			},
 		]
 		const positiveXpositiveYquadrantFourthRowTiles = [
 			{
 				baseId: 480,
+				colors: [ TRANSPARENT, TRANSPARENT ],
 				tileOrigin: [ 200 as any, 240 as any ] as Coordinate,
 				tileSize: 20 as any,
-				colors: [ TRANSPARENT, TRANSPARENT ],
 			},
 			{
 				baseId: 488,
+				colors: [ BLACK, BLACK ],
 				tileOrigin: [ 230 as any, 260 as any ] as Coordinate,
 				tileSize: 20 as any,
-				colors: [ BLACK, BLACK ],
 			},
 			{
 				baseId: 496,
+				colors: [ TRANSPARENT, TRANSPARENT ],
 				tileOrigin: [ 270 as any, 280 as any ] as Coordinate,
 				tileSize: 20 as any,
-				colors: [ TRANSPARENT, TRANSPARENT ],
 			},
 			{
 				baseId: 504,
+				colors: [ BLACK, BLACK ],
 				tileOrigin: [ 320 as any, 300 as any ] as Coordinate,
 				tileSize: 20 as any,
-				colors: [ BLACK, BLACK ],
 			},
 		]
 
