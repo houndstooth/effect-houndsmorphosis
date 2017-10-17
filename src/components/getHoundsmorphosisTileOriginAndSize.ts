@@ -1,9 +1,9 @@
 import { Address, Coordinate, TileOriginAndSize, Units } from '../../../../src'
 import { quarterSquareNumber, trapezoidalNumber } from '../../../../src/utilities/mathUtilities'
 
-const getHoundsmorphosisTileOriginAndSize: {
-	({}: { gridAddress: Address }): TileOriginAndSize | undefined,
-} = ({ gridAddress }) => {
+const getHoundsmorphosisTileOriginAndSize: (_: {
+	gridAddress: Address,
+}) => TileOriginAndSize | undefined = ({ gridAddress }) => {
 	if (gridAddress[ 0 ] === 0 || gridAddress[ 1 ] === 0) {
 		return undefined
 	}
@@ -19,23 +19,17 @@ const getHoundsmorphosisTileOriginAndSize: {
 	return { tileOrigin, tileSize } as TileOriginAndSize
 }
 
-const houndsmorphosisTileSize: {
-	({}: { addressX: number, addressY: number, baseSize: Units }): Units,
-} = ({ addressX, addressY, baseSize }) => {
+const houndsmorphosisTileSize: (_: {
+	addressX: number, addressY: number, baseSize: Units,
+}) => Units = ({ addressX, addressY, baseSize }) => {
 	const baseSizeAsNumber = baseSize as any
 
 	return addressY % 2 !== 0 ? addressX as any + baseSizeAsNumber : baseSize as any
 }
 
-const houndsmorphosisTileOrigin: {
-	({}: {
-		addressX: number,
-		addressY: number,
-		baseSize: Units,
-		gridAddress: Address,
-		tileSize: Units,
-	}): Coordinate,
-} = ({ addressX, addressY, baseSize, gridAddress, tileSize }) => {
+const houndsmorphosisTileOrigin: (_: {
+	addressX: number, addressY: number, baseSize: Units, gridAddress: Address, tileSize: Units,
+}) => Coordinate = ({ addressX, addressY, baseSize, gridAddress, tileSize }) => {
 	let x = trapezoidalNumber({ start: baseSize as any, height: addressX - 1 })
 	let y = baseSize as any * (addressX - 1) + quarterSquareNumber(addressY)
 
