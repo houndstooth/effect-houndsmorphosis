@@ -1,5 +1,5 @@
-import { trapezoidalNumber, quarterSquareNumber } from '../../../../src/utilities/mathUtilities'
-import { TileOriginAndSize, Address, Coordinate, Units } from '../../../../src'
+import { Address, Coordinate, TileOriginAndSize, Units } from '../../../../src'
+import { quarterSquareNumber, trapezoidalNumber } from '../../../../src/utilities/mathUtilities'
 
 const getHoundsmorphosisTileOriginAndSize: {
 	({}: { gridAddress: Address }): TileOriginAndSize | undefined,

@@ -1,4 +1,4 @@
-import { getHoundsmorphosisTileOriginAndSize, getHoundsmorphosisAddressOffset } from './components'
+import { getHoundsmorphosisAddressOffset, getHoundsmorphosisTileOriginAndSize } from './components'
 
 export {
 	getHoundsmorphosisTileOriginAndSize,

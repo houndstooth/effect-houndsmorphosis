@@ -1,5 +1,5 @@
+import { AssignmentMode, Houndstooth, Supertile } from '../../../src'
 import { getHoundsmorphosisAddressOffset, getHoundsmorphosisTileOriginAndSize } from '../src'
-import { Houndstooth, Supertile, AssignmentMode } from '../../../src'
 
 const houndsmorphosisEffect: Houndstooth = {
 	name: 'houndsmorphosis',

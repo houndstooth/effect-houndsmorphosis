@@ -1,6 +1,6 @@
 // tslint:disable:max-line-length
-import getHoundsmorphosisTileOriginAndSize from '../../../../src/components/getHoundsmorphosisTileOriginAndSize'
 import Address from '../../../../../../src/components/types/Address'
+import getHoundsmorphosisTileOriginAndSize from '../../../../src/components/getHoundsmorphosisTileOriginAndSize'
 
 let actual
 
