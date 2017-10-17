@@ -20,8 +20,8 @@ const getHoundsmorphosisTileOriginAndSize: {
 }
 
 const houndsmorphosisTileSize: {
-	({}: { baseSize: Units, addressX: number, addressY: number }): Units,
-} = ({ baseSize, addressX, addressY }) => {
+	({}: { addressX: number, addressY: number, baseSize: Units }): Units,
+} = ({ addressX, addressY, baseSize }) => {
 	const baseSizeAsNumber = baseSize as any
 
 	return addressY % 2 !== 0 ? addressX as any + baseSizeAsNumber : baseSize as any
@@ -29,13 +29,13 @@ const houndsmorphosisTileSize: {
 
 const houndsmorphosisTileOrigin: {
 	({}: {
-		tileSize: Units,
-		gridAddress: Address,
-		baseSize: Units,
 		addressX: number,
 		addressY: number,
+		baseSize: Units,
+		gridAddress: Address,
+		tileSize: Units,
 	}): Coordinate,
-} = ({ tileSize, gridAddress, baseSize, addressX, addressY }) => {
+} = ({ addressX, addressY, baseSize, gridAddress, tileSize }) => {
 	let x = trapezoidalNumber({ start: baseSize as any, height: addressX - 1 })
 	let y = baseSize as any * (addressX - 1) + quarterSquareNumber(addressY)
 
