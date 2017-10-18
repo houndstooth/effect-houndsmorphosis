@@ -49,4 +49,4 @@ const houndsmorphosisTileOrigin: (_: {
 	return [ x as any, y as any ] as Coordinate
 }
 
-export default getHoundsmorphosisTileOriginAndSize
+export { getHoundsmorphosisTileOriginAndSize }

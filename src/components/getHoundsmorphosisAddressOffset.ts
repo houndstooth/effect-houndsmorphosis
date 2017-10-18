@@ -16,4 +16,4 @@ const getHoundsmorphosisAddressOffset: (_: { gridAddress: Address }) => Address 
 	return [ xOffset, yOffset ] as Address
 }
 
-export default getHoundsmorphosisAddressOffset
+export { getHoundsmorphosisAddressOffset }

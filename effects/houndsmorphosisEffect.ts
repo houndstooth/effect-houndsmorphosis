@@ -29,4 +29,4 @@ const houndsmorphosisEffect: Houndstooth = {
 	name: 'houndsmorphosis',
 }
 
-export default houndsmorphosisEffect
+export { houndsmorphosisEffect }

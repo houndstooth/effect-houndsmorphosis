@@ -1,11 +1,11 @@
-import CanvasSize from '../../../../../src/canvas/types/CanvasSize'
+import { CanvasSize } from '../../../../../src/canvas/types/CanvasSize'
 import { BLACK, TRANSPARENT } from '../../../../../src/constants'
-import executeSelectedHoundstoothEffects from '../../../../../src/execute/executeSelectedHoundstoothEffects'
-import Coordinate from '../../../../../src/space/types/Coordinate'
-import state from '../../../../../src/state'
-import activateTestMarkerCanvas from '../../../../../test/integration/helpers/activateTestMarkerCanvas'
-import standardTileIsColors from '../../../../../test/integration/helpers/standardTileIsColors'
-import houndsmorphosisEffect from '../../../effects/houndsmorphosisEffect'
+import { executeSelectedHoundstoothEffects } from '../../../../../src/execute/executeSelectedHoundstoothEffects'
+import { Coordinate } from '../../../../../src/space/types/Coordinate'
+import { state } from '../../../../../src/state'
+import { activateTestMarkerCanvas } from '../../../../../test/integration/helpers/activateTestMarkerCanvas'
+import { standardTileIsColors } from '../../../../../test/integration/helpers/standardTileIsColors'
+import { houndsmorphosisEffect } from '../../../effects/houndsmorphosisEffect'
 
 describe('houndsmorphosis', () => {
 	it('lays out the tiles in alternating growing rows and steady rows', () => {
