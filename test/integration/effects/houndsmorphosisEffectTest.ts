@@ -25,27 +25,28 @@ describe('houndsmorphosis', () => {
 
 		executeSelectedHoundstoothEffects({ houndstoothOverrides })
 
+		let baseId = -8
 		const negativeXnegativeYquadrantFirstRowTiles = [
 			{
-				baseId: 0,
+				baseId: baseId += 8,
 				colors: [ TRANSPARENT, TRANSPARENT ],
 				tileOrigin: [ 190 as any, 190 as any ] as Coordinate,
 				tileSize: 10 as any,
 			},
 			{
-				baseId: 8,
+				baseId: baseId += 8,
 				colors: [ BLACK, BLACK ],
 				tileOrigin: [ 170 as any, 180 as any ] as Coordinate,
 				tileSize: 20 as any,
 			},
 			{
-				baseId: 16,
+				baseId: baseId += 8,
 				colors: [ TRANSPARENT, TRANSPARENT ],
 				tileOrigin: [ 140 as any, 170 as any ] as Coordinate,
 				tileSize: 30 as any,
 			},
 			{
-				baseId: 24,
+				baseId: baseId += 8,
 				colors: [ BLACK, BLACK ],
 				tileOrigin: [ 100 as any, 160 as any ] as Coordinate,
 				tileSize: 40 as any,
@@ -53,25 +54,25 @@ describe('houndsmorphosis', () => {
 		]
 		const negativeXnegativeYquadrantSecondRowTiles = [
 			{
-				baseId: 32,
+				baseId: baseId += 8,
 				colors: [ TRANSPARENT, BLACK ],
 				tileOrigin: [ 190 as any, 180 as any ] as Coordinate,
 				tileSize: 10 as any,
 			},
 			{
-				baseId: 40,
+				baseId: baseId += 8,
 				colors: [ BLACK, TRANSPARENT ],
 				tileOrigin: [ 170 as any, 170 as any ] as Coordinate,
 				tileSize: 10 as any,
 			},
 			{
-				baseId: 48,
+				baseId: baseId += 8,
 				colors: [ TRANSPARENT, BLACK ],
 				tileOrigin: [ 140 as any, 160 as any ] as Coordinate,
 				tileSize: 10 as any,
 			},
 			{
-				baseId: 56,
+				baseId: baseId += 8,
 				colors: [ BLACK, TRANSPARENT ],
 				tileOrigin: [ 100 as any, 150 as any ] as Coordinate,
 				tileSize: 10 as any,
@@ -79,25 +80,25 @@ describe('houndsmorphosis', () => {
 		]
 		const negativeXnegativeYquadrantThirdRowTiles = [
 			{
-				baseId: 64,
+				baseId: baseId += 8,
 				colors: [ TRANSPARENT, TRANSPARENT ],
 				tileOrigin: [ 180 as any, 160 as any ] as Coordinate,
 				tileSize: 20 as any,
 			},
 			{
-				baseId: 72,
+				baseId: baseId += 8,
 				colors: [ BLACK, BLACK ],
 				tileOrigin: [ 150 as any, 140 as any ] as Coordinate,
 				tileSize: 30 as any,
 			},
 			{
-				baseId: 80,
+				baseId: baseId += 8,
 				colors: [ TRANSPARENT, TRANSPARENT ],
 				tileOrigin: [ 110 as any, 120 as any ] as Coordinate,
 				tileSize: 40 as any,
 			},
 			{
-				baseId: 88,
+				baseId: baseId += 8,
 				colors: [ BLACK, BLACK ],
 				tileOrigin: [ 60 as any, 100 as any ] as Coordinate,
 				tileSize: 50 as any,
@@ -105,25 +106,25 @@ describe('houndsmorphosis', () => {
 		]
 		const negativeXnegativeYquadrantFourthRowTiles = [
 			{
-				baseId: 96,
+				baseId: baseId += 8,
 				colors: [ TRANSPARENT, BLACK ],
 				tileOrigin: [ 180 as any, 140 as any ] as Coordinate,
 				tileSize: 20 as any,
 			},
 			{
-				baseId: 104,
+				baseId: baseId += 8,
 				colors: [ BLACK, TRANSPARENT ],
 				tileOrigin: [ 150 as any, 120 as any ] as Coordinate,
 				tileSize: 20 as any,
 			},
 			{
-				baseId: 112,
+				baseId: baseId += 8,
 				colors: [ TRANSPARENT, BLACK ],
 				tileOrigin: [ 110 as any, 100 as any ] as Coordinate,
 				tileSize: 20 as any,
 			},
 			{
-				baseId: 120,
+				baseId: baseId += 8,
 				colors: [ BLACK, TRANSPARENT ],
 				tileOrigin: [ 60 as any, 80 as any ] as Coordinate,
 				tileSize: 20 as any,
@@ -132,25 +133,25 @@ describe('houndsmorphosis', () => {
 
 		const positiveXnegativeYquadrantFirstRowTiles = [
 			{
-				baseId: 128,
+				baseId: baseId += 8,
 				colors: [ BLACK, TRANSPARENT ],
 				tileOrigin: [ 200 as any, 190 as any ] as Coordinate,
 				tileSize: 10 as any,
 			},
 			{
-				baseId: 136,
+				baseId: baseId += 8,
 				colors: [ TRANSPARENT, BLACK ],
 				tileOrigin: [ 210 as any, 180 as any ] as Coordinate,
 				tileSize: 20 as any,
 			},
 			{
-				baseId: 144,
+				baseId: baseId += 8,
 				colors: [ BLACK, TRANSPARENT ],
 				tileOrigin: [ 230 as any, 170 as any ] as Coordinate,
 				tileSize: 30 as any,
 			},
 			{
-				baseId: 152,
+				baseId: baseId += 8,
 				colors: [ TRANSPARENT, BLACK ],
 				tileOrigin: [ 260 as any, 160 as any ] as Coordinate,
 				tileSize: 40 as any,
@@ -158,25 +159,25 @@ describe('houndsmorphosis', () => {
 		]
 		const positiveXnegativeYquadrantSecondRowTiles = [
 			{
-				baseId: 160,
+				baseId: baseId += 8,
 				colors: [ BLACK, BLACK ],
 				tileOrigin: [ 200 as any, 180 as any ] as Coordinate,
 				tileSize: 10 as any,
 			},
 			{
-				baseId: 168,
+				baseId: baseId += 8,
 				colors: [ TRANSPARENT, TRANSPARENT ],
 				tileOrigin: [ 220 as any, 170 as any ] as Coordinate,
 				tileSize: 10 as any,
 			},
 			{
-				baseId: 176,
+				baseId: baseId += 8,
 				colors: [ BLACK, BLACK ],
 				tileOrigin: [ 250 as any, 160 as any ] as Coordinate,
 				tileSize: 10 as any,
 			},
 			{
-				baseId: 184,
+				baseId: baseId += 8,
 				colors: [ TRANSPARENT, TRANSPARENT ],
 				tileOrigin: [ 290 as any, 150 as any ] as Coordinate,
 				tileSize: 10 as any,
@@ -184,25 +185,25 @@ describe('houndsmorphosis', () => {
 		]
 		const positiveXnegativeYquadrantThirdRowTiles = [
 			{
-				baseId: 192,
+				baseId: baseId += 8,
 				colors: [ BLACK, TRANSPARENT ],
 				tileOrigin: [ 200 as any, 160 as any ] as Coordinate,
 				tileSize: 20 as any,
 			},
 			{
-				baseId: 200,
+				baseId: baseId += 8,
 				colors: [ TRANSPARENT, BLACK ],
 				tileOrigin: [ 220 as any, 140 as any ] as Coordinate,
 				tileSize: 30 as any,
 			},
 			{
-				baseId: 208,
+				baseId: baseId += 8,
 				colors: [ BLACK, TRANSPARENT ],
 				tileOrigin: [ 250 as any, 120 as any ] as Coordinate,
 				tileSize: 40 as any,
 			},
 			{
-				baseId: 216,
+				baseId: baseId += 8,
 				colors: [ TRANSPARENT, BLACK ],
 				tileOrigin: [ 290 as any, 100 as any ] as Coordinate,
 				tileSize: 50 as any,
@@ -210,25 +211,25 @@ describe('houndsmorphosis', () => {
 		]
 		const positiveXnegativeYquadrantFourthRowTiles = [
 			{
-				baseId: 224,
+				baseId: baseId += 8,
 				colors: [ BLACK, BLACK ],
 				tileOrigin: [ 200 as any, 140 as any ] as Coordinate,
 				tileSize: 20 as any,
 			},
 			{
-				baseId: 232,
+				baseId: baseId += 8,
 				colors: [ TRANSPARENT, TRANSPARENT ],
 				tileOrigin: [ 230 as any, 120 as any ] as Coordinate,
 				tileSize: 20 as any,
 			},
 			{
-				baseId: 240,
+				baseId: baseId += 8,
 				colors: [ BLACK, BLACK ],
 				tileOrigin: [ 270 as any, 100 as any ] as Coordinate,
 				tileSize: 20 as any,
 			},
 			{
-				baseId: 248,
+				baseId: baseId += 8,
 				colors: [ TRANSPARENT, TRANSPARENT ],
 				tileOrigin: [ 320 as any, 80 as any ] as Coordinate,
 				tileSize: 20 as any,
@@ -237,25 +238,25 @@ describe('houndsmorphosis', () => {
 
 		const negativeXpositiveYquadrantFirstRowTiles = [
 			{
-				baseId: 256,
+				baseId: baseId += 8,
 				colors: [ BLACK, BLACK ],
 				tileOrigin: [ 190 as any, 200 as any ] as Coordinate,
 				tileSize: 10 as any,
 			},
 			{
-				baseId: 264,
+				baseId: baseId += 8,
 				colors: [ TRANSPARENT, TRANSPARENT ],
 				tileOrigin: [ 170 as any, 200 as any ] as Coordinate,
 				tileSize: 20 as any,
 			},
 			{
-				baseId: 272,
+				baseId: baseId += 8,
 				colors: [ BLACK, BLACK ],
 				tileOrigin: [ 140 as any, 200 as any ] as Coordinate,
 				tileSize: 30 as any,
 			},
 			{
-				baseId: 280,
+				baseId: baseId += 8,
 				colors: [ TRANSPARENT, TRANSPARENT ],
 				tileOrigin: [ 100 as any, 200 as any ] as Coordinate,
 				tileSize: 40 as any,
@@ -263,25 +264,25 @@ describe('houndsmorphosis', () => {
 		]
 		const negativeXpositiveYquadrantSecondRowTiles = [
 			{
-				baseId: 288,
+				baseId: baseId += 8,
 				colors: [ BLACK, TRANSPARENT ],
 				tileOrigin: [ 190 as any, 210 as any ] as Coordinate,
 				tileSize: 10 as any,
 			},
 			{
-				baseId: 296,
+				baseId: baseId += 8,
 				colors: [ TRANSPARENT, BLACK ],
 				tileOrigin: [ 170 as any, 220 as any ] as Coordinate,
 				tileSize: 10 as any,
 			},
 			{
-				baseId: 304,
+				baseId: baseId += 8,
 				colors: [ BLACK, TRANSPARENT ],
 				tileOrigin: [ 140 as any, 230 as any ] as Coordinate,
 				tileSize: 10 as any,
 			},
 			{
-				baseId: 312,
+				baseId: baseId += 8,
 				colors: [ TRANSPARENT, BLACK ],
 				tileOrigin: [ 100 as any, 240 as any ] as Coordinate,
 				tileSize: 10 as any,
@@ -289,25 +290,25 @@ describe('houndsmorphosis', () => {
 		]
 		const negativeXpositiveYquadrantThirdRowTiles = [
 			{
-				baseId: 320,
+				baseId: baseId += 8,
 				colors: [ BLACK, BLACK ],
 				tileOrigin: [ 180 as any, 220 as any ] as Coordinate,
 				tileSize: 20 as any,
 			},
 			{
-				baseId: 328,
+				baseId: baseId += 8,
 				colors: [ TRANSPARENT, TRANSPARENT ],
 				tileOrigin: [ 150 as any, 230 as any ] as Coordinate,
 				tileSize: 30 as any,
 			},
 			{
-				baseId: 336,
+				baseId: baseId += 8,
 				colors: [ BLACK, BLACK ],
 				tileOrigin: [ 110 as any, 240 as any ] as Coordinate,
 				tileSize: 40 as any,
 			},
 			{
-				baseId: 344,
+				baseId: baseId += 8,
 				colors: [ TRANSPARENT, TRANSPARENT ],
 				tileOrigin: [ 60 as any, 250 as any ] as Coordinate,
 				tileSize: 50 as any,
@@ -315,25 +316,25 @@ describe('houndsmorphosis', () => {
 		]
 		const negativeXpositiveYquadrantFourthRowTiles = [
 			{
-				baseId: 352,
+				baseId: baseId += 8,
 				colors: [ BLACK, TRANSPARENT ],
 				tileOrigin: [ 180 as any, 240 as any ] as Coordinate,
 				tileSize: 20 as any,
 			},
 			{
-				baseId: 360,
+				baseId: baseId += 8,
 				colors: [ TRANSPARENT, BLACK ],
 				tileOrigin: [ 150 as any, 260 as any ] as Coordinate,
 				tileSize: 20 as any,
 			},
 			{
-				baseId: 368,
+				baseId: baseId += 8,
 				colors: [ BLACK, TRANSPARENT ],
 				tileOrigin: [ 110 as any, 280 as any ] as Coordinate,
 				tileSize: 20 as any,
 			},
 			{
-				baseId: 376,
+				baseId: baseId += 8,
 				colors: [ TRANSPARENT, BLACK ],
 				tileOrigin: [ 60 as any, 300 as any ] as Coordinate,
 				tileSize: 20 as any,
@@ -342,25 +343,25 @@ describe('houndsmorphosis', () => {
 
 		const positiveXpositiveYquadrantFirstRowTiles = [
 			{
-				baseId: 384,
+				baseId: baseId += 8,
 				colors: [ TRANSPARENT, BLACK ],
 				tileOrigin: [ 200 as any, 200 as any ] as Coordinate,
 				tileSize: 10 as any,
 			},
 			{
-				baseId: 392,
+				baseId: baseId += 8,
 				colors: [ BLACK, TRANSPARENT ],
 				tileOrigin: [ 210 as any, 200 as any ] as Coordinate,
 				tileSize: 20 as any,
 			},
 			{
-				baseId: 400,
+				baseId: baseId += 8,
 				colors: [ TRANSPARENT, BLACK ],
 				tileOrigin: [ 230 as any, 200 as any ] as Coordinate,
 				tileSize: 30 as any,
 			},
 			{
-				baseId: 408,
+				baseId: baseId += 8,
 				colors: [ BLACK, TRANSPARENT ],
 				tileOrigin: [ 260 as any, 200 as any ] as Coordinate,
 				tileSize: 40 as any,
@@ -368,25 +369,25 @@ describe('houndsmorphosis', () => {
 		]
 		const positiveXpositiveYquadrantSecondRowTiles = [
 			{
-				baseId: 416,
+				baseId: baseId += 8,
 				colors: [ TRANSPARENT, TRANSPARENT ],
 				tileOrigin: [ 200 as any, 210 as any ] as Coordinate,
 				tileSize: 10 as any,
 			},
 			{
-				baseId: 424,
+				baseId: baseId += 8,
 				colors: [ BLACK, BLACK ],
 				tileOrigin: [ 220 as any, 220 as any ] as Coordinate,
 				tileSize: 10 as any,
 			},
 			{
-				baseId: 432,
+				baseId: baseId += 8,
 				colors: [ TRANSPARENT, TRANSPARENT ],
 				tileOrigin: [ 250 as any, 230 as any ] as Coordinate,
 				tileSize: 10 as any,
 			},
 			{
-				baseId: 440,
+				baseId: baseId += 8,
 				colors: [ BLACK, BLACK ],
 				tileOrigin: [ 290 as any, 240 as any ] as Coordinate,
 				tileSize: 10 as any,
@@ -394,25 +395,25 @@ describe('houndsmorphosis', () => {
 		]
 		const positiveXpositiveYquadrantThirdRowTiles = [
 			{
-				baseId: 448,
+				baseId: baseId += 8,
 				colors: [ TRANSPARENT, BLACK ],
 				tileOrigin: [ 200 as any, 220 as any ] as Coordinate,
 				tileSize: 20 as any,
 			},
 			{
-				baseId: 456,
+				baseId: baseId += 8,
 				colors: [ BLACK, TRANSPARENT ],
 				tileOrigin: [ 220 as any, 230 as any ] as Coordinate,
 				tileSize: 30 as any,
 			},
 			{
-				baseId: 464,
+				baseId: baseId += 8,
 				colors: [ TRANSPARENT, BLACK ],
 				tileOrigin: [ 250 as any, 240 as any ] as Coordinate,
 				tileSize: 40 as any,
 			},
 			{
-				baseId: 472,
+				baseId: baseId += 8,
 				colors: [ BLACK, TRANSPARENT ],
 				tileOrigin: [ 290 as any, 250 as any ] as Coordinate,
 				tileSize: 50 as any,
@@ -420,25 +421,25 @@ describe('houndsmorphosis', () => {
 		]
 		const positiveXpositiveYquadrantFourthRowTiles = [
 			{
-				baseId: 480,
+				baseId: baseId += 8,
 				colors: [ TRANSPARENT, TRANSPARENT ],
 				tileOrigin: [ 200 as any, 240 as any ] as Coordinate,
 				tileSize: 20 as any,
 			},
 			{
-				baseId: 488,
+				baseId: baseId += 8,
 				colors: [ BLACK, BLACK ],
 				tileOrigin: [ 230 as any, 260 as any ] as Coordinate,
 				tileSize: 20 as any,
 			},
 			{
-				baseId: 496,
+				baseId: baseId += 8,
 				colors: [ TRANSPARENT, TRANSPARENT ],
 				tileOrigin: [ 270 as any, 280 as any ] as Coordinate,
 				tileSize: 20 as any,
 			},
 			{
-				baseId: 504,
+				baseId: baseId += 8,
 				colors: [ BLACK, BLACK ],
 				tileOrigin: [ 320 as any, 300 as any ] as Coordinate,
 				tileSize: 20 as any,
