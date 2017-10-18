@@ -1,17 +1,21 @@
-import { Address, Coordinate, TileOriginAndSize, Units } from '../../../../src'
-import { quarterSquareNumber, trapezoidalNumber } from '../../../../src/utilities/mathUtilities'
+import { Address, constants, Coordinate, TileOriginAndSize, Units } from '../../../../src'
+import { isOdd, quarterSquareNumber, trapezoidalNumber } from '../../../../src/utilities/mathUtilities'
+
+const ROW_TYPE_COUNT = 2
+const X_INDEX = constants.X_INDEX
+const Y_INDEX = constants.Y_INDEX
 
 const getHoundsmorphosisTileOriginAndSize: (_: {
 	gridAddress: Address,
 }) => TileOriginAndSize | undefined = ({ gridAddress }) => {
-	if (gridAddress[ 0 ] === 0 || gridAddress[ 1 ] === 0) {
+	if (gridAddress[ X_INDEX ] === 0 || gridAddress[ Y_INDEX ] === 0) {
 		return undefined
 	}
 
-	const addressX = Math.abs(gridAddress[ 0 ])
-	const addressY = Math.abs(gridAddress[ 1 ])
+	const addressX = Math.abs(gridAddress[ X_INDEX ])
+	const addressY = Math.abs(gridAddress[ Y_INDEX ])
 
-	const baseSize = Math.floor(addressY / 2) as any
+	const baseSize = Math.floor(addressY / ROW_TYPE_COUNT) as any
 
 	const tileSize = houndsmorphosisTileSize({ baseSize, addressX, addressY })
 	const tileOrigin = houndsmorphosisTileOrigin({ baseSize, addressX, addressY, tileSize, gridAddress })
@@ -24,7 +28,7 @@ const houndsmorphosisTileSize: (_: {
 }) => Units = ({ addressX, addressY, baseSize }) => {
 	const baseSizeAsNumber = baseSize as any
 
-	return addressY % 2 !== 0 ? addressX as any + baseSizeAsNumber : baseSize as any
+	return isOdd(addressY) ? addressX as any + baseSizeAsNumber : baseSize as any
 }
 
 const houndsmorphosisTileOrigin: (_: {
@@ -33,11 +37,11 @@ const houndsmorphosisTileOrigin: (_: {
 	let x = trapezoidalNumber({ start: baseSize as any, height: addressX - 1 })
 	let y = baseSize as any * (addressX - 1) + quarterSquareNumber(addressY)
 
-	if (gridAddress[ 0 ] < 0) {
+	if (gridAddress[ X_INDEX ] < 0) {
 		x *= -1
 		x -= tileSize as any
 	}
-	if (gridAddress[ 1 ] < 0) {
+	if (gridAddress[ Y_INDEX ] < 0) {
 		y *= -1
 		y -= tileSize as any
 	}
