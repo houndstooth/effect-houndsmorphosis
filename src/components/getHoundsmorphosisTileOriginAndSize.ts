@@ -20,7 +20,7 @@ const getHoundsmorphosisTileOriginAndSize: (_: {
 	const tileSize = houndsmorphosisTileSize({ baseSize, addressX, addressY })
 	const tileOrigin = houndsmorphosisTileOrigin({ baseSize, addressX, addressY, tileSize, gridAddress })
 
-	return { tileOrigin, tileSize } as TileOriginAndSize
+	return { tileOrigin, tileSize }
 }
 
 const houndsmorphosisTileSize: (_: {
