@@ -1,4 +1,3 @@
-import { CanvasSize } from '../../../../../src/canvas/types/CanvasSize'
 import { BLACK, TRANSPARENT } from '../../../../../src/constants'
 import { executeSelectedHoundstoothEffects } from '../../../../../src/execute/executeSelectedHoundstoothEffects'
 import { Coordinate } from '../../../../../src/space/types/Coordinate'
@@ -16,7 +15,7 @@ describe('houndsmorphosis', () => {
 					gridSize: 6,
 				},
 				viewSettings: {
-					canvasSize: 400 as CanvasSize,
+					canvasSize: 400 as any,
 					zoom: 10,
 				},
 			},
