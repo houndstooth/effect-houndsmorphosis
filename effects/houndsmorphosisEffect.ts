@@ -1,7 +1,7 @@
-import { AssignmentMode, Houndstooth, Supertile } from '../../../src'
+import { AssignmentMode, Effect, Supertile } from '../../../src'
 import { getHoundsmorphosisAddressOffset, getHoundsmorphosisTileOriginAndSize } from '../src'
 
-const houndsmorphosisEffect: Houndstooth = {
+const houndsmorphosisEffect: Effect = {
 	basePattern: {
 		colorSettings: {
 			assignment: {
