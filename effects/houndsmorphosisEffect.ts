@@ -1,4 +1,4 @@
-import { AssignmentMode, Effect, Supertile } from '../../../src'
+import { AssignmentMode, Effect, to } from '../../../src'
 import { getHoundsmorphosisAddressOffset, getHoundsmorphosisTileOriginAndSize } from '../src'
 
 const houndsmorphosisEffect: Effect = {
@@ -7,10 +7,10 @@ const houndsmorphosisEffect: Effect = {
 			assignment: {
 				assignmentMode: AssignmentMode.SUPERTILE,
 				offsetAddress: getHoundsmorphosisAddressOffset,
-				supertile: [
+				supertile: to.Supertile([
 					[ [ 0, 0 ], [ 0, 1 ] ],
 					[ [ 1, 1 ], [ 1, 0 ] ],
-				] as Supertile,
+				]),
 			},
 		},
 		gridSettings: {
@@ -19,7 +19,7 @@ const houndsmorphosisEffect: Effect = {
 		},
 		tileSettings: {
 			getTileOriginAndSize: getHoundsmorphosisTileOriginAndSize,
-			tileSizeSetting: 0 as any,
+			tileSizeSetting: to.Units(0),
 		},
 		viewSettings: {
 			centerViewOnCenterOfTileAtHomeAddress: true,
