@@ -5,7 +5,7 @@ const houndsmorphosisEffect: Effect = {
 	basePattern: {
 		colorSettings: {
 			assignment: {
-				assignmentMode: AssignmentMode.SUPERTILE,
+				assignmentMode: AssignmentMode.Supertile,
 				offsetAddress: getHoundsmorphosisAddressOffset,
 				supertile: to.Supertile([
 					[ [ 0, 0 ], [ 0, 1 ] ],
