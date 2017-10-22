@@ -1,4 +1,4 @@
-import { Address, to, from } from '../../../../src'
+import { Address, from, to } from '../../../../src'
 
 const getHoundsmorphosisAddressOffset: (_: { gridAddress: Address[] }) => Address[] = ({ gridAddress }) => {
 	let xOffset = 0
