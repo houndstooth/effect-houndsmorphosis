@@ -19,7 +19,7 @@ const houndsmorphosisEffect: Effect = {
 		},
 		tileSettings: {
 			getTileOriginAndSize: getHoundsmorphosisTileOriginAndSize,
-			tileSizeSetting: to.Unit(0),
+			tileSize: to.Unit(0),
 		},
 		viewSettings: {
 			centerViewOnCenterOfTileAtHomeAddress: true,
