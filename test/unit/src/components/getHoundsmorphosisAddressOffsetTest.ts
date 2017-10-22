@@ -1,4 +1,4 @@
-import * as to from '../../../../../../src/to'
+import * as to from '../../../../../../src/utilities/to'
 import { getHoundsmorphosisAddressOffset } from '../../../../src/components/getHoundsmorphosisAddressOffset'
 
 // tslint:disable-next-line:max-line-length
