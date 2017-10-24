@@ -14,7 +14,7 @@ describe('houndsmorphosis', () => {
 					gridSize: 6,
 				},
 				viewSettings: {
-					canvasSize: to.Dimension(400),
+					canvasSize: to.Px(400),
 					zoom: 10,
 				},
 			},
