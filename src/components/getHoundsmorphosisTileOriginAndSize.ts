@@ -4,7 +4,7 @@ import { isOdd, quarterSquareNumber, trapezoidalNumber } from '../../../../src/u
 const ROW_TYPE_COUNT = 2
 
 const getHoundsmorphosisTileOriginAndSize: (_: {
-	gridAddress: Address[],
+	gridAddress: Address,
 }) => TileOriginAndSize | undefined = ({ gridAddress }) => {
 	const [ x, y ] = from.Address(gridAddress)
 	if (x === 0 || y === 0) {
@@ -28,7 +28,7 @@ const houndsmorphosisTileSize: (_: {
 	to.Unit(isOdd(absoluteY) ? absoluteX + from.Unit(baseSize) : from.Unit(baseSize))
 
 const houndsmorphosisTileOrigin: (_: {
-	absoluteX: number, absoluteY: number, baseSize: Unit, gridAddress: Address[], tileSize: Unit,
+	absoluteX: number, absoluteY: number, baseSize: Unit, gridAddress: Address, tileSize: Unit,
 }) => Coordinate = ({ absoluteX, absoluteY, baseSize, gridAddress, tileSize }) => {
 	let x = trapezoidalNumber({ start: from.Unit(baseSize), height: absoluteX - 1 })
 	let y = from.Unit(baseSize) * (absoluteX - 1) + quarterSquareNumber(absoluteY)
