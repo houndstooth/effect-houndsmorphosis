@@ -1,9 +1,10 @@
 // tslint:disable:max-line-length no-unused-expression
 
 import { to } from '../../../../../../src'
+import { TileOriginAndSize } from '../../../../../../src/components/types'
 import { getHoundsmorphosisTileOriginAndSize } from '../../../../src/components/getHoundsmorphosisTileOriginAndSize'
 
-let actual
+let actual: TileOriginAndSize | undefined
 
 describe('houndsmorphosis tile origin and size', () => {
 	describe('if either x or y are 0', () => {
