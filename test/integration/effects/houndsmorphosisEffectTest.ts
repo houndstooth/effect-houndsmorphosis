@@ -8,7 +8,7 @@ import { StandardTileExpectation } from '../../../../../test/integration/helpers
 import { houndsmorphosisEffect } from '../../../effects/houndsmorphosisEffect'
 
 describe('houndsmorphosis', () => {
-	it('lays out the tiles in alternating growing rows and steady rows', () => {
+	it('lays out the tiles in alternating growing rows and steady rows', async (done: DoneFn) => {
 		state.selectedHoundstoothEffects = [ houndsmorphosisEffect ]
 		const houndstoothOverrides: Effect = {
 			basePattern: {
@@ -23,7 +23,7 @@ describe('houndsmorphosis', () => {
 		}
 		activateTestMarkerCanvas()
 
-		executeSelectedHoundstoothEffects({ houndstoothOverrides })
+		await executeSelectedHoundstoothEffects({ houndstoothOverrides })
 
 		let baseId: number = -8
 		const negativeXnegativeYquadrantFirstRowTiles: StandardTileExpectation[] = [
@@ -472,5 +472,7 @@ describe('houndsmorphosis', () => {
 			.concat(positiveXpositiveYquadrantTiles)
 
 		tiles.forEach((tile: StandardTileExpectation) => expect(standardTileIsColors(tile)).toBe(true))
+
+		done()
 	})
 })
