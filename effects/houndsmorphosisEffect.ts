@@ -14,8 +14,8 @@ const houndsmorphosisEffect: Effect = {
 			},
 		},
 		gridSettings: {
-			gridSize: 71,
 			includeNegativeQuadrants: true,
+			tileResolution: 71,
 		},
 		tileSettings: {
 			getTileOriginAndSize: getHoundsmorphosisTileOriginAndSize,

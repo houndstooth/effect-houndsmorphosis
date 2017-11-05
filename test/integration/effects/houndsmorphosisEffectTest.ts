@@ -13,7 +13,7 @@ describe('houndsmorphosis', () => {
 		const houndstoothOverrides: Effect = {
 			basePattern: {
 				gridSettings: {
-					gridSize: 6,
+					tileResolution: 6,
 				},
 				viewSettings: {
 					canvasSize: to.Px(400),
