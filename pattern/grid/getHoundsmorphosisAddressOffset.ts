@@ -1,5 +1,6 @@
-import { Address, from, to } from '../../../../src'
-import { AddressElement } from '../../../../src/components/types'
+import { Address, AddressElement } from '../../../../src'
+import * as from from '../../../../src/from'
+import * as to from '../../../../src/to'
 
 const getHoundsmorphosisAddressOffset: (_: { gridAddress: Address }) => Address =
 	({ gridAddress }: { gridAddress: Address }): Address => {

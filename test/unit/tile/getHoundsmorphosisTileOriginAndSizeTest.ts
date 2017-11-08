@@ -1,8 +1,8 @@
 // tslint:disable:max-line-length no-unused-expression
 
-import { to } from '../../../../../../src'
-import { TileOriginAndSize } from '../../../../../../src/components/types'
-import { getHoundsmorphosisTileOriginAndSize } from '../../../../src/components/getHoundsmorphosisTileOriginAndSize'
+import { TileOriginAndSize } from '../../../../../src'
+import * as to from '../../../../../src/to'
+import { getHoundsmorphosisTileOriginAndSize } from '../../../pattern'
 
 let actual: TileOriginAndSize | undefined
 

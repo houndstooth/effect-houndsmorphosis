@@ -1,5 +1,6 @@
-import { AssignmentMode, Effect, to } from '../../../src'
-import { getHoundsmorphosisAddressOffset, getHoundsmorphosisTileOriginAndSize } from '../src'
+import { AssignmentMode, Effect } from '../../../src'
+import * as to from '../../../src/to'
+import { getHoundsmorphosisAddressOffset, getHoundsmorphosisTileOriginAndSize } from '../pattern'
 
 const houndsmorphosisEffect: Effect = {
 	basePattern: {

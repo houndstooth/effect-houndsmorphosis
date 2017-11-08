@@ -1,5 +1,5 @@
-import * as to from '../../../../../../src/utilities/to'
-import { getHoundsmorphosisAddressOffset } from '../../../../src/components/getHoundsmorphosisAddressOffset'
+import * as to from '../../../../../src/to'
+import { getHoundsmorphosisAddressOffset } from '../../../pattern/grid/getHoundsmorphosisAddressOffset'
 
 // tslint:disable-next-line:max-line-length
 describe('houndsmorphosis address offset deals with set assignment because the axes were eliminated to simplify sizing and positioning but that screws with assignment', () => {
