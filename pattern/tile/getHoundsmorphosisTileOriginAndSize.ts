@@ -1,6 +1,4 @@
-import { Address, Coordinate, mathUtilities, TileOriginAndSize, Unit } from '../../../../src'
-import * as from from '../../../../src/from'
-import * as to from '../../../../src/to'
+import { Address, Coordinate, from, mathUtilities, TileOriginAndSize, to, Unit } from '../../../../src'
 import { HoundsmorphosisTileOriginParams } from './types'
 
 const ROW_TYPE_COUNT: number = 2
