@@ -1,12 +1,8 @@
-import { state } from '../../../../../src'
-import { executeSelectedHoundstoothEffects } from '../../../../../src/app/execute/executeSelectedHoundstoothEffects'
-import { BLACK, TRANSPARENT } from '../../../../../src/constants'
-import { Effect } from '../../../../../src/pattern/types'
-import * as to from '../../../../../src/to'
-import { activateTestMarkerCanvas } from '../../../../../test/integration/helpers/activateTestMarkerCanvas'
-import { standardTileIsColors } from '../../../../../test/integration/helpers/standardTileIsColors'
-import { StandardTileExpectation } from '../../../../../test/integration/helpers/types'
-import { houndsmorphosisEffect } from '../../../effects/houndsmorphosisEffect'
+import { constants, Effect, executeSelectedHoundstoothEffects, state, to } from '../../../../../src'
+import { activateTestMarkerCanvas, StandardTileExpectation, standardTileIsColors } from '../../../../../test'
+import { houndsmorphosisEffect } from '../../../effects'
+
+const { BLACK, TRANSPARENT } = constants
 
 describe('houndsmorphosis', () => {
 	it('lays out the tiles in alternating growing rows and steady rows', async (done: DoneFn) => {
