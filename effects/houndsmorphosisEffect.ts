@@ -6,7 +6,7 @@ const houndsmorphosisEffect: Effect = {
 		colorSettings: {
 			colorAssignmentSettings: {
 				assignmentMode: AssignmentMode.Supertile,
-				offsetAddress: getHoundsmorphosisAddressOffset,
+				offsetAddress: getHoundsmorphosisAddressOffset.main,
 				supertile: to.Supertile([
 					[ [ 0, 0 ], [ 0, 1 ] ],
 					[ [ 1, 1 ], [ 1, 0 ] ],
@@ -18,7 +18,7 @@ const houndsmorphosisEffect: Effect = {
 			tileResolution: 71,
 		},
 		tileSettings: {
-			getTileOriginAndSize: getHoundsmorphosisTileOriginAndSize,
+			getTileOriginAndSize: getHoundsmorphosisTileOriginAndSize.main,
 			tileSize: to.Unit(0),
 		},
 		viewSettings: {

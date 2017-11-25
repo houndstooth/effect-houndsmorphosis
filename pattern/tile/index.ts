@@ -1,4 +1,4 @@
-import { getHoundsmorphosisTileOriginAndSize } from './getHoundsmorphosisTileOriginAndSize'
+import * as getHoundsmorphosisTileOriginAndSize from './getHoundsmorphosisTileOriginAndSize'
 
 export {
 	getHoundsmorphosisTileOriginAndSize,

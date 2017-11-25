@@ -1,4 +1,4 @@
-import { getHoundsmorphosisAddressOffset } from './getHoundsmorphosisAddressOffset'
+import * as getHoundsmorphosisAddressOffset from './getHoundsmorphosisAddressOffset'
 
 export {
 	getHoundsmorphosisAddressOffset,

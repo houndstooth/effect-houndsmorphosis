@@ -1,7 +1,2 @@
-import { getHoundsmorphosisAddressOffset } from './grid'
-import { getHoundsmorphosisTileOriginAndSize } from './tile'
-
-export {
-	getHoundsmorphosisTileOriginAndSize,
-	getHoundsmorphosisAddressOffset,
-}
+export { getHoundsmorphosisAddressOffset } from './grid'
+export { getHoundsmorphosisTileOriginAndSize } from './tile'

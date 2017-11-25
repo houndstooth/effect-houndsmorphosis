@@ -1,3 +1,1 @@
-import { houndsmorphosisEffect } from './effects'
-
-export { houndsmorphosisEffect }
+export { houndsmorphosisEffect } from './effects'
