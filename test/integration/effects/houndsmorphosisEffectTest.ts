@@ -1,5 +1,5 @@
 import { constants, Effect, executeSelectedHoundstoothEffects, state, to } from '../../../../../src'
-import { activateTestMarkerCanvas, StandardTileExpectation, standardTileIsColors } from '../../../../../test'
+import { StandardTileExpectation, standardTileIsColors } from '../../../../../test'
 import { houndsmorphosisEffect } from '../../../effects'
 
 const { BLACK, TRANSPARENT } = constants
@@ -18,7 +18,6 @@ describe('houndsmorphosis', () => {
 				},
 			},
 		}
-		activateTestMarkerCanvas()
 
 		executeSelectedHoundstoothEffects.default({ houndstoothOverrides })
 
