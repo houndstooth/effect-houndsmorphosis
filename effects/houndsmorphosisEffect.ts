@@ -1,5 +1,6 @@
 import { AssignmentMode, NamedEffect, to } from '../../../src'
 import { getHoundsmorphosisAddressOffset, getHoundsmorphosisTileOriginAndSize } from '../pattern'
+import HOUNDSMORPHOSIS_DESCRIPTION from './houndsmorphosisDescription'
 
 const houndsmorphosisEffect: NamedEffect = {
 	basePattern: {
@@ -26,6 +27,7 @@ const houndsmorphosisEffect: NamedEffect = {
 			zoomOnCanvasCenter: true,
 		},
 	},
+	description: HOUNDSMORPHOSIS_DESCRIPTION,
 	name: 'houndsmorphosis',
 }
 

@@ -1,0 +1,28 @@
+const HOUNDSMORPHOSIS_DESCRIPTION: string = [
+	'--- houndsmorphosis ---',
+	'',
+	'Resizes and repositions the tiles in a manner extrapolated from',
+	'the Pythagorean tiling. Each quadrant mirrors the others,',
+	'at least in terms of the tile sizes and positions.',
+	'',
+	'Regarding the upper right quadrant as an example, then,',
+	'the first row starts with a tile of size 1, and each next tile',
+	'increases in size by 1. The second row also starts with size 1,',
+	'but stays that size, no matter how far out to the right you go,',
+	'stacking on top of the previous layer as it can.',
+	'The next row starts with a tile of size 2 and grows by 1 each time,',
+	'and the next row starts at 2 and does not grow.',
+	'',
+	'Repeating this pattern, and mirroring quadrants, houndsmorphosis emerges.',
+	'In the top and bottom center areas, the two types of tiles are',
+	'about the same size; in the left and right center areas, the farther',
+	'out you go, the more different in size they become, so the pattern',
+	'begins to look like a simple checkerboard.',
+	'',
+	'Assigning houndstooth colors to these tiles is not necessary',
+	'but creates an extra fun effect.',
+	'',
+	'The name of this pattern is inspired by M.C. Escher\'s Metamorphosis.',
+].join('\n')
+
+export default HOUNDSMORPHOSIS_DESCRIPTION
