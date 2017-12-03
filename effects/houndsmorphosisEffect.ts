@@ -1,7 +1,7 @@
-import { AssignmentMode, Effect, to } from '../../../src'
+import { AssignmentMode, NamedEffect, to } from '../../../src'
 import { getHoundsmorphosisAddressOffset, getHoundsmorphosisTileOriginAndSize } from '../pattern'
 
-const houndsmorphosisEffect: Effect = {
+const houndsmorphosisEffect: NamedEffect = {
 	basePattern: {
 		colorSettings: {
 			colorAssignmentSettings: {
