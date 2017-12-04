@@ -6,7 +6,7 @@ const { BLACK, TRANSPARENT } = constants
 
 describe('houndsmorphosis', () => {
 	it('lays out the tiles in alternating growing rows and steady rows', async (done: DoneFn) => {
-		state.selectedHoundstoothEffects = [ houndsmorphosisEffect ]
+		state.controls.selectedHoundstoothEffects = [ houndsmorphosisEffect ]
 		const houndstoothOverrides: Effect = {
 			basePattern: {
 				gridSettings: {
