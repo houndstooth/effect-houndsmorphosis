@@ -4,7 +4,7 @@ import { houndsmorphosisEffect } from '../../../effects'
 
 const { BLACK, TRANSPARENT } = constants
 
-describe('houndsmorphosis', () => {
+xdescribe('houndsmorphosis', () => {
 	it('lays out the tiles in alternating growing rows and steady rows', async (done: DoneFn) => {
 		state.controls.selectedHoundstoothEffects = [ houndsmorphosisEffect ]
 		const houndstoothOverrides: Effect = {
@@ -13,7 +13,6 @@ describe('houndsmorphosis', () => {
 					tileResolution: 6,
 				},
 				viewSettings: {
-					canvasSize: to.Px(400),
 					zoom: 10,
 				},
 			},
