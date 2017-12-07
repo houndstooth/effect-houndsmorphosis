@@ -4,7 +4,7 @@ import { houndsmorphosisEffect } from '../../../effects'
 
 const { BLACK, TRANSPARENT } = constants
 
-xdescribe('houndsmorphosis', () => {
+describe('houndsmorphosis', () => {
 	it('lays out the tiles in alternating growing rows and steady rows', async (done: DoneFn) => {
 		state.controls.selectedHoundstoothEffects = [ houndsmorphosisEffect ]
 		const houndstoothOverrides: Effect = {
@@ -26,25 +26,25 @@ xdescribe('houndsmorphosis', () => {
 				{
 					baseId: baseId += 8,
 					colors: [ TRANSPARENT, TRANSPARENT ],
-					tileOrigin: to.Coordinate([ 190, 190 ]),
+					tileOrigin: to.Coordinate([ 390, 390 ]),
 					tileSize: to.Unit(10),
 				},
 				{
 					baseId: baseId += 8,
 					colors: [ BLACK, BLACK ],
-					tileOrigin: to.Coordinate([ 170, 180 ]),
+					tileOrigin: to.Coordinate([ 370, 380 ]),
 					tileSize: to.Unit(20),
 				},
 				{
 					baseId: baseId += 8,
 					colors: [ TRANSPARENT, TRANSPARENT ],
-					tileOrigin: to.Coordinate([ 140, 170 ]),
+					tileOrigin: to.Coordinate([ 340, 370 ]),
 					tileSize: to.Unit(30),
 				},
 				{
 					baseId: baseId += 8,
 					colors: [ BLACK, BLACK ],
-					tileOrigin: to.Coordinate([ 100, 160 ]),
+					tileOrigin: to.Coordinate([ 300, 360 ]),
 					tileSize: to.Unit(40),
 				},
 			]
@@ -52,25 +52,25 @@ xdescribe('houndsmorphosis', () => {
 				{
 					baseId: baseId += 8,
 					colors: [ TRANSPARENT, BLACK ],
-					tileOrigin: to.Coordinate([ 190, 180 ]),
+					tileOrigin: to.Coordinate([ 390, 380 ]),
 					tileSize: to.Unit(10),
 				},
 				{
 					baseId: baseId += 8,
 					colors: [ BLACK, TRANSPARENT ],
-					tileOrigin: to.Coordinate([ 170, 170 ]),
+					tileOrigin: to.Coordinate([ 370, 370 ]),
 					tileSize: to.Unit(10),
 				},
 				{
 					baseId: baseId += 8,
 					colors: [ TRANSPARENT, BLACK ],
-					tileOrigin: to.Coordinate([ 140, 160 ]),
+					tileOrigin: to.Coordinate([ 340, 360 ]),
 					tileSize: to.Unit(10),
 				},
 				{
 					baseId: baseId += 8,
 					colors: [ BLACK, TRANSPARENT ],
-					tileOrigin: to.Coordinate([ 100, 150 ]),
+					tileOrigin: to.Coordinate([ 300, 350 ]),
 					tileSize: to.Unit(10),
 				},
 			]
@@ -78,25 +78,25 @@ xdescribe('houndsmorphosis', () => {
 				{
 					baseId: baseId += 8,
 					colors: [ TRANSPARENT, TRANSPARENT ],
-					tileOrigin: to.Coordinate([ 180, 160 ]),
+					tileOrigin: to.Coordinate([ 380, 360 ]),
 					tileSize: to.Unit(20),
 				},
 				{
 					baseId: baseId += 8,
 					colors: [ BLACK, BLACK ],
-					tileOrigin: to.Coordinate([ 150, 140 ]),
+					tileOrigin: to.Coordinate([ 350, 340 ]),
 					tileSize: to.Unit(30),
 				},
 				{
 					baseId: baseId += 8,
 					colors: [ TRANSPARENT, TRANSPARENT ],
-					tileOrigin: to.Coordinate([ 110, 120 ]),
+					tileOrigin: to.Coordinate([ 310, 320 ]),
 					tileSize: to.Unit(40),
 				},
 				{
 					baseId: baseId += 8,
 					colors: [ BLACK, BLACK ],
-					tileOrigin: to.Coordinate([ 60, 100 ]),
+					tileOrigin: to.Coordinate([ 260, 300 ]),
 					tileSize: to.Unit(50),
 				},
 			]
@@ -104,25 +104,25 @@ xdescribe('houndsmorphosis', () => {
 				{
 					baseId: baseId += 8,
 					colors: [ TRANSPARENT, BLACK ],
-					tileOrigin: to.Coordinate([ 180, 140 ]),
+					tileOrigin: to.Coordinate([ 380, 340 ]),
 					tileSize: to.Unit(20),
 				},
 				{
 					baseId: baseId += 8,
 					colors: [ BLACK, TRANSPARENT ],
-					tileOrigin: to.Coordinate([ 150, 120 ]),
+					tileOrigin: to.Coordinate([ 350, 320 ]),
 					tileSize: to.Unit(20),
 				},
 				{
 					baseId: baseId += 8,
 					colors: [ TRANSPARENT, BLACK ],
-					tileOrigin: to.Coordinate([ 110, 100 ]),
+					tileOrigin: to.Coordinate([ 310, 300 ]),
 					tileSize: to.Unit(20),
 				},
 				{
 					baseId: baseId += 8,
 					colors: [ BLACK, TRANSPARENT ],
-					tileOrigin: to.Coordinate([ 60, 80 ]),
+					tileOrigin: to.Coordinate([ 260, 280 ]),
 					tileSize: to.Unit(20),
 				},
 			]
@@ -131,25 +131,25 @@ xdescribe('houndsmorphosis', () => {
 				{
 					baseId: baseId += 8,
 					colors: [ BLACK, TRANSPARENT ],
-					tileOrigin: to.Coordinate([ 200, 190 ]),
+					tileOrigin: to.Coordinate([ 400, 390 ]),
 					tileSize: to.Unit(10),
 				},
 				{
 					baseId: baseId += 8,
 					colors: [ TRANSPARENT, BLACK ],
-					tileOrigin: to.Coordinate([ 210, 180 ]),
+					tileOrigin: to.Coordinate([ 410, 380 ]),
 					tileSize: to.Unit(20),
 				},
 				{
 					baseId: baseId += 8,
 					colors: [ BLACK, TRANSPARENT ],
-					tileOrigin: to.Coordinate([ 230, 170 ]),
+					tileOrigin: to.Coordinate([ 430, 370 ]),
 					tileSize: to.Unit(30),
 				},
 				{
 					baseId: baseId += 8,
 					colors: [ TRANSPARENT, BLACK ],
-					tileOrigin: to.Coordinate([ 260, 160 ]),
+					tileOrigin: to.Coordinate([ 460, 360 ]),
 					tileSize: to.Unit(40),
 				},
 			]
@@ -157,25 +157,25 @@ xdescribe('houndsmorphosis', () => {
 				{
 					baseId: baseId += 8,
 					colors: [ BLACK, BLACK ],
-					tileOrigin: to.Coordinate([ 200, 180 ]),
+					tileOrigin: to.Coordinate([ 400, 380 ]),
 					tileSize: to.Unit(10),
 				},
 				{
 					baseId: baseId += 8,
 					colors: [ TRANSPARENT, TRANSPARENT ],
-					tileOrigin: to.Coordinate([ 220, 170 ]),
+					tileOrigin: to.Coordinate([ 420, 370 ]),
 					tileSize: to.Unit(10),
 				},
 				{
 					baseId: baseId += 8,
 					colors: [ BLACK, BLACK ],
-					tileOrigin: to.Coordinate([ 250, 160 ]),
+					tileOrigin: to.Coordinate([ 450, 360 ]),
 					tileSize: to.Unit(10),
 				},
 				{
 					baseId: baseId += 8,
 					colors: [ TRANSPARENT, TRANSPARENT ],
-					tileOrigin: to.Coordinate([ 290, 150 ]),
+					tileOrigin: to.Coordinate([ 490, 350 ]),
 					tileSize: to.Unit(10),
 				},
 			]
@@ -183,25 +183,25 @@ xdescribe('houndsmorphosis', () => {
 				{
 					baseId: baseId += 8,
 					colors: [ BLACK, TRANSPARENT ],
-					tileOrigin: to.Coordinate([ 200, 160 ]),
+					tileOrigin: to.Coordinate([ 400, 360 ]),
 					tileSize: to.Unit(20),
 				},
 				{
 					baseId: baseId += 8,
 					colors: [ TRANSPARENT, BLACK ],
-					tileOrigin: to.Coordinate([ 220, 140 ]),
+					tileOrigin: to.Coordinate([ 420, 340 ]),
 					tileSize: to.Unit(30),
 				},
 				{
 					baseId: baseId += 8,
 					colors: [ BLACK, TRANSPARENT ],
-					tileOrigin: to.Coordinate([ 250, 120 ]),
+					tileOrigin: to.Coordinate([ 450, 320 ]),
 					tileSize: to.Unit(40),
 				},
 				{
 					baseId: baseId += 8,
 					colors: [ TRANSPARENT, BLACK ],
-					tileOrigin: to.Coordinate([ 290, 100 ]),
+					tileOrigin: to.Coordinate([ 490, 300 ]),
 					tileSize: to.Unit(50),
 				},
 			]
@@ -209,25 +209,25 @@ xdescribe('houndsmorphosis', () => {
 				{
 					baseId: baseId += 8,
 					colors: [ BLACK, BLACK ],
-					tileOrigin: to.Coordinate([ 200, 140 ]),
+					tileOrigin: to.Coordinate([ 400, 340 ]),
 					tileSize: to.Unit(20),
 				},
 				{
 					baseId: baseId += 8,
 					colors: [ TRANSPARENT, TRANSPARENT ],
-					tileOrigin: to.Coordinate([ 230, 120 ]),
+					tileOrigin: to.Coordinate([ 430, 320 ]),
 					tileSize: to.Unit(20),
 				},
 				{
 					baseId: baseId += 8,
 					colors: [ BLACK, BLACK ],
-					tileOrigin: to.Coordinate([ 270, 100 ]),
+					tileOrigin: to.Coordinate([ 470, 300 ]),
 					tileSize: to.Unit(20),
 				},
 				{
 					baseId: baseId += 8,
 					colors: [ TRANSPARENT, TRANSPARENT ],
-					tileOrigin: to.Coordinate([ 320, 80 ]),
+					tileOrigin: to.Coordinate([ 520, 280 ]),
 					tileSize: to.Unit(20),
 				},
 			]
@@ -236,25 +236,25 @@ xdescribe('houndsmorphosis', () => {
 				{
 					baseId: baseId += 8,
 					colors: [ BLACK, BLACK ],
-					tileOrigin: to.Coordinate([ 190, 200 ]),
+					tileOrigin: to.Coordinate([ 390, 400 ]),
 					tileSize: to.Unit(10),
 				},
 				{
 					baseId: baseId += 8,
 					colors: [ TRANSPARENT, TRANSPARENT ],
-					tileOrigin: to.Coordinate([ 170, 200 ]),
+					tileOrigin: to.Coordinate([ 370, 400 ]),
 					tileSize: to.Unit(20),
 				},
 				{
 					baseId: baseId += 8,
 					colors: [ BLACK, BLACK ],
-					tileOrigin: to.Coordinate([ 140, 200 ]),
+					tileOrigin: to.Coordinate([ 340, 400 ]),
 					tileSize: to.Unit(30),
 				},
 				{
 					baseId: baseId += 8,
 					colors: [ TRANSPARENT, TRANSPARENT ],
-					tileOrigin: to.Coordinate([ 100, 200 ]),
+					tileOrigin: to.Coordinate([ 300, 400 ]),
 					tileSize: to.Unit(40),
 				},
 			]
@@ -262,25 +262,25 @@ xdescribe('houndsmorphosis', () => {
 				{
 					baseId: baseId += 8,
 					colors: [ BLACK, TRANSPARENT ],
-					tileOrigin: to.Coordinate([ 190, 210 ]),
+					tileOrigin: to.Coordinate([ 390, 410 ]),
 					tileSize: to.Unit(10),
 				},
 				{
 					baseId: baseId += 8,
 					colors: [ TRANSPARENT, BLACK ],
-					tileOrigin: to.Coordinate([ 170, 220 ]),
+					tileOrigin: to.Coordinate([ 370, 420 ]),
 					tileSize: to.Unit(10),
 				},
 				{
 					baseId: baseId += 8,
 					colors: [ BLACK, TRANSPARENT ],
-					tileOrigin: to.Coordinate([ 140, 230 ]),
+					tileOrigin: to.Coordinate([ 340, 430 ]),
 					tileSize: to.Unit(10),
 				},
 				{
 					baseId: baseId += 8,
 					colors: [ TRANSPARENT, BLACK ],
-					tileOrigin: to.Coordinate([ 100, 240 ]),
+					tileOrigin: to.Coordinate([ 300, 440 ]),
 					tileSize: to.Unit(10),
 				},
 			]
@@ -288,25 +288,25 @@ xdescribe('houndsmorphosis', () => {
 				{
 					baseId: baseId += 8,
 					colors: [ BLACK, BLACK ],
-					tileOrigin: to.Coordinate([ 180, 220 ]),
+					tileOrigin: to.Coordinate([ 380, 420 ]),
 					tileSize: to.Unit(20),
 				},
 				{
 					baseId: baseId += 8,
 					colors: [ TRANSPARENT, TRANSPARENT ],
-					tileOrigin: to.Coordinate([ 150, 230 ]),
+					tileOrigin: to.Coordinate([ 350, 430 ]),
 					tileSize: to.Unit(30),
 				},
 				{
 					baseId: baseId += 8,
 					colors: [ BLACK, BLACK ],
-					tileOrigin: to.Coordinate([ 110, 240 ]),
+					tileOrigin: to.Coordinate([ 310, 440 ]),
 					tileSize: to.Unit(40),
 				},
 				{
 					baseId: baseId += 8,
 					colors: [ TRANSPARENT, TRANSPARENT ],
-					tileOrigin: to.Coordinate([ 60, 250 ]),
+					tileOrigin: to.Coordinate([ 260, 450 ]),
 					tileSize: to.Unit(50),
 				},
 			]
@@ -314,25 +314,25 @@ xdescribe('houndsmorphosis', () => {
 				{
 					baseId: baseId += 8,
 					colors: [ BLACK, TRANSPARENT ],
-					tileOrigin: to.Coordinate([ 180, 240 ]),
+					tileOrigin: to.Coordinate([ 380, 440 ]),
 					tileSize: to.Unit(20),
 				},
 				{
 					baseId: baseId += 8,
 					colors: [ TRANSPARENT, BLACK ],
-					tileOrigin: to.Coordinate([ 150, 260 ]),
+					tileOrigin: to.Coordinate([ 350, 460 ]),
 					tileSize: to.Unit(20),
 				},
 				{
 					baseId: baseId += 8,
 					colors: [ BLACK, TRANSPARENT ],
-					tileOrigin: to.Coordinate([ 110, 280 ]),
+					tileOrigin: to.Coordinate([ 310, 480 ]),
 					tileSize: to.Unit(20),
 				},
 				{
 					baseId: baseId += 8,
 					colors: [ TRANSPARENT, BLACK ],
-					tileOrigin: to.Coordinate([ 60, 300 ]),
+					tileOrigin: to.Coordinate([ 260, 500 ]),
 					tileSize: to.Unit(20),
 				},
 			]
@@ -341,25 +341,25 @@ xdescribe('houndsmorphosis', () => {
 				{
 					baseId: baseId += 8,
 					colors: [ TRANSPARENT, BLACK ],
-					tileOrigin: to.Coordinate([ 200, 200 ]),
+					tileOrigin: to.Coordinate([ 400, 400 ]),
 					tileSize: to.Unit(10),
 				},
 				{
 					baseId: baseId += 8,
 					colors: [ BLACK, TRANSPARENT ],
-					tileOrigin: to.Coordinate([ 210, 200 ]),
+					tileOrigin: to.Coordinate([ 410, 400 ]),
 					tileSize: to.Unit(20),
 				},
 				{
 					baseId: baseId += 8,
 					colors: [ TRANSPARENT, BLACK ],
-					tileOrigin: to.Coordinate([ 230, 200 ]),
+					tileOrigin: to.Coordinate([ 430, 400 ]),
 					tileSize: to.Unit(30),
 				},
 				{
 					baseId: baseId += 8,
 					colors: [ BLACK, TRANSPARENT ],
-					tileOrigin: to.Coordinate([ 260, 200 ]),
+					tileOrigin: to.Coordinate([ 460, 400 ]),
 					tileSize: to.Unit(40),
 				},
 			]
@@ -367,25 +367,25 @@ xdescribe('houndsmorphosis', () => {
 				{
 					baseId: baseId += 8,
 					colors: [ TRANSPARENT, TRANSPARENT ],
-					tileOrigin: to.Coordinate([ 200, 210 ]),
+					tileOrigin: to.Coordinate([ 400, 410 ]),
 					tileSize: to.Unit(10),
 				},
 				{
 					baseId: baseId += 8,
 					colors: [ BLACK, BLACK ],
-					tileOrigin: to.Coordinate([ 220, 220 ]),
+					tileOrigin: to.Coordinate([ 420, 420 ]),
 					tileSize: to.Unit(10),
 				},
 				{
 					baseId: baseId += 8,
 					colors: [ TRANSPARENT, TRANSPARENT ],
-					tileOrigin: to.Coordinate([ 250, 230 ]),
+					tileOrigin: to.Coordinate([ 450, 430 ]),
 					tileSize: to.Unit(10),
 				},
 				{
 					baseId: baseId += 8,
 					colors: [ BLACK, BLACK ],
-					tileOrigin: to.Coordinate([ 290, 240 ]),
+					tileOrigin: to.Coordinate([ 490, 440 ]),
 					tileSize: to.Unit(10),
 				},
 			]
@@ -393,25 +393,25 @@ xdescribe('houndsmorphosis', () => {
 				{
 					baseId: baseId += 8,
 					colors: [ TRANSPARENT, BLACK ],
-					tileOrigin: to.Coordinate([ 200, 220 ]),
+					tileOrigin: to.Coordinate([ 400, 420 ]),
 					tileSize: to.Unit(20),
 				},
 				{
 					baseId: baseId += 8,
 					colors: [ BLACK, TRANSPARENT ],
-					tileOrigin: to.Coordinate([ 220, 230 ]),
+					tileOrigin: to.Coordinate([ 420, 430 ]),
 					tileSize: to.Unit(30),
 				},
 				{
 					baseId: baseId += 8,
 					colors: [ TRANSPARENT, BLACK ],
-					tileOrigin: to.Coordinate([ 250, 240 ]),
+					tileOrigin: to.Coordinate([ 450, 440 ]),
 					tileSize: to.Unit(40),
 				},
 				{
 					baseId: baseId += 8,
 					colors: [ BLACK, TRANSPARENT ],
-					tileOrigin: to.Coordinate([ 290, 250 ]),
+					tileOrigin: to.Coordinate([ 490, 450 ]),
 					tileSize: to.Unit(50),
 				},
 			]
@@ -419,25 +419,25 @@ xdescribe('houndsmorphosis', () => {
 				{
 					baseId: baseId += 8,
 					colors: [ TRANSPARENT, TRANSPARENT ],
-					tileOrigin: to.Coordinate([ 200, 240 ]),
+					tileOrigin: to.Coordinate([ 400, 440 ]),
 					tileSize: to.Unit(20),
 				},
 				{
 					baseId: baseId += 8,
 					colors: [ BLACK, BLACK ],
-					tileOrigin: to.Coordinate([ 230, 260 ]),
+					tileOrigin: to.Coordinate([ 430, 460 ]),
 					tileSize: to.Unit(20),
 				},
 				{
 					baseId: baseId += 8,
 					colors: [ TRANSPARENT, TRANSPARENT ],
-					tileOrigin: to.Coordinate([ 270, 280 ]),
+					tileOrigin: to.Coordinate([ 470, 480 ]),
 					tileSize: to.Unit(20),
 				},
 				{
 					baseId: baseId += 8,
 					colors: [ BLACK, BLACK ],
-					tileOrigin: to.Coordinate([ 320, 300 ]),
+					tileOrigin: to.Coordinate([ 520, 500 ]),
 					tileSize: to.Unit(20),
 				},
 			]
