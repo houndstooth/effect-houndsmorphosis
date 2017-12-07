@@ -1,4 +1,4 @@
-import { constants, Effect, executeSelectedHoundstoothEffects, state, to } from '../../../../../src'
+import { appState, constants, Effect, executeSelectedHoundstoothEffects, to } from '../../../../../src'
 import { StandardTileExpectation, standardTileIsColors } from '../../../../../test'
 import { houndsmorphosisEffect } from '../../../effects'
 
@@ -6,7 +6,7 @@ const { BLACK, TRANSPARENT } = constants
 
 describe('houndsmorphosis', () => {
 	it('lays out the tiles in alternating growing rows and steady rows', async (done: DoneFn) => {
-		state.controls.selectedHoundstoothEffects = [ houndsmorphosisEffect ]
+		appState.controls.selectedHoundstoothEffects = [ houndsmorphosisEffect ]
 		const houndstoothOverrides: Effect = {
 			basePattern: {
 				gridSettings: {
