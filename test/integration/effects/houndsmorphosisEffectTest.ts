@@ -1,12 +1,13 @@
-import { appState, constants, Effect, executeSelectedEffects, to } from '../../../../../src/indexForTest'
+import { constants, Effect, executeSelectedEffects, to } from '../../../../../src/indexForTest'
 import { StandardTileExpectation, standardTileIsColors } from '../../../../../test'
 import { houndsmorphosisEffect } from '../../../effects'
+import { setAppStateForEffectTests } from '../../../../../test'
 
 const { BLACK, TRANSPARENT } = constants
 
 describe('houndsmorphosis', () => {
 	it('lays out the tiles in alternating growing rows and steady rows', async (done: DoneFn) => {
-		appState.controls.selectedEffects = [ houndsmorphosisEffect ]
+		setAppStateForEffectTests.setSelectedEffects([ houndsmorphosisEffect ])
 		const overrides: Effect = {
 			basePattern: {
 				gridSettings: {
