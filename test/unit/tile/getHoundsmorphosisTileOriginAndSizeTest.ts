@@ -1,6 +1,6 @@
 // tslint:disable:max-line-length no-unused-expression
 
-import { Address, TileOriginAndSize, to } from '../../../../../src'
+import { Address, TileOriginAndSize, to } from '../../../../../src/indexForTest'
 import { getHoundsmorphosisTileOriginAndSize } from '../../../pattern'
 
 const subject: (_: { gridAddress: Address }) => TileOriginAndSize | undefined = getHoundsmorphosisTileOriginAndSize.default

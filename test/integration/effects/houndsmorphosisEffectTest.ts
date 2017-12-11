@@ -1,4 +1,4 @@
-import { appState, constants, Effect, executeSelectedEffects, to } from '../../../../../src'
+import { appState, constants, Effect, executeSelectedEffects, to } from '../../../../../src/indexForTest'
 import { StandardTileExpectation, standardTileIsColors } from '../../../../../test'
 import { houndsmorphosisEffect } from '../../../effects'
 

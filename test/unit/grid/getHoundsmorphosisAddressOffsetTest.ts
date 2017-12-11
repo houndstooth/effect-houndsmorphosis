@@ -1,4 +1,4 @@
-import { Address, to } from '../../../../../src'
+import { Address, to } from '../../../../../src/indexForTest'
 import { getHoundsmorphosisAddressOffset } from '../../../pattern'
 
 const subject: (_: { gridAddress: Address }) => Address = getHoundsmorphosisAddressOffset.default
