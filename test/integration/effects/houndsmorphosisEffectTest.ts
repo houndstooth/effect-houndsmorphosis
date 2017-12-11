@@ -1,7 +1,6 @@
 import { constants, Effect, executeSelectedEffects, to } from '../../../../../src/indexForTest'
-import { StandardTileExpectation, standardTileIsColors } from '../../../../../test'
+import { setAppStateForEffectTests, StandardTileExpectation, standardTileIsColors } from '../../../../../test'
 import { houndsmorphosisEffect } from '../../../effects'
-import { setAppStateForEffectTests } from '../../../../../test'
 
 const { BLACK, TRANSPARENT } = constants
 
