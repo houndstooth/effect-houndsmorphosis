@@ -1,8 +1,6 @@
-import { constants, Effect, executeSelectedEffects, to } from '../../../../../src/indexForTest'
+import { BLACK, Effect, executeSelectedEffects, to, TRANSPARENT } from '../../../../../src/indexForTest'
 import { setAppStateForEffectTests, StandardTileExpectation, standardTileIsColors } from '../../../../../test'
 import { houndsmorphosisEffect } from '../../../effects'
-
-const { BLACK, TRANSPARENT } = constants
 
 describe('houndsmorphosis', () => {
 	it('lays out the tiles in alternating growing rows and steady rows', async (done: DoneFn) => {
