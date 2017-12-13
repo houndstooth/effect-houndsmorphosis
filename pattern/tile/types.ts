@@ -3,8 +3,8 @@ import { Address, Unit } from '../../../../src'
 interface HoundsmorphosisTileOriginParams {
 	absoluteX: number,
 	absoluteY: number,
+	address: Address,
 	baseSize: Unit,
-	gridAddress: Address,
 	tileSize: Unit
 }
 

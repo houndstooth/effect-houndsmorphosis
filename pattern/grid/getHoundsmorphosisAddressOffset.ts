@@ -1,10 +1,10 @@
 import { Address, AddressElement, from, to } from '../../../../src'
 
-const getHoundsmorphosisAddressOffset: (_: { gridAddress: Address }) => Address =
-	({ gridAddress }: { gridAddress: Address }): Address => {
+const getHoundsmorphosisAddressOffset: (_: { address: Address }) => Address =
+	({ address }: { address: Address }): Address => {
 		let xOffset: AddressElement = to.AddressElement(0)
 		let yOffset: AddressElement = to.AddressElement(0)
-		const [ x, y ]: AddressElement[] = gridAddress
+		const [ x, y ]: AddressElement[] = address
 
 		if (from.AddressElement(x) < 0) {
 			yOffset = to.AddressElement(from.AddressElement(yOffset) + 1)
