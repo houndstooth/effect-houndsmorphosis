@@ -1,10 +1,13 @@
 import { Address, to } from '../../../../../src/indexForTest'
 import { getHoundsmorphosisAddressOffset } from '../../../pattern'
 
-const subject: (_: { address: Address }) => Address = getHoundsmorphosisAddressOffset.default
-
 // tslint:disable-next-line:max-line-length
 describe('houndsmorphosis address offset deals with set assignment because the axes were eliminated to simplify sizing and positioning but that screws with assignment', () => {
+	let subject: (_: { address: Address }) => Address
+	beforeEach(() => {
+		subject = getHoundsmorphosisAddressOffset.default
+	})
+
 	describe('when both x and y are negative', () => {
 		it('provides an offset to cause the address to assign its tile the correct colors, etc', () => {
 			expect(subject({ address: to.Address([ -1, -1 ]) })).toEqual(to.Address([ 2, 1 ]))

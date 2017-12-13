@@ -3,10 +3,12 @@
 import { Address, TileOriginAndSize, to } from '../../../../../src/indexForTest'
 import { getHoundsmorphosisTileOriginAndSize } from '../../../pattern'
 
-const subject: (_: { address: Address }) => TileOriginAndSize | undefined = getHoundsmorphosisTileOriginAndSize.default
-
 describe('get houndsmorphosis tile origin and size', () => {
 	let actual: TileOriginAndSize | undefined
+	let subject: (_: { address: Address }) => TileOriginAndSize | undefined
+	beforeEach(() => {
+		subject = getHoundsmorphosisTileOriginAndSize.default
+	})
 
 	describe('if either x or y are 0', () => {
 		it('returns undefineds', () => {
