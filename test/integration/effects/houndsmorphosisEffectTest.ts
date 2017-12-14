@@ -1,11 +1,11 @@
-import { BLACK, Effect, executeSelectedEffects, to, TRANSPARENT } from '../../../../../src/indexForTest'
+import { BLACK, executeSelectedEffects, to, TRANSPARENT } from '../../../../../src/indexForTest'
 import { setAppStateForEffectTests, StandardTileExpectation, standardTileIsColors } from '../../../../../test'
 import { houndsmorphosisEffect } from '../../../effects'
 
 describe('houndsmorphosis', () => {
 	it('lays out the tiles in alternating growing rows and steady rows', async (done: DoneFn) => {
 		setAppStateForEffectTests.setSelectedEffects([ houndsmorphosisEffect ])
-		const overrides: Effect = {
+		setAppStateForEffectTests.setOverrides({
 			basePattern: {
 				gridSettings: {
 					tileResolution: 6,
@@ -14,9 +14,9 @@ describe('houndsmorphosis', () => {
 					zoom: 10,
 				},
 			},
-		}
+		})
 
-		executeSelectedEffects.default({ overrides })
+		executeSelectedEffects.default()
 
 		setTimeout(() => {
 			let baseId: number = -8
