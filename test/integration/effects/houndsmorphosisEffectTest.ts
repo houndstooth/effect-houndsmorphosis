@@ -1,4 +1,4 @@
-import { BLACK, executeSelectedEffects, to, TRANSPARENT } from '../../../../../src/indexForTest'
+import { BLACK, executePattern, to, TRANSPARENT } from '../../../../../src/indexForTest'
 import { setAppStateForEffectTests, StandardTileExpectation, standardTileIsColors } from '../../../../../test'
 import { houndsmorphosisEffect } from '../../../effects'
 
@@ -17,7 +17,7 @@ describe('houndsmorphosis', () => {
 			},
 		})
 
-		executeSelectedEffects.default()
+		executePattern.default()
 
 		setTimeout(() => {
 			let baseId: number = -8
