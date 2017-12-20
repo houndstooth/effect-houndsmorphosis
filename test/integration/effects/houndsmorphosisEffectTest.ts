@@ -4,7 +4,8 @@ import { houndsmorphosisEffect } from '../../../effects'
 
 describe('houndsmorphosis', () => {
 	it('lays out the tiles in alternating growing rows and steady rows', async (done: DoneFn) => {
-		setAppStateForEffectTests.setSelectedEffects([ houndsmorphosisEffect ])
+		setAppStateForEffectTests.setAvailableEffects({ houndsmorphosis: houndsmorphosisEffect })
+		setAppStateForEffectTests.setSelectedEffects([ 'houndsmorphosis' ])
 		setAppStateForEffectTests.setOverrides({
 			basePattern: {
 				gridSettings: {
