@@ -1,4 +1,4 @@
-import { AssignmentMode, NamedEffect, to } from '../../../src'
+import { AssignmentMode, CANVAS_SIZE, from, HALF, NamedEffect, to } from '../../../src'
 import { getHoundsmorphosisAddressOffset, getHoundsmorphosisTileOriginAndSize } from '../pattern'
 import HOUNDSMORPHOSIS_DESCRIPTION from './houndsmorphosisDescription'
 
@@ -23,8 +23,10 @@ const houndsmorphosisEffect: NamedEffect = {
 			tileSize: to.Unit(0),
 		},
 		viewSettings: {
-			centerViewOnCenterOfTileAtHomeAddress: true,
-			zoomOnCanvasCenter: true,
+			scroll: [
+				to.Px(from.Px(CANVAS_SIZE) * HALF),
+				to.Px(from.Px(CANVAS_SIZE) * HALF),
+			],
 		},
 	},
 	description: HOUNDSMORPHOSIS_DESCRIPTION,
