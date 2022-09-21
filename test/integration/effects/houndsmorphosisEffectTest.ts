@@ -3,7 +3,7 @@ import { setAppStateForEffectTests, StandardTileExpectation, standardTileIsColor
 import { houndsmorphosisEffect } from '../../../effects'
 
 describe('houndsmorphosis', () => {
-	it('lays out the tiles in alternating growing rows and steady rows', async (done: DoneFn) => {
+	it('lays out the tiles in alternating growing rows and steady rows', (done: DoneFn) => {
 		setAppStateForEffectTests.setAvailableEffects({ houndsmorphosis: houndsmorphosisEffect })
 		setAppStateForEffectTests.setSelectedEffects([ 'houndsmorphosis' ])
 		setAppStateForEffectTests.setOverrides({

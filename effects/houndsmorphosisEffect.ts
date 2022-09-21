@@ -1,5 +1,6 @@
 import { AssignmentMode, CANVAS_SIZE, from, HALF, NamedEffect, to } from '../../../src'
 import { getHoundsmorphosisAddressOffset, getHoundsmorphosisTileOriginAndSize } from '../pattern'
+
 import HOUNDSMORPHOSIS_DESCRIPTION from './houndsmorphosisDescription'
 
 const houndsmorphosisEffect: NamedEffect = {
